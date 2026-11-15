@@ -1,43 +1,50 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
+  ArrowLeft,
   ArrowRight,
-  BadgeCheck,
   CheckCircle2,
   ClipboardCheck,
   Clock,
-  Heart,
-  MapPin,
+  Inbox,
   Package,
   RefreshCw,
   Truck,
   Utensils,
 } from 'lucide-react';
 
-import { Badge, Banner, Button, Card, EmptyState, useToast } from '../../components/ui/index.js';
-import { useAuth } from '../../context/AuthContext.jsx';
-import { listDonations } from '../../services/donation.service.js';
-import { cn } from '../../utils/cn.js';
-import { countdownLabel, formatDateTime, isPast, minutesUntil } from '../../utils/datetime.js';
 import {
-  estimateMeals,
-  formatQuantityWithWeight,
-} from '../../utils/donationFormat.js';
+  Badge,
+  Banner,
+  Button,
+  Card,
+  EmptyState,
+  Skeleton,
+  useToast,
+} from '../../components/ui/index.js';
+import { useAuth } from '../../context/AuthContext.jsx';
+import { listPickups } from '../../services/pickup.service.js';
+import { cn } from '../../utils/cn.js';
+import { countdownLabel, formatDateTime } from '../../utils/datetime.js';
+import { estimateMeals, formatQuantityWithWeight } from '../../utils/donationFormat.js';
+import { donorName } from './NgoDashboard.jsx';
 
-function statusToneClass(status) {
-  if (status === 'AVAILABLE') return 'text-secondary';
-  if (status === 'COMPLETED') return 'text-primary';
-  if (status === 'EXPIRED' || status === 'CANCELLED') return 'text-outline';
-  return 'text-on-surface-variant';
-}
+/**
+ * AcceptedDonations — page 18, "My Accepted Donations".
+ *
+ * The source is GET /api/pickups, not GET /api/donations: the NGO donation feed
+ * only ever contains AVAILABLE batches, so filtering it for ACCEPTED could only
+ * ever produce an empty page. A pickup row is created the moment the NGO claims
+ * a batch and carries the donation, the donor and the collection timestamps.
+ *
+ * The row's primary action follows the lifecycle: confirm the collection on
+ * Pickup Management while PENDING, then keep the batch record for reference.
+ */
 
-function AcceptedDonationRow({ donation }) {
-  const minutes = minutesUntil(donation.expiryTime);
-  const expired = donation.effectiveStatus === 'EXPIRED' || minutes <= 0;
-  const isInTransit =
-    donation.effectiveStatus === 'PICKED_UP' ||
-    donation.effectiveStatus === 'ASSIGNED' ||
-    donation.effectiveStatus === 'ACCEPTED';
+function AcceptedDonationRow({ pickup }) {
+  const donation = pickup.donation;
+  const pending = pickup.status === 'PENDING';
+  const delivered = pickup.status === 'COMPLETED';
 
   return (
     <li className="flex flex-col gap-3 border-b border-outline-variant px-4 py-4 last:border-b-0 sm:px-5 sm:py-3">
@@ -48,47 +55,70 @@ function AcceptedDonationRow({ donation }) {
           </span>
           <div className="min-w-0">
             <p className="truncate font-title-md text-title-md font-semibold text-on-surface">
-              {donation.foodName}
+              {donation?.foodName || `Batch #${donation?.id}`}
             </p>
             <p className="font-body-sm text-body-sm text-on-surface-variant">
-              {formatQuantityWithWeight(donation.quantity, donation.quantityUnit)} ·{' '}
-              {donation.foodCategory}
+              {formatQuantityWithWeight(donation?.quantity, donation?.quantityUnit)} ·{' '}
+              {donation?.foodCategory}
+            </p>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">
+              From <span className="font-semibold text-on-surface">{donorName(donation)}</span>
             </p>
           </div>
         </div>
 
-        <Badge status={donation.effectiveStatus} size="sm" />
+        <Badge status={donation?.effectiveStatus || pickup.status} size="sm" />
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-body-sm text-body-sm">
-          <span className="inline-flex items-center gap-1.5 text-on-surface-variant">
+          <span
+            className={cn(
+              'inline-flex items-center gap-1.5',
+              pending ? 'text-secondary' : 'text-on-surface-variant'
+            )}
+          >
             <Clock className="h-4 w-4" aria-hidden="true" />
-            {expired ? 'Deadline passed' : countdownLabel(donation.expiryTime)}
+            {pending
+              ? `${countdownLabel(donation?.expiryTime)} to collect`
+              : `Accepted ${formatDateTime(pickup.createdAt)}`}
           </span>
-          {donation.matchedNgo && (
+          {pickup.pickupTime && (
             <span className="text-on-surface-variant">
-              <Strong>Recipient:</Strong> <span className="font-semibold">{donation.matchedNgo?.organizationName || '—'}</span>
+              Collected{' '}
+              <span className="font-semibold text-on-surface">
+                {formatDateTime(pickup.pickupTime)}
+              </span>
             </span>
           )}
-          <span className={cn('text-on-surface-variant', statusToneClass(donation.effectiveStatus))}>
-            {expired ? formatDateTime(donation.expiryTime) : `Deadline ${formatDateTime(donation.expiryTime)}`}
-          </span>
+          {delivered && pickup.deliveryTime && (
+            <span className="text-on-surface-variant">
+              Delivered{' '}
+              <span className="font-semibold text-on-surface">
+                {formatDateTime(pickup.deliveryTime)}
+              </span>
+            </span>
+          )}
         </div>
 
-        {isInTransit ? (
-          <span className="text-on-surface-variant">
-            <Strong>In transit</Strong>
-          </span>
-        ) : (
+        <div className="flex items-center gap-1">
+          {pending && (
+            <Link
+              to="/ngo/pickups"
+              className="inline-flex items-center gap-1 rounded-lg px-3 py-1.5 font-label-md text-label-md font-semibold text-secondary hover:bg-surface-container-high hover:text-on-surface"
+            >
+              <Truck className="h-3.5 w-3.5" aria-hidden="true" />
+              Record pickup
+            </Link>
+          )}
           <Link
-            to={`/ngo/donations/${donation.id}`}
-            className="inline-flex items-center gap-1 rounded-lg px-3 py-1.5 font-label-md text-label-md font-semibold text-secondary hover:bg-surface-container-high hover:text-on-surface"
+            to={`/ngo/donations/${donation?.id}`}
+            className="inline-flex items-center gap-1 rounded-lg px-3 py-1.5 font-label-md text-label-md font-semibold text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface"
           >
             View Details
             <ArrowRight className="h-3 w-3" aria-hidden="true" />
           </Link>
-        )}
+        </div>
       </div>
     </li>
   );
@@ -98,7 +128,7 @@ export default function AcceptedDonations() {
   const { user } = useAuth();
   const { error: raiseError } = useToast();
 
-  const [donations, setDonations] = useState([]);
+  const [pickups, setPickups] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState(null);
 
@@ -106,14 +136,12 @@ export default function AcceptedDonations() {
     setLoading(true);
     setLoadError(null);
     try {
-      const data = await listDonations();
-      // Filter to only ACCEPTED donations for this NGO
-      setDonations((data.donations || []).filter(
-        (d) => d.effectiveStatus === 'ACCEPTED' && d.matchedNgo?.id
-      ));
+      const data = await listPickups();
+      setPickups(data.pickups || []);
     } catch (apiError) {
-      setLoadError(apiError?.message || 'Could not load your accepted donations.');
-      raiseError(apiError?.message || 'Could not load your accepted donations.');
+      const message = apiError?.message || 'Could not load your accepted donations.';
+      setLoadError(message);
+      raiseError(message);
     } finally {
       setLoading(false);
     }
@@ -124,33 +152,36 @@ export default function AcceptedDonations() {
   }, [load]);
 
   useEffect(() => {
-    // NGO can only see their own accepted donations
+    // The API scopes pickups to the signed-in NGO; this only avoids a flash of
+    // another role's data if the component is ever mounted outside RoleRoute.
     if (user?.role !== 'NGO') {
-      setDonations([]);
+      setPickups([]);
       setLoading(false);
     }
   }, [user?.role]);
 
+  const accepted = useMemo(
+    () =>
+      [...pickups].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()),
+    [pickups]
+  );
+
   const stats = useMemo(() => {
-    const accepted = donations.filter(
-      (d) => d.effectiveStatus === 'ACCEPTED' || d.effectiveStatus === 'ASSIGNED'
-    );
-    const inTransit = donations.filter(
-      (d) => d.effectiveStatus === 'PICKED_UP' || d.effectiveStatus === 'ASSIGNED'
-    );
-    const completed = donations.filter((d) => d.effectiveStatus === 'COMPLETED');
+    const awaiting = accepted.filter((p) => p.status === 'PENDING');
+    const inTransit = accepted.filter((p) => p.status === 'PICKED_UP');
+    const completed = accepted.filter((p) => p.status === 'COMPLETED');
 
     return {
-      total: donations.length,
-      accepted: accepted.length,
+      total: accepted.length,
+      awaiting: awaiting.length,
       inTransit: inTransit.length,
       completed: completed.length,
       meals: completed.reduce(
-        (sum, d) => sum + estimateMeals(d.quantity, d.quantityUnit),
+        (sum, p) => sum + estimateMeals(p.donation?.quantity, p.donation?.quantityUnit),
         0
       ),
     };
-  }, [donations]);
+  }, [accepted]);
 
   return (
     <div className="flex flex-col gap-space-lg">
@@ -164,7 +195,7 @@ export default function AcceptedDonations() {
             {user?.organizationName || user?.name}
           </h1>
           <p className="mt-1 max-w-2xl font-body-md text-body-md text-on-surface-variant">
-            Your accepted and in-transit donations.
+            Every batch your organisation has claimed, from collection to delivery.
           </p>
         </div>
 
@@ -201,15 +232,17 @@ export default function AcceptedDonations() {
         ) : (
           <>
             <Card padding="lg" className="xl:col-span-2">
-              <h2 className="font-headline-sm text-headline-sm font-semibold text-on-surface mb-4">Donation Summary</h2>
+              <h2 className="mb-4 font-headline-sm text-headline-sm font-semibold text-on-surface">
+                Donation Summary
+              </h2>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-surface-container-high text-primary">
                     <Package className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div>
-                    <p className="font-body-sm text-label-sm uppercase tracking-wider text-secondary">Total Accepted</p>
-                    <p className="font-title-md text-title-md font-bold text-primary">{stats.accepted}</p>
+                    <p className="font-body-sm text-label-sm uppercase tracking-wider text-secondary">Total Claimed</p>
+                    <p className="font-title-md text-title-md font-bold text-primary">{stats.total}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -217,8 +250,8 @@ export default function AcceptedDonations() {
                     <Truck className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div>
-                    <p className="font-body-sm text-label-sm uppercase tracking-wider text-secondary">In Transit</p>
-                    <p className="font-title-md text-title-md font-bold text-primary">{stats.inTransit}</p>
+                    <p className="font-body-sm text-label-sm uppercase tracking-wider text-secondary">Awaiting Pickup</p>
+                    <p className="font-title-md text-title-md font-bold text-primary">{stats.awaiting}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -226,8 +259,8 @@ export default function AcceptedDonations() {
                     <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div>
-                    <p className="font-body-sm text-label-sm uppercase tracking-wider text-secondary">Completed</p>
-                    <p className="font-title-md text-title-md font-bold text-primary">{stats.completed}</p>
+                    <p className="font-body-sm text-label-sm uppercase tracking-wider text-secondary">Collected</p>
+                    <p className="font-title-md text-title-md font-bold text-primary">{stats.inTransit}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -240,6 +273,26 @@ export default function AcceptedDonations() {
                   </div>
                 </div>
               </div>
+            </Card>
+
+            <Card padding="lg" className="xl:col-span-2">
+              <h2 className="font-headline-sm text-headline-sm font-semibold text-on-surface">
+                Delivery Progress
+              </h2>
+              <ul className="mt-3 flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+                <li>
+                  <span className="font-semibold text-on-surface">{stats.awaiting}</span> awaiting
+                  collection at the donor
+                </li>
+                <li>
+                  <span className="font-semibold text-on-surface">{stats.inTransit}</span> collected
+                  and on the way to your kitchen
+                </li>
+                <li>
+                  <span className="font-semibold text-on-surface">{stats.completed}</span> delivered
+                  and recorded in your history
+                </li>
+              </ul>
             </Card>
           </>
         )}
@@ -268,7 +321,7 @@ export default function AcceptedDonations() {
               <Skeleton className="h-16 w-full" />
               <Skeleton className="h-16 w-full" />
             </div>
-          ) : donations.length === 0 ? (
+          ) : accepted.length === 0 ? (
             <EmptyState
               compact
               icon={ClipboardCheck}
@@ -282,8 +335,8 @@ export default function AcceptedDonations() {
             </EmptyState>
           ) : (
             <ul className="border-t border-outline-variant space-y-3">
-              {donations.map((donation) => (
-                <AcceptedDonationRow key={donation.id} donation={donation} />
+              {accepted.map((pickup) => (
+                <AcceptedDonationRow key={pickup.id} pickup={pickup} />
               ))}
             </ul>
           )}

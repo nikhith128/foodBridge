@@ -112,6 +112,30 @@ export function AuthProvider({ children }) {
     [endSession]
   );
 
+  /**
+   * Merge session-only edits into the signed-in user.
+   *
+   * The backend has no profile-update endpoint yet (auth.routes.js only has
+   * register / login / me), so Edit Profile and Settings keep their changes in
+   * memory. A reload deliberately restores the values /auth/me returns. `ngo`
+   * is merged one level deep so a caller can patch one organisation field
+   * without rebuilding the whole object.
+   */
+  const updateUser = useCallback((patch) => {
+    setUser((current) => {
+      if (!current) return current;
+      const next = typeof patch === 'function' ? patch(current) : patch;
+      if (!next) return current;
+
+      const { ngo, ...rest } = next;
+      return {
+        ...current,
+        ...rest,
+        ...(ngo ? { ngo: { ...(current.ngo || {}), ...ngo } } : {}),
+      };
+    });
+  }, []);
+
   const value = useMemo(
     () => ({
       user,
@@ -121,8 +145,9 @@ export function AuthProvider({ children }) {
       login,
       register,
       logout,
+      updateUser,
     }),
-    [user, status, login, register, logout]
+    [user, status, login, register, logout, updateUser]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

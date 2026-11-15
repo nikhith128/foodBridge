@@ -78,15 +78,28 @@ function DonationAction({ donation }) {
   }
 
   const note = {
-    ACCEPTED: 'Pickup coordination is coming soon.',
-    ASSIGNED: 'A volunteer has been assigned. Tracking is coming soon.',
+    ACCEPTED: 'Awaiting collection by the NGO.',
+    ASSIGNED: 'A volunteer has been assigned to move this batch.',
     PICKED_UP: 'Collected and on the way to the NGO.',
     COMPLETED: 'Delivered and verified.',
     EXPIRED: 'The collection deadline passed.',
     CANCELLED: 'You withdrew this donation.',
   }[donation.effectiveStatus];
 
-  return <span className="font-body-sm text-body-sm text-on-surface-variant">{note}</span>;
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      {note && (
+        <span className="font-body-sm text-body-sm text-on-surface-variant">{note}</span>
+      )}
+      <Link
+        to={`/donor/donations/${donation.id}`}
+        className="inline-flex items-center gap-1 font-label-md text-label-md font-semibold text-secondary hover:underline"
+      >
+        View Details
+        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      </Link>
+    </div>
+  );
 }
 
 function RecentDonationRow({ donation }) {
@@ -102,7 +115,12 @@ function RecentDonationRow({ donation }) {
           </span>
           <div className="min-w-0">
             <p className="truncate font-title-md text-title-md font-semibold text-on-surface">
-              {donation.foodName}
+              <Link
+                to={`/donor/donations/${donation.id}`}
+                className="hover:text-primary hover:underline"
+              >
+                {donation.foodName}
+              </Link>
             </p>
             <p className="font-body-sm text-body-sm text-on-surface-variant">
               {formatQuantityWithWeight(donation.quantity, donation.quantityUnit)} ·{' '}

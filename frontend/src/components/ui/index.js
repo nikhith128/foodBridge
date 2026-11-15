@@ -8,6 +8,7 @@
 // --- Atoms (B2a) ------------------------------------------------------------
 export { default as Button } from './Button.jsx';
 export { default as Input } from './Input.jsx';
+export { default as Toggle } from './Toggle.jsx';
 export { default as Select } from './Select.jsx';
 export { default as Badge, DietBadge, STATUS } from './Badge.jsx';
 export { default as Card } from './Card.jsx';

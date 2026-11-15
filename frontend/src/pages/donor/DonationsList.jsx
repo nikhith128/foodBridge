@@ -6,14 +6,25 @@ import {
   ClipboardList,
   Clock,
   Heart,
+  Inbox,
   MapPin,
   Package,
+  PlusCircle,
   RefreshCw,
+  Sparkles,
   Trash2,
   Utensils,
 } from 'lucide-react';
 
-import { Badge, Banner, Button, Card, EmptyState, useToast } from '../../components/ui/index.js';
+import {
+  Badge,
+  Banner,
+  Button,
+  Card,
+  EmptyState,
+  Skeleton,
+  useToast,
+} from '../../components/ui/index.js';
 import { useAuth } from '../../context/AuthContext.jsx';
 import { listDonations } from '../../services/donation.service.js';
 import { cn } from '../../utils/cn.js';
@@ -31,6 +42,14 @@ function statusToneClass(status) {
   return 'text-on-surface-variant';
 }
 
+/** The four tabs Design.md page 9 asks for, each keyed to its stored statuses. */
+const DONATION_TABS = [
+  { key: 'ACTIVE', label: 'Active', statuses: ['AVAILABLE', 'ACCEPTED', 'ASSIGNED', 'PICKED_UP'] },
+  { key: 'COMPLETED', label: 'Completed', statuses: ['COMPLETED'] },
+  { key: 'EXPIRED', label: 'Expired', statuses: ['EXPIRED'] },
+  { key: 'CANCELLED', label: 'Cancelled', statuses: ['CANCELLED'] },
+];
+
 function RecentDonationRow({ donation }) {
   const minutes = minutesUntil(donation.expiryTime);
   const expired = donation.effectiveStatus === 'EXPIRED' || minutes <= 0;
@@ -44,7 +63,12 @@ function RecentDonationRow({ donation }) {
           </span>
           <div className="min-w-0">
             <p className="truncate font-title-md text-title-md font-semibold text-on-surface">
-              {donation.foodName}
+              <Link
+                to={`/donor/donations/${donation.id}`}
+                className="hover:text-primary hover:underline"
+              >
+                {donation.foodName}
+              </Link>
             </p>
             <p className="font-body-sm text-body-sm text-on-surface-variant">
               {formatQuantityWithWeight(donation.quantity, donation.quantityUnit)} ·{' '}
@@ -143,6 +167,7 @@ export default function DonationsList() {
   const [donations, setDonations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState(null);
+  const [filter, setFilter] = useState('ACTIVE');
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -190,6 +215,16 @@ export default function DonationsList() {
         .slice(0, 6),
     [donations]
   );
+
+  const visible = useMemo(
+    () =>
+      donations.filter((d) =>
+        DONATION_TABS.find((tab) => tab.key === filter)?.statuses.includes(d.effectiveStatus)
+      ),
+    [donations, filter]
+  );
+
+  const activeTab = DONATION_TABS.find((tab) => tab.key === filter);
 
   const expiringSoon = useMemo(
     () =>
@@ -301,12 +336,32 @@ export default function DonationsList() {
                 </Banner>
               )}
 
-              <RecentDonationRow donation={recent[0]} key={recent[0]?.id} />
-              {recent.length > 1 && (
-                <RecentDonationRow donation={recent[1]} key={recent[1]?.id} />
-              )}
-              {recent.length > 2 && (
-                <RecentDonationRow donation={recent[2]} key={recent[2]?.id} />
+              {recent.length === 0 ? (
+                <div className="flex flex-col items-center gap-2 py-6 text-center">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant">
+                    <Inbox className="h-6 w-6" aria-hidden="true" />
+                  </span>
+                  <p className="font-title-md text-title-md font-semibold text-on-surface">
+                    No donations yet
+                  </p>
+                  <p className="max-w-sm font-body-sm text-body-sm text-on-surface-variant">
+                    Publish a surplus batch and its latest activity will appear here.
+                  </p>
+                  <Button
+                    as={Link}
+                    to="/donor/donations/new"
+                    variant="outline"
+                    size="sm"
+                    className="mt-1"
+                  >
+                    <PlusCircle className="h-4 w-4" aria-hidden="true" />
+                    Create Donation
+                  </Button>
+                </div>
+              ) : (
+                recent
+                  .slice(0, 3)
+                  .map((donation) => <RecentDonationRow key={donation.id} donation={donation} />)
               )}
             </Card>
           </>
@@ -331,6 +386,42 @@ export default function DonationsList() {
             )}
           </div>
 
+          {!loading && donations.length > 0 && (
+            <div
+              role="tablist"
+              aria-label="Filter donations by status"
+              className="mt-4 flex flex-wrap gap-2"
+            >
+              {DONATION_TABS.map((tab) => {
+                const count = donations.filter((d) =>
+                  tab.statuses.includes(d.effectiveStatus)
+                ).length;
+                const selected = filter === tab.key;
+
+                return (
+                  <button
+                    key={tab.key}
+                    type="button"
+                    role="tab"
+                    aria-selected={selected}
+                    onClick={() => setFilter(tab.key)}
+                    className={cn(
+                      'inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-label-md text-label-md font-semibold transition-colors',
+                      selected
+                        ? 'bg-secondary-container text-on-secondary-container'
+                        : 'bg-surface-container-high text-on-surface-variant hover:text-on-surface'
+                    )}
+                  >
+                    {tab.label}
+                    <span className="rounded-full bg-surface-container-lowest px-1.5 text-label-sm text-outline">
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
           {loading ? (
             <div className="flex flex-col gap-4 px-4 pb-5 sm:px-5">
               <Skeleton className="h-16 w-full" />
@@ -349,9 +440,16 @@ export default function DonationsList() {
                 Create First Donation
               </Button>
             </EmptyState>
+          ) : visible.length === 0 ? (
+            <EmptyState
+              compact
+              icon={Inbox}
+              title={`No ${(activeTab?.label || '').toLowerCase()} donations`}
+              message="Nothing in this status right now. Switch tabs to see your other donations."
+            />
           ) : (
             <ul className="border-t border-outline-variant space-y-3">
-              {donations.map((donation) => (
+              {visible.map((donation) => (
                 <li key={donation.id} className="flex flex-col gap-3 border-b border-outline-variant px-4 py-3 last:border-b-0 sm:px-5 sm:py-4">
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="flex min-w-0 items-start gap-3">
@@ -360,7 +458,12 @@ export default function DonationsList() {
                       </span>
                       <div className="min-w-0">
                         <p className="truncate font-title-md text-title-md font-semibold text-on-surface">
-                          {donation.foodName}
+                          <Link
+                            to={`/donor/donations/${donation.id}`}
+                            className="hover:text-primary hover:underline"
+                          >
+                            {donation.foodName}
+                          </Link>
                         </p>
                         <p className="font-body-sm text-body-sm text-on-surface-variant">
                           {formatQuantityWithWeight(donation.quantity, donation.quantityUnit)} ·
@@ -392,13 +495,21 @@ export default function DonationsList() {
                       </span>
                     </div>
 
-                    <Link
-                      to={`/donor/donations/${donation.id}/matches`}
-                      className="inline-flex items-center gap-1 rounded-lg px-3 py-1.5 font-label-md text-label-md font-semibold text-secondary hover:bg-surface-container-high hover:text-on-surface"
-                    >
-                      Matches
-                      <ArrowRight className="h-3 w-3" aria-hidden="true" />
-                    </Link>
+                    <div className="flex items-center gap-1">
+                      <Link
+                        to={`/donor/donations/${donation.id}`}
+                        className="inline-flex items-center gap-1 rounded-lg px-3 py-1.5 font-label-md text-label-md font-semibold text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface"
+                      >
+                        Details
+                      </Link>
+                      <Link
+                        to={`/donor/donations/${donation.id}/matches`}
+                        className="inline-flex items-center gap-1 rounded-lg px-3 py-1.5 font-label-md text-label-md font-semibold text-secondary hover:bg-surface-container-high hover:text-on-surface"
+                      >
+                        Matches
+                        <ArrowRight className="h-3 w-3" aria-hidden="true" />
+                      </Link>
+                    </div>
                   </div>
                 </li>
               ))}

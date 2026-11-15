@@ -35,8 +35,8 @@ import {
 // rendered as inert text for now.
 export const PUBLIC_NAV = [
   { key: 'home', label: 'Home', to: '/', built: true, end: true },
-  { key: 'about', label: 'About Us', to: '/about', built: false },
-  { key: 'how', label: 'How It Works', to: '/how-it-works', built: false },
+  { key: 'about', label: 'About Us', to: '/about', built: true },
+  { key: 'how', label: 'How It Works', to: '/how-it-works', built: true },
 ];
 
 export const PUBLIC_ACCOUNT_LINKS = [
@@ -50,7 +50,7 @@ export const NAV_ITEMS = {
   DONOR: [
     { key: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, to: '/donor', built: true, exact: true },
     { key: 'create', label: 'Create Donation', icon: PlusCircle, to: '/donor/donations/new', built: true },
-    { key: 'donations', label: 'My Donations', icon: Package, to: '/donor/donations', built: true },
+    { key: 'donations', label: 'My Donations', icon: Package, to: '/donor/donations', built: true, exact: true },
     { key: 'matches', label: 'Matching Results', icon: Network, to: '/donor/matches', built: true },
     { key: 'pickups', label: 'Pickup Details', icon: Truck, to: '/donor/pickups', built: true },
     { key: 'impact', label: 'Impact Dashboard', icon: LineChart, to: '/impact', built: true },
@@ -60,7 +60,7 @@ export const NAV_ITEMS = {
   ],
   NGO: [
     { key: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, to: '/ngo', built: true, exact: true },
-    { key: 'available', label: 'Available Donations', icon: Inbox, to: '/ngo/donations', built: true },
+    { key: 'available', label: 'Available Donations', icon: Inbox, to: '/ngo/donations', built: true, exact: true },
     { key: 'recommendations', label: 'Matching Recommendations', icon: Sparkles, to: '/ngo/recommendations', built: true },
     { key: 'accepted', label: 'My Accepted Donations', icon: ClipboardCheck, to: '/ngo/accepted', built: true },
     { key: 'pickups', label: 'Pickup Management', icon: Truck, to: '/ngo/pickups', built: true },
@@ -88,9 +88,9 @@ export const NAV_ITEMS = {
  */
 export const VOLUNTEER_TABS = [
   { key: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, to: '/volunteer', built: true, exact: true },
-  { key: 'tasks', label: 'Tasks', icon: Truck, to: '/volunteer/tasks', built: false },
-  { key: 'alerts', label: 'Alerts', icon: Bell, to: '/notifications', built: false, badge: true },
-  { key: 'profile', label: 'Profile', icon: UserCircle, to: '/profile', built: false },
+  { key: 'tasks', label: 'Tasks', icon: Truck, to: '/volunteer/tasks', built: true },
+  { key: 'alerts', label: 'Alerts', icon: Bell, to: '/notifications', built: true, badge: true },
+  { key: 'profile', label: 'Profile', icon: UserCircle, to: '/profile', built: true },
 ];
 
 /** Human labels for the role, used by the sidebar footer and the top bar. */

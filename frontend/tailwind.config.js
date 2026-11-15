@@ -75,6 +75,13 @@ export default {
         sage: '#e8f0e8',
         'ink-strong': '#202b24',
         'ink-muted': '#68756b',
+
+        // Aliases used by a handful of pages. They point at existing screen
+        // tokens rather than introducing new hex values: `mint` is the pale
+        // green wash (primary-fixed) and `amber` the warm urgency ink
+        // (tertiary-container, WCAG AA on the surface).
+        mint: '#b8efd0',
+        amber: '#673700',
       },
 
       // NOTE: there is deliberately no `status` colour block. Design.md section
@@ -85,9 +92,24 @@ export default {
       // onto an existing token instead of introducing new hex values.
 
       // ------------------------------------------------------------ typography
+      // Each family is the one its DESIGN.md token block declares: the display
+      // scale is Manrope, the reading scale is Inter. Pages reference the token
+      // names directly (font-headline-md, font-body-sm, ...), so they are all
+      // registered here instead of being rewritten across dozens of files.
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
+        'headline-lg': ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
+        'headline-lg-mobile': ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
+        'headline-md': ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
+        'headline-md-mobile': ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
+        'headline-sm': ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
+        'title-md': ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
+        'body-lg': ['Inter', 'system-ui', 'sans-serif'],
+        'body-md': ['Inter', 'system-ui', 'sans-serif'],
+        'body-sm': ['Inter', 'system-ui', 'sans-serif'],
+        'label-md': ['Inter', 'system-ui', 'sans-serif'],
+        'label-sm': ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         display: ['3.5rem', { lineHeight: '4rem', fontWeight: '800', letterSpacing: '-0.03em' }],

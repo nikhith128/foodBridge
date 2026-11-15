@@ -494,7 +494,7 @@ try {
   check('Login renders the email field', loginPage.includes('Email Address'));
   check('Login links to registration', loginPage.includes('href="/register"'));
   check('Login renders the story panel greeting', loginPage.includes('Welcome back'));
-  check('Login marks the forgot-password control inert', loginPage.includes('Password reset is coming soon'));
+  check('Login links to the password reset page', loginPage.includes('href="/forgot-password"'));
 
   // Social buttons are shown but disabled — no OAuth backend exists.
   check(
@@ -560,8 +560,8 @@ try {
   check('PublicLayout offers a Login link', publicShell.includes('href="/login"'));
   check('PublicLayout offers a Register link', publicShell.includes('href="/register"'));
   check(
-    'PublicLayout marks the unbuilt About Us item inert',
-    publicShell.includes('aria-disabled="true"') && publicShell.includes('About Us')
+    'PublicLayout links the About Us item',
+    publicShell.includes('href="/about"')
   );
   check('PublicLayout uses the header shadow token', publicShell.includes('shadow-header'));
   check('PublicLayout pins the header', publicShell.includes('fixed') && publicShell.includes('top-0'));
@@ -624,7 +624,7 @@ try {
     )
   );
   check(
-    'The built nav items are the dashboards, Create Donation, the NGO feed and Impact',
+    'All nav items are built (no unbuilt pages remain)',
     ['DONOR', 'NGO', 'VOLUNTEER']
       .flatMap((role) =>
         navigation
@@ -634,12 +634,12 @@ try {
       )
       .sort()
       .join(',') ===
-      'DONOR:create,DONOR:dashboard,DONOR:impact,NGO:available,NGO:dashboard,NGO:impact,NGO:pickups,VOLUNTEER:dashboard,VOLUNTEER:impact'
+      'DONOR:create,DONOR:dashboard,DONOR:donations,DONOR:impact,DONOR:matches,DONOR:notifications,DONOR:pickups,DONOR:profile,DONOR:settings,NGO:accepted,NGO:available,NGO:dashboard,NGO:history,NGO:impact,NGO:notifications,NGO:pickups,NGO:profile,NGO:recommendations,NGO:settings,VOLUNTEER:available,VOLUNTEER:dashboard,VOLUNTEER:impact,VOLUNTEER:mine,VOLUNTEER:notifications,VOLUNTEER:profile,VOLUNTEER:settings'
   );
   check('Volunteer bottom nav has four tabs', navigation.VOLUNTEER_TABS.length === 4);
   check(
-    'Public nav marks About Us and How It Works unbuilt',
-    navigation.PUBLIC_NAV.filter((item) => !item.built).length === 2
+    'Public nav marks About Us and How It Works built',
+    navigation.PUBLIC_NAV.filter((item) => item.built).length === 3
   );
   check('Role labels cover all three roles', Object.keys(navigation.ROLE_LABELS).length === 3);
 
@@ -670,10 +670,10 @@ try {
     donorSidebar.includes('Demo Account') && donorSidebar.includes('Log Out')
   );
   check('Donor sidebar offers the collapse control', donorSidebar.includes('Collapse sidebar'));
-  check('Unbuilt items carry a Soon pill', donorSidebar.includes('Soon'));
+  check('No unbuilt items carry a Soon pill', !donorSidebar.includes('Soon'))
   check(
-    'Unbuilt items are not links',
-    donorSidebar.includes('aria-disabled="true"') && donorSidebar.includes('cursor-not-allowed')
+    'All donor sidebar items are links',
+    !donorSidebar.includes('aria-disabled="true"') && !donorSidebar.includes('cursor-not-allowed')
   );
 
   const ngoSidebar = render(
@@ -1215,8 +1215,8 @@ try {
   );
   check('NGO sidebar links the built Pickup Management item', ngoSidebar.includes('href="/ngo/pickups"'));
   check(
-    'NGO sidebar keeps the unbuilt items inert',
-    ngoSidebar.includes('aria-disabled="true"') && ngoSidebar.includes('Matching Recommendations')
+    'NGO sidebar keeps every item a real link',
+    ngoSidebar.includes('href="/ngo/recommendations"') && !ngoSidebar.includes('aria-disabled="true"')
   );
 
   // ============================================ Step E: Impact dashboard

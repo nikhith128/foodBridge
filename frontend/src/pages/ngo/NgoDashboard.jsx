@@ -316,7 +316,7 @@ export default function NgoDashboard() {
               The best-scoring available batches for your intake profile.
             </p>
           </div>
-          <Button as={Link} to="/ngo/donations" variant="ghost" size="sm">
+          <Button as={Link} to="/ngo/recommendations" variant="ghost" size="sm">
             View all
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Button>

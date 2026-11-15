@@ -21,10 +21,9 @@ import { homePathForRole } from '../../routes/guards.js';
  *     through five mock states, not a feature. Only the default sign-in state is
  *     real here; the error state is produced by an actual failed request rather
  *     than a button;
- *   - the Forgot Password, Reset Link Sent and Set New Password states. Password
- *     reset needs mail delivery and a token store, which Phases.md defers to
- *     "Later", so "Forgot password?" is rendered inert with an explanatory title
- *     instead of linking to a page that does not exist.
+ *   - the Reset Link Sent and Set New Password states, which need mail delivery
+ *     and a token store. The request state itself is the /forgot-password page,
+ *     which the form links to.
  *
  * On success the page navigates to the dashboard for the signed-in role, or back
  * to wherever the guard bounced the visitor from (`location.state.from`).
@@ -256,14 +255,12 @@ export default function Login() {
                   </span>
                   <span className="sr-only">— not available yet</span>
                 </label>
-                <span
-                  role="link"
-                  aria-disabled="true"
-                  title="Password reset is coming soon"
-                  className="cursor-not-allowed font-label-md text-label-md text-secondary/60"
+                <Link
+                  to="/forgot-password"
+                  className="font-label-md text-label-md text-secondary hover:underline"
                 >
                   Forgot password?
-                </span>
+                </Link>
               </div>
 
               <Button
