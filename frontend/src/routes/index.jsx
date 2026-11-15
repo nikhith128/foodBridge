@@ -104,9 +104,13 @@ export default function AppRoutes() {
         </Route>
       </Route>
 
-      {/* --- Development only (deleted before Step F) --------------------- */}
-      <Route path="/dev/components" element={<ComponentGallery />} />
-      <Route path="/dev/tokens" element={<TokenPreview />} />
+      {/* --- Development only (never shipped to production) ---------------- */}
+      {import.meta.env.DEV && (
+        <>
+          <Route path="/dev/components" element={<ComponentGallery />} />
+          <Route path="/dev/tokens" element={<TokenPreview />} />
+        </>
+      )}
 
       {/* --- Anything else ------------------------------------------------ */}
       <Route path="*" element={<NotFound />} />

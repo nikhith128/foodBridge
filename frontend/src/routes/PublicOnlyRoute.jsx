@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 import { useAuth, AUTH_STATUS } from '../context/AuthContext.jsx';
 import { homePathForRole } from './guards.js';
@@ -17,9 +17,18 @@ import { homePathForRole } from './guards.js';
  */
 export default function PublicOnlyRoute({ children }) {
   const { status, user } = useAuth();
+  const location = useLocation();
 
   if (status === AUTH_STATUS.AUTHENTICATED) {
-    return <Navigate to={homePathForRole(user?.role)} replace />;
+    // A guard that bounced the visitor here records where they were headed.
+    // Honouring it here (not only in Login) prevents this redirect from racing
+    // the login page and sending the user to their dashboard instead.
+    const from = location.state?.from;
+    const target =
+      typeof from === 'string' && from.startsWith('/') && !from.startsWith('//')
+        ? from
+        : homePathForRole(user?.role);
+    return <Navigate to={target} replace />;
   }
 
   return children ?? <Outlet />;

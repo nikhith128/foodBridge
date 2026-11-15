@@ -25,9 +25,16 @@ const impactRoutes = require('./routes/impact.routes');
 const app = express();
 
 // --- Global middleware ---------------------------------------------------
+// Accept one origin, or a comma-separated list (e.g. production + preview
+// deployments). Trailing slashes are stripped because browsers never send one.
+const CLIENT_ORIGINS = (process.env.CLIENT_URL || 'http://localhost:5173')
+  .split(',')
+  .map((origin) => origin.trim().replace(/\/$/, ''))
+  .filter(Boolean);
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: CLIENT_ORIGINS,
     credentials: true,
   })
 );
