@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import {
   ArrowLeft,
   ArrowRight,
@@ -307,6 +307,12 @@ export default function MatchingResults() {
   const [cancelling, setCancelling] = useState(false);
 
   const load = useCallback(async () => {
+    // /donor/matches has no :id — send the donor to the list instead of
+    // requesting /matches/undefined.
+    if (!id) {
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     setLoadError(null);
     try {
@@ -347,6 +353,9 @@ export default function MatchingResults() {
       setCancelling(false);
     }
   }
+
+  // --- Missing donation id --------------------------------------------------
+  if (!id) return <Navigate to="/donor/donations" replace />;
 
   // --- Loading --------------------------------------------------------------
   if (loading) {

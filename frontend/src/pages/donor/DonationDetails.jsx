@@ -360,7 +360,7 @@ export default function DonationDetails() {
           </Card>
 
           <Card padding="lg" className="flex flex-col gap-2 bg-surface-container-low">
-            <p className="font-title-sm text-title-sm font-semibold text-on-surface">
+            <p className="font-title-md text-title-md font-semibold text-on-surface">
               {donation.effectiveStatus === 'AVAILABLE' ? 'Matching in progress' : 'Status'}
             </p>
             <p className="font-body-sm text-body-sm leading-relaxed text-on-surface-variant">

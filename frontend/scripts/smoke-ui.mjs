@@ -1029,7 +1029,7 @@ try {
   tokenStore.clearToken();
 
   // --- the pages render inside their providers
-  const pageAt = (path, element, role = 'DONOR') =>
+  const pageAt = (path, element, role = 'DONOR', routePath = null) =>
     render(
       h(
         MemoryRouter,
@@ -1037,7 +1037,11 @@ try {
         h(
           ToastProvider,
           null,
-          h(authContext.AuthContext.Provider, { value: fakeAuth('authenticated', role) }, element)
+          h(
+            authContext.AuthContext.Provider,
+            { value: fakeAuth('authenticated', role) },
+            routePath ? h(Routes, null, h(Route, { path: routePath, element })) : element
+          )
         )
       )
     );
@@ -1078,7 +1082,12 @@ try {
   check('CreateDonation submits to the matching engine', createDonationPage.includes('Publish Donation'));
   check('CreateDonation states that drafts are not stored', createDonationPage.includes('Drafts are not stored'));
 
-  const matchingResultsPage = pageAt('/donor/donations/7/matches', h(MatchingResults));
+  const matchingResultsPage = pageAt(
+    '/donor/donations/7/matches',
+    h(MatchingResults),
+    'DONOR',
+    '/donor/donations/:id/matches'
+  );
   check('MatchingResults renders its loading shell', matchingResultsPage.includes('animate-pulse'));
 
   // --- the donor sidebar reflects what is actually built
