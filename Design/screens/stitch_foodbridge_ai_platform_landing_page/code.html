@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"primary-container":"#174c36","on-surface":"#131e17","primary":"#003422","on-primary-container":"#86bc9f","outline":"#717973","surface-container-lowest":"#ffffff","on-secondary-container":"#1b7046","surface-tint":"#356850","tertiary":"#472400","inverse-on-surface":"#e6f4e8","on-primary-fixed":"#002114","on-background":"#131e17","on-error-container":"#93000a","primary-fixed":"#b8efd0","inverse-surface":"#27332b","outline-variant":"#c0c9c1","surface-variant":"#d8e6da","on-error":"#ffffff","on-tertiary-fixed-variant":"#6c3a00","surface-dim":"#d0ded1","background":"#effdf0","secondary-fixed":"#a2f4bf","error-container":"#ffdad6","surface-container":"#e4f1e5","error":"#ba1a1a","secondary":"#156c42","on-secondary":"#ffffff","on-tertiary":"#ffffff","on-primary":"#ffffff","on-secondary-fixed-variant":"#00522f","surface":"#effdf0","on-tertiary-container":"#ed9f55","on-surface-variant":"#404943","on-secondary-fixed":"#002110","secondary-container":"#9ff1bd","surface-container-highest":"#d8e6da","tertiary-fixed-dim":"#ffb778","surface-container-low":"#e9f7eb","primary-fixed-dim":"#9cd2b5","on-tertiary-fixed":"#2e1500","tertiary-container":"#673700","inverse-primary":"#9cd2b5","surface-bright":"#effdf0","on-primary-fixed-variant":"#1b5039","secondary-fixed-dim":"#87d8a5","surface-container-high":"#deecdf","tertiary-fixed":"#ffdcc1"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-mobile":"1rem","space-lg":"1.5rem","space-xs":"0.25rem","space-xl":"2.5rem","space-md":"1rem","gutter":"1.5rem","margin":"2rem","space-sm":"0.5rem","margin-mobile":"1rem"},"fontFamily":{"headline-lg":["Manrope"],"display-mobile":["Manrope"],"headline-md-mobile":["Manrope"],"headline-sm":["Manrope"],"label-sm":["Inter"],"headline-md":["Manrope"],"headline-lg-mobile":["Manrope"],"display":["Manrope"],"body-md":["Inter"],"title-md":["Manrope"],"body-lg":["Inter"],"body-sm":["Inter"],"label-md":["Inter"]},"fontSize":{"headline-lg":["2.5rem",{"lineHeight":"3rem","letterSpacing":"-0.02em","fontWeight":"700"}],"display-mobile":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"800"}],"headline-md-mobile":["1.375rem",{"lineHeight":"1.875rem","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"0em","fontWeight":"600"}],"label-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"headline-md":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.01em","fontWeight":"700"}],"display":["3.5rem",{"lineHeight":"4rem","letterSpacing":"-0.03em","fontWeight":"800"}],"body-md":["1rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"title-md":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"600"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","letterSpacing":"-0.005em","fontWeight":"400"}],"body-sm":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"label-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(23,76,54,0.06)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="FoodBridge AI Logo Mark" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrBtTzIDrjh-HsoOw0qwrWwKBYbgJiDFtmFK8a_8aQOCPbqflfCwbFlcQ4DED8rfRLWqOI_p6MTHKhocmOQb4q1QvhaLAEEXYzNBxNA3CYkVFucFEvSraTPRu4XhE3tm84CumXBbzKUxqBdh5UaDVcVgDB79MIQolrIQFuYUJTt1tq1Da7DN43U3T5zYXOJCygcX3Yhx-eDobEDfj8hogCoEvVJ1rFpmIqsWdmgIdcQ"/><div class="flex flex-col min-w-0"><span class="font-title-md text-title-md text-primary tracking-tight truncate">FoodBridge AI</span></div></div><div class="flex items-center gap-space-xs"><button class="min-h-[44px] px-space-md py-space-xs rounded-full bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center shadow-sm" type="button">Get Started</button><button aria-label="Toggle Navigation Menu" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full overflow-hidden">
+<!-- Keyframe & Dynamic Style Micro-Injects -->
+<style>
+    @keyframes liquidSheen {
+      0% { transform: translateX(-120%) rotate(25deg); }
+      50%, 100% { transform: translateX(220%) rotate(25deg); }
+    }
+    @keyframes pulseSoft {
+      0%, 100% { opacity: 0.9; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.96); }
+    }
+    @keyframes floatCard1 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(-0.5deg); }
+    }
+    @keyframes floatCard2 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(5px) rotate(0.8deg); }
+    }
+    .animate-liquid-sheen {
+      animation: liquidSheen 4.5s ease-in-out infinite;
+    }
+    .animate-pulse-glow {
+      animation: pulseSoft 2.8s ease-in-out infinite;
+    }
+    .animate-float-1 {
+      animation: floatCard1 4s ease-in-out infinite;
+    }
+    .animate-float-2 {
+      animation: floatCard2 4.6s ease-in-out infinite;
+    }
+    .perspective-carousel {
+      perspective: 1000px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-liquid-sheen, .animate-pulse-glow, .animate-float-1, .animate-float-2 {
+        animation: none !important;
+      }
+    }
+  </style>
+<!-- SECTION 1: Liquid Glass Brand Reveal Module -->
+<section class="relative w-full px-gutter-mobile pt-space-md pb-space-xs">
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl p-space-md shadow-[0_8px_30px_rgb(23,76,54,0.06)] flex items-center justify-between gap-space-sm">
+<!-- Animated Iridescent Glare Sheen -->
+<div class="pointer-events-none absolute inset-0 -top-8 -bottom-8 w-1/3 bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-60 animate-liquid-sheen"></div>
+<!-- Brand Logo + Wordmark -->
+<div class="flex items-center gap-space-sm relative z-10 min-w-0">
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center p-1.5 shadow-sm shrink-0">
+<img alt="FoodBridge AI Logo Mark" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBtTzIDrjh-HsoOw0qwrWwKBYbgJiDFtmFK8a_8aQOCPbqflfCwbFlcQ4DED8rfRLWqOI_p6MTHKhocmOQb4q1QvhaLAEEXYzNBxNA3CYkVFucFEvSraTPRu4XhE3tm84CumXBbzKUxqBdh5UaDVcVgDB79MIQolrIQFuYUJTt1tq1Da7DN43U3T5zYXOJCygcX3Yhx-eDobEDfj8hogCoEvVJ1rFpmIqsWdmgIdcQ"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-primary truncate">FoodBridge AI</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold tracking-wide">
+              AI-Powered
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Grassroots Rescue Engine</span>
+</div>
+</div>
+<!-- Quick Action -->
+<div class="relative z-10 shrink-0">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Hero Section -->
+<section class="relative w-full px-gutter-mobile pt-space-lg pb-space-xl flex flex-col gap-space-lg">
+<!-- Top Pill Indicator -->
+<div class="self-start inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high text-primary shadow-xs">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse-glow"></span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase">AI-Powered Food Rescue Platform</span>
+</div>
+<!-- Main Headline & Copy -->
+<div class="flex flex-col gap-space-sm">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">
+        Together, We Can End Food Waste.
+        <span class="block text-secondary mt-1">Turning Surplus Food Into Hope.</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Every day, nutritious food goes to waste while local communities need it. FoodBridge AI connects commercial food donors with vetted nearby NGOs in real time, routing fresh surplus straight to the table.
+      </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row items-stretch gap-space-sm pt-space-xs">
+<button class="w-full h-12 px-space-lg rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(23,76,54,0.22)] active:scale-[0.98] transition-transform" type="button">
+<span>Donate Food</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full h-12 px-space-lg rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-[0_2px_8px_rgba(23,76,54,0.06)] active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary">handshake</span>
+<span>Join as an NGO</span>
+</button>
+</div>
+<!-- Trust Indicator -->
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+<span class="font-body-sm text-body-sm">Connecting donors, NGOs, and communities for a better tomorrow.</span>
+</div>
+<!-- Visual Display Card with Floating Interactive Micro-Cards -->
+<div class="relative w-full mt-space-sm rounded-3xl overflow-hidden bg-surface-container-low shadow-[0_12px_36px_rgba(23,76,54,0.08)]">
+<!-- Ambient Backing Glow -->
+<div class="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-secondary-container/50 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -right-10 w-44 h-44 rounded-full bg-tertiary-fixed/40 blur-2xl pointer-events-none"></div>
+<!-- Main Visual Placeholder (Fresh Produce Donation Crate) -->
+<div class="relative w-full aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up organic produce wooden donation crate filled with fresh sourdough loaf, bell peppers, carrots, crisp green lettuce, and ripe tomatoes on a bright warm wooden tabletop, soft natural sun flare, ultra clean editorial studio photography in earthy tones #174C36 and #F7F5EC" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASyQigi4EhkMq81Un5jArCGY-SqBMnT4pkL8Ehm4Zj9T0fdj4YHWCnnjRXxe-4hj5WK353MKgoH7PkV3M8mukF21j0-gxgt8GoTOnyN-qAMsEoEXquMuDntjPPJYUihR6YGK_HXu1T-NWozSXujPAJZ60yK01ue9tZ1tyaSyhFNnde75YGzMQGMbhIJeLe_pncDttPNX_bkQKuUPyB810gJunV0923enME_aSI2A"/>
+<!-- Soft Inner Gradient Overlay for Text Readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-on-primary">
+<span class="font-label-sm text-label-sm tracking-wide bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full">Harvest Hope Crate #408</span>
+<span class="font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span> Live Dispatch
+          </span>
+</div>
+</div>
+<!-- Floating Micro Live Cards -->
+<div class="p-space-md flex flex-col gap-space-sm relative z-10 bg-surface-container-lowest/90 backdrop-blur-md">
+<!-- Floating Live Card 1 -->
+<div class="animate-float-1 rounded-2xl p-space-sm bg-surface-container-low shadow-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest flex items-center justify-center text-xl shrink-0">
+            🍞
+          </div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-body-sm font-semibold text-primary truncate">Fresh Sourdough &amp; Veggies</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold shrink-0">45 kg</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-secondary text-[14px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Just matched with Hope Shelter</span>
+</div>
+</div>
+</div>
+<!-- Floating Live Card 2 -->
+<div class="animate-float-2 rounded-2xl p-space-sm bg-surface-container-lowest shadow-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-primary font-bold">98% AI Match</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Optimal route compatibility</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">
+              1.4 km away
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Warp Perspective Carousel – Impact Statistics -->
+<section class="relative w-full px-gutter-mobile py-space-xl bg-surface-container-low overflow-hidden">
+<div class="flex flex-col gap-space-xs mb-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Network Transparency</span>
+<span class="px-2 py-0.5 rounded-full bg-surface text-on-surface-variant font-label-sm text-label-sm">Demo Feed</span>
+</div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary">Small Actions. Meaningful Impact.</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time telemetry from active municipal food rescue nodes.</p>
+</div>
+<!-- 3D Warp Carousel Container -->
+<div class="perspective-carousel relative w-full pt-space-xs pb-space-sm">
+<div class="flex gap-space-md overflow-x-auto snap-x snap-mandatory scroll-smooth pb-space-sm -mx-gutter-mobile px-gutter-mobile" id="statsCarousel">
+<!-- Metric Card 1 -->
+<div class="snap-center shrink-0 w-[275px] rounded-3xl p-space-lg bg-gradient-to-br from-primary via-primary-container to-secondary text-on-primary shadow-[0_12px_32px_-4px_rgba(23,76,54,0.28)] flex flex-col justify-between h-[210px] transform transition-transform">
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[22px]">restaurant</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-white/20 text-on-primary font-label-sm text-label-sm font-semibold backdrop-blur-xs">
+              +18% this wk
+            </span>
+</div>
+<div>
+<div class="font-display-mobile text-display-mobile leading-none tracking-tight">12,500+</div>
+<div class="font-title-md text-title-md text-on-primary-container mt-1 font-medium">Meals Rescued</div>
+<div class="font-body-sm text-body-sm text-white/70 mt-0.5">Saved from landfills &amp; redistributed</div>
+</div>
+</div>
+<!-- Metric Card 2 -->
+<div class="snap-center shrink-0 w-[275px] rounded-3xl p-space-lg bg-gradient-to-br from-secondary via-surface-tint to-primary-container text-on-primary shadow-[0_12px_32px_-4px_rgba(23,76,54,0.22)] flex flex-col justify-between h-[210px] transform transition-transform">
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[22px]">storefront</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-white/20 text-on-primary font-label-sm text-label-sm font-semibold backdrop-blur-xs">
+              Verified
+            </span>
+</div>
+<div>
+<div class="font-display-mobile text-display-mobile leading-none tracking-tight">250+</div>
+<div class="font-title-md text-title-md text-secondary-fixed mt-1 font-medium">Food Donors</div>
+<div class="font-body-sm text-body-sm text-white/70 mt-0.5">Bakeries, groceries, hotel kitchens</div>
+</div>
+</div>
+<!-- Metric Card 3 -->
+<div class="snap-center shrink-0 w-[275px] rounded-3xl p-space-lg bg-gradient-to-br from-surface-tint via-secondary to-primary-fixed-dim text-on-surface shadow-[0_12px_32px_-4px_rgba(23,76,54,0.18)] flex flex-col justify-between h-[210px] transform transition-transform bg-secondary-container">
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-2xl bg-primary/10 backdrop-blur-md flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">volunteer_activism</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+              Active Fleet
+            </span>
+</div>
+<div>
+<div class="font-display-mobile text-display-mobile text-primary leading-none tracking-tight">80+</div>
+<div class="font-title-md text-title-md text-primary mt-1 font-medium">Partner NGOs</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Shelters, soup kitchens &amp; food pantries</div>
+</div>
+</div>
+<!-- Metric Card 4 -->
+<div class="snap-center shrink-0 w-[275px] rounded-3xl p-space-lg bg-gradient-to-br from-primary-container via-surface-variant to-secondary-container text-primary shadow-[0_12px_32px_-4px_rgba(23,76,54,0.15)] flex flex-col justify-between h-[210px] transform transition-transform">
+<div class="flex items-start justify-between">
+<span class="w-10 h-10 rounded-2xl bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+              99.2% Success
+            </span>
+</div>
+<div>
+<div class="font-display-mobile text-display-mobile leading-none tracking-tight">1,200+</div>
+<div class="font-title-md text-title-md text-primary mt-1 font-medium">Donations Completed</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Cold chain &amp; ambient routed safely</div>
+</div>
+</div>
+</div>
+<!-- Carousel Progress Dots / Tabs -->
+<div class="flex items-center justify-center gap-2 mt-space-md">
+<span class="w-6 h-2 rounded-full bg-primary transition-all duration-300"></span>
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+</div>
+</div>
+</section>
+<!-- SECTION 4: How It Works -->
+<section class="relative w-full px-gutter-mobile py-space-xl flex flex-col gap-space-lg">
+<div class="flex flex-col gap-space-xs text-center items-center">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">
+        Operational Flow
+      </span>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary mt-1">From Surplus to Smiles.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Making food donation simple, transparent, and ultra-efficient.</p>
+</div>
+<!-- Timeline Stepper -->
+<div class="relative flex flex-col gap-space-md pl-4">
+<!-- Vertical Flow Connector Line -->
+<div class="absolute left-[31px] top-6 bottom-6 w-0.5 bg-gradient-to-b from-secondary via-primary-container to-surface-variant"></div>
+<!-- STEP 01 -->
+<div class="relative flex items-start gap-space-md">
+<div class="relative z-10 w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold shadow-md shrink-0">
+          01
+        </div>
+<div class="flex-1 bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_4px_20px_-2px_rgba(23,76,54,0.05)]">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-md text-title-md text-primary">Donate Food</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">inventory_2</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Share your surplus food by logging items, quantities, prep timestamps, allergen notices, and collection access windows.
+          </p>
+</div>
+</div>
+<!-- STEP 02 -->
+<div class="relative flex items-start gap-space-md">
+<div class="relative z-10 w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm font-bold shadow-md shrink-0">
+          02
+        </div>
+<div class="flex-1 bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_4px_20px_-2px_rgba(23,76,54,0.05)]">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-md text-title-md text-primary">Smart AI Matching</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">hub</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Our intelligent matching engine identifies suitable nearby NGOs factoring in dietary needs, recipient capacity, and travel times.
+          </p>
+</div>
+</div>
+<!-- STEP 03 -->
+<div class="relative flex items-start gap-space-md">
+<div class="relative z-10 w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold shadow-md shrink-0">
+          03
+        </div>
+<div class="flex-1 bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_4px_20px_-2px_rgba(23,76,54,0.05)]">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-md text-title-md text-primary">Coordinate Pickup</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">near_me</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            The selected NGO accepts the automated dispatch in one tap and coordinates secure volunteer collection.
+          </p>
+</div>
+</div>
+<!-- STEP 04 -->
+<div class="relative flex items-start gap-space-md">
+<div class="relative z-10 w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-sm text-label-sm font-bold shadow-md shrink-0">
+          04
+        </div>
+<div class="flex-1 bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_4px_20px_-2px_rgba(23,76,54,0.05)]">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-md text-title-md text-primary">Create Impact</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">favorite</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Fresh meals reach communities within safe consumption windows, directly diverting tons of greenhouse emissions.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: Why FoodBridge AI -->
+<section class="relative w-full px-gutter-mobile py-space-xl bg-surface-container-low">
+<div class="flex flex-col gap-space-xs mb-space-lg text-left">
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">Built for Frictionless Logistics</span>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary">Making Every Meal Matter.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Technology and grassroots community working together to make food rescue second nature.</p>
+</div>
+<!-- 4 Polished Feature Cards Bento Stack -->
+<div class="flex flex-col gap-space-md">
+<!-- Feature 1 -->
+<div class="rounded-3xl p-space-lg bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(23,76,54,0.05)] flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/60 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">psychology</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold">Smart NGO Matching</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Find suitable NGOs based on food perishability, current intake capacity, refrigerator availability, and route viability.
+        </p>
+</div>
+<!-- Feature 2 -->
+<div class="rounded-3xl p-space-lg bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(23,76,54,0.05)] flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-2xl bg-surface-variant text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">speed</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold">Faster Food Connections</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Connect surplus donors directly with local dispatchers who can collect and redistribute in under 45 minutes.
+        </p>
+</div>
+<!-- Feature 3 -->
+<div class="rounded-3xl p-space-lg bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(23,76,54,0.05)] flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-2xl bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">verified</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold">Responsible Food Rescue</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Digital health compliance logs, allergen tags, and temperature validation checks keep every donation 100% safe.
+        </p>
+</div>
+<!-- Feature 4 -->
+<div class="rounded-3xl p-space-lg bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(23,76,54,0.05)] flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-2xl bg-tertiary-fixed/50 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">insights</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold">Measurable Community Impact</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Export verified ESG compliance metrics, CO2 offset tallies, and hunger alleviation proofs for corporate audits.
+        </p>
+</div>
+</div>
+</section>
+<!-- SECTION 6: High-Conversion Call To Action -->
+<section class="relative w-full px-gutter-mobile py-space-xl">
+<div class="relative overflow-hidden rounded-3xl bg-primary-container text-on-primary p-space-lg shadow-[0_16px_40px_rgba(23,76,54,0.25)] flex flex-col gap-space-md">
+<!-- Decorative Botanical Leaf SVG Watermark -->
+<svg class="absolute -right-8 -bottom-10 w-44 h-44 text-on-primary-container/20 pointer-events-none" fill="currentColor" viewbox="0 0 100 100">
+<path d="M50 0 C65 25 85 45 100 50 C85 55 65 75 50 100 C35 75 15 55 0 50 C15 45 35 25 50 0 Z"></path>
+</svg>
+<div class="absolute -top-16 -left-16 w-36 h-36 rounded-full bg-secondary/30 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<span class="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md self-start font-label-sm text-label-sm text-secondary-fixed font-semibold">
+          Get Started Today
+        </span>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-on-primary tracking-tight mt-1">
+          Have Extra Food? Someone Needs It.
+        </h2>
+<p class="font-body-md text-body-md text-on-primary-container leading-relaxed">
+          Don't let good meals go to waste. Join FoodBridge AI and become part of a compassionate community creating meaningful change every hour.
+        </p>
+</div>
+<div class="relative z-10 flex flex-col gap-space-sm pt-space-xs">
+<button class="w-full h-12 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" type="button">
+<span>Start Donating</span>
+<span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
+</button>
+<button class="w-full h-12 rounded-full bg-white/10 text-on-primary border border-white/20 font-label-md text-label-md font-semibold backdrop-blur-md flex items-center justify-center gap-2 active:scale-[0.98] transition-transform" type="button">
+<span>Join as an NGO</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+<div class="relative z-10 flex items-center justify-center gap-2 text-on-primary-container text-center pt-space-xs">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-body-sm text-body-sm">Zero platform fees for non-profit and community partners.</span>
+</div>
+</div>
+</section>
+<!-- Interactive Carousel Micro-Script -->
+<script>
+    (function initFoodBridgeInteractions() {
+      const carousel = document.getElementById('statsCarousel');
+      if (!carousel) return;
+      
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+      });
+      carousel.addEventListener('mouseleave', () => { isDown = false; });
+      carousel.addEventListener('mouseup', () => { isDown = false; });
+      carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+    })();
+  </script>
+</div><footer class="w-full bg-surface-container-low mt-auto pt-space-xl pb-safe shadow-[0_-1px_12px_rgba(23,76,54,0.04)]"><div class="px-gutter-mobile flex flex-col gap-space-lg"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="FoodBridge AI Logo Mark" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBtTzIDrjh-HsoOw0qwrWwKBYbgJiDFtmFK8a_8aQOCPbqflfCwbFlcQ4DED8rfRLWqOI_p6MTHKhocmOQb4q1QvhaLAEEXYzNBxNA3CYkVFucFEvSraTPRu4XhE3tm84CumXBbzKUxqBdh5UaDVcVgDB79MIQolrIQFuYUJTt1tq1Da7DN43U3T5zYXOJCygcX3Yhx-eDobEDfj8hogCoEvVJ1rFpmIqsWdmgIdcQ"/><span class="font-headline-sm text-headline-sm text-primary">FoodBridge AI</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Connecting surplus food with those who need it.</p></div><div class="grid grid-cols-2 gap-space-lg pt-space-xs"><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-primary uppercase tracking-wider">Quick Links</span><ul class="flex flex-col gap-space-xs"><li class="flex"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary py-space-xs transition-colors" href="#">Home</a></li><li class="flex"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary py-space-xs transition-colors" href="#">About Us</a></li><li class="flex"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary py-space-xs transition-colors" href="#">How It Works</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-primary uppercase tracking-wider">Get Involved</span><ul class="flex flex-col gap-space-xs"><li class="flex"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary py-space-xs transition-colors" href="#">Donate Food</a></li><li class="flex"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary py-space-xs transition-colors" href="#">Join as NGO</a></li><li class="flex"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary py-space-xs transition-colors" href="#">Become a Volunteer</a></li></ul></div></div><div class="flex flex-col gap-space-xs"><span class="font-label-md text-label-md text-primary uppercase tracking-wider">Contact</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary py-space-xs transition-colors" href="mailto:partner@foodbridge.ai">partner@foodbridge.ai</a></div><div class="pt-space-md pb-space-lg"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2026 FoodBridge AI. All rights reserved.</p></div></div></footer></main></body></html>

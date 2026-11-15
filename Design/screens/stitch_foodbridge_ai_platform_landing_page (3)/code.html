@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed": "#002110", "surface-container-high": "#deecdf", "error-container": "#ffdad6", "secondary-container": "#9ff1bd", "primary-fixed-dim": "#9cd2b5", "surface-container-lowest": "#ffffff", "surface-container-highest": "#d8e6da", "tertiary-fixed": "#ffdcc1", "on-secondary-container": "#1b7046", "error": "#ba1a1a", "on-surface": "#131e17", "on-tertiary": "#ffffff", "outline": "#717973", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#00522f", "on-surface-variant": "#404943", "outline-variant": "#c0c9c1", "inverse-on-surface": "#e6f4e8", "on-primary-container": "#86bc9f", "on-primary-fixed": "#002114", "secondary-fixed-dim": "#87d8a5", "surface-variant": "#d8e6da", "tertiary-container": "#673700", "on-error-container": "#93000a", "on-error": "#ffffff", "tertiary-fixed-dim": "#ffb778", "on-primary-fixed-variant": "#1b5039", "surface-dim": "#d0ded1", "surface-tint": "#356850", "on-tertiary-fixed-variant": "#6c3a00", "primary-fixed": "#b8efd0", "on-tertiary-container": "#ed9f55", "surface-bright": "#effdf0", "surface-container-low": "#e9f7eb", "inverse-surface": "#27332b", "on-tertiary-fixed": "#2e1500", "secondary": "#156c42", "secondary-fixed": "#a2f4bf", "tertiary": "#472400", "inverse-primary": "#9cd2b5", "primary": "#003422", "on-background": "#131e17", "primary-container": "#174c36", "background": "#effdf0", "surface-container": "#e4f1e5", "on-secondary": "#ffffff", "surface": "#effdf0" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "space-md": "1rem", "gutter-mobile": "1rem", "margin-mobile": "1rem", "gutter": "1.5rem", "margin": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, "fontFamily": { "body-lg": ["Inter"], "label-sm": ["Inter"], "headline-lg-mobile": ["Manrope"], "display-mobile": ["Manrope"], "headline-lg": ["Manrope"], "title-md": ["Manrope"], "headline-md-mobile": ["Manrope"], "body-sm": ["Inter"], "headline-md": ["Manrope"], "display": ["Manrope"], "label-md": ["Inter"], "headline-sm": ["Manrope"], "body-md": ["Inter"] }, "fontSize": { "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.005em", "fontWeight": "400" }], "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-md": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "600" }], "headline-md-mobile": ["1.375rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display": ["3.5rem", { "lineHeight": "4rem", "letterSpacing": "-0.03em", "fontWeight": "800" }], "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0em", "fontWeight": "600" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[260px] bg-primary z-50 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.18)]"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-[72px] px-space-md flex items-center justify-between bg-primary"><div class="flex items-center gap-space-sm"><img alt="FoodBridge AI modern logo icon combining leaf, organic loop, bridge connection and warm accent core" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF2-4qPXZcIgIokxbhIsc23Xi-dfeMCu1iTV1CrshxlNxljOvvniLC_PL3P5795WPSl9JLp8fNbuzIEnqYvrVkuIO6Q-6diN9A5VCQ4ysDsNDKUqNL0amD-VcHrTXaL332IDICKyu2L6tWvczR0VEfQAqe6ydnH6--N6gWcgA77vwzUTI2V59bUMzz-ue4zuqd3D6E2V7-HPGlBHoWQ1urfORssBlfrmsPxoeOPw"/><span class="font-title-md text-title-md text-on-primary tracking-tight font-bold">FoodBridge AI</span></div><button aria-label="Collapse sidebar" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-primary/70 hover:text-on-primary hover:bg-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><nav class="flex-1 px-space-sm py-space-md flex flex-col gap-1.5" data-active-classes="bg-primary-container text-on-primary relative before:content-[''] before:absolute before:left-0 before:top-2 before:bottom-2 before:w-1.5 before:bg-secondary-fixed before:rounded-r"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary relative before:content-[''] before:absolute before:left-0 before:top-2 before:bottom-2 before:w-1.5 before:bg-secondary-fixed before:rounded-r" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="create-donation" href="#"><span class="material-symbols-outlined text-[20px]">add_circle</span><span class="font-label-md text-label-md">Create Donation</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="my-donations" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-label-md text-label-md">My Donations</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="matching-results" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-label-md text-label-md">Matching Results</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="pickup-details" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span class="font-label-md text-label-md">Pickup Details</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="impact-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">eco</span><span class="font-label-md text-label-md">Impact Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="font-label-md text-label-md">Notifications</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">account_circle</span><span class="font-label-md text-label-md">Profile</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-md text-label-md">Settings</span></a></nav></div><div class="p-space-sm m-space-sm rounded-xl bg-primary-container/60 shadow-[0_4px_16px_rgba(0,0,0,0.12)]"><div class="flex items-center gap-space-sm mb-space-sm"><div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-title-md text-title-md font-bold">AS</div><div class="flex-1 min-w-0"><div class="font-label-md text-label-md text-on-primary font-semibold truncate">Aarav Sharma</div><span class="inline-block px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold leading-none">Donor</span></div></div><button class="w-full flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg text-on-primary/80 hover:text-on-primary hover:bg-primary transition-colors font-label-sm text-label-sm" type="button"><span class="material-symbols-outlined text-[16px]">logout</span><span>Log Out</span></button></div></aside><div class="pl-[260px] min-h-screen flex flex-col"><header class="fixed top-0 left-[260px] right-0 h-[72px] bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="flex items-center text-on-surface-variant font-label-sm text-label-sm"><span>Portal</span><span class="material-symbols-outlined text-[16px] mx-1">chevron_right</span><span class="text-secondary font-semibold">Operations</span></div></div><div class="flex-1 max-w-md mx-auto hidden md:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">search</span><input class="w-full h-10 pl-9 pr-space-md rounded-lg bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] transition-all" placeholder="Search donations, food banks, pickup routes..." type="search"/></div></div><div class="flex items-center gap-space-md"><a class="hidden sm:flex items-center gap-space-xs h-11 px-space-md rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-primary-container shadow-[0_2px_8px_rgba(21,108,66,0.25)] transition-all" data-path="create-donation" href="#"><span class="material-symbols-outlined text-[20px]">add</span><span>Create Donation</span></a><button aria-label="Notifications" class="relative p-2 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-xs pl-space-xs rounded-full hover:bg-surface-container p-1 cursor-pointer transition-colors"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div></header><main class="flex-1 pt-[72px] bg-surface-container-lowest"><div class="w-full p-space-xl"><div class="flex flex-col w-full">
+<!-- Interactive View Switcher Bar (Simulation Controls) -->
+<div class="mb-space-lg flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low p-2 rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px] ml-2">tune</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">Preview State:</span>
+</div>
+<div class="flex items-center flex-wrap gap-1.5" id="state-tab-container">
+<button class="state-pill-btn px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-semibold bg-surface-container-lowest text-primary shadow-sm hover:bg-surface-container-lowest transition-all" id="btn-state-default" onclick="switchDashboardState('default')" type="button">Default Dashboard</button>
+<button class="state-pill-btn px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" id="btn-state-loading" onclick="switchDashboardState('loading')" type="button">Loading State</button>
+<button class="state-pill-btn px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" id="btn-state-empty" onclick="switchDashboardState('empty')" type="button">Empty State</button>
+<button class="state-pill-btn px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" id="btn-state-offline" onclick="switchDashboardState('offline')" type="button">Offline Alert</button>
+</div>
+</div>
+<!-- Persistent Offline Alert Banner (Hidden by default, shown in offline state) -->
+<div class="hidden mb-space-lg p-space-md rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-between shadow-md transition-all" id="offline-alert-banner">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-tertiary-container text-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">cloud_off</span>
+</div>
+<div>
+<p class="font-title-md text-title-md font-bold leading-tight">You're currently offline</p>
+<p class="font-body-sm text-body-sm opacity-90">Changes will be cached locally and synced to FoodBridge AI once connection is restored.</p>
+</div>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-tertiary-container text-tertiary-fixed font-label-sm text-label-sm font-semibold hover:opacity-90" onclick="switchDashboardState('default')" type="button">
+      Retry Connection
+    </button>
+</div>
+<!-- MAIN WRAPPER FOR DYNAMIC STATES -->
+<div class="flex flex-col w-full" id="dashboard-state-content">
+<!-- DEFAULT STATE VIEW -->
+<div class="flex flex-col w-full" id="view-default">
+<!-- Greeting and Quick Operations Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">Welcome back, Aarav</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              Live Rescue Network
+            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Here's your real-time food rescue operations summary for <span class="text-on-surface font-semibold">Green Leaf Restaurant</span>.</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="bg-surface-container-low px-space-md py-2.5 rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="text-left">
+<span class="block font-label-sm text-label-sm text-on-surface-variant font-medium">Donor Trust Score</span>
+<span class="font-title-md text-title-md text-primary font-bold">99.4% Verified</span>
+</div>
+</div>
+<button class="h-11 px-space-md rounded-xl bg-surface-container-low text-primary font-label-md text-label-md font-semibold hover:bg-surface-container transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>Logs</span>
+</button>
+</div>
+</div>
+<!-- Top Summary Metric Cards (Row of 4) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Card 1: Total Donations -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Total Donations</span>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">inventory_2</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-display text-display font-extrabold text-primary leading-none">148</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+12% from last month</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary opacity-20"></div>
+</div>
+<!-- Card 2: Active Donations -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Active Donations</span>
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">radar</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-display text-display font-extrabold text-secondary leading-none">3</span>
+<span class="font-label-md text-label-md text-on-surface-variant">in progress</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Live matching &amp; transit</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-secondary opacity-40"></div>
+</div>
+<!-- Card 3: Completed Donations -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Completed Donations</span>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">task_alt</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-display text-display font-extrabold text-primary leading-none">142</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>95.9% rescue success rate</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-primary-container opacity-25"></div>
+</div>
+<!-- Card 4: Estimated Meals Rescued -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Meals Rescued</span>
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">volunteer_activism</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-display text-display font-extrabold text-primary leading-none">4,850+</span>
+</div>
+<div class="flex items-center gap-1.5 text-tertiary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span>~3.64 tons CO2e diverted</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-on-tertiary-container opacity-40"></div>
+</div>
+</div>
+<!-- Hero Action Card -->
+<div class="relative bg-gradient-to-r from-primary via-primary-container to-secondary p-space-xl rounded-3xl text-on-primary shadow-xl mb-space-xl overflow-hidden">
+<div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg max-w-4xl">
+<div class="space-y-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-secondary-fixed text-label-sm font-label-sm font-semibold mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+              AI Instant Food Rescue Engine
+            </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-primary tracking-tight">Have surplus food? Create a donation</h2>
+<p class="font-body-lg text-body-lg text-on-primary/85 leading-relaxed">
+              Turn extra cooked meals, bakery goods or pantry items into fresh hope for nearby communities in under 60 seconds.
+            </p>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm w-full md:w-auto">
+<a class="h-12 px-space-xl rounded-xl bg-secondary-fixed text-on-secondary-fixed font-title-md text-title-md font-bold flex items-center justify-center gap-2 hover:bg-secondary-container shadow-lg transition-transform active:scale-95 whitespace-nowrap" data-path="create-donation" href="#">
+<span class="material-symbols-outlined text-[22px]">add_circle</span>
+<span>+ Create Donation Now</span>
+</a>
+</div>
+</div>
+<!-- Decorative background graphics -->
+<div class="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-secondary-fixed/10 blur-3xl pointer-events-none"></div>
+<div class="absolute right-4 bottom-2 opacity-15 pointer-events-none hidden lg:block">
+<svg class="text-white" fill="none" height="180" viewbox="0 0 200 160" width="220">
+<path d="M20 140 C 60 40, 140 40, 180 140" stroke="currentColor" stroke-linecap="round" stroke-width="12"></path>
+<circle cx="100" cy="70" fill="currentColor" fill-opacity="0.5" r="32"></circle>
+</svg>
+</div>
+</div>
+<!-- Main Content Grid (8 cols left, 4 cols right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Recent Donations (8 Columns) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+<!-- Header & Toolbar -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md mb-space-lg pb-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary">Recent Donations</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Manage ongoing handoffs, recipient claims and rescue dispatches</p>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<div class="relative flex-1 sm:w-56">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface text-body-sm placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest shadow-sm" placeholder="Search item, NGO..." type="text"/>
+</div>
+<button class="w-10 h-10 rounded-lg bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:text-on-surface hover:bg-surface-container transition-colors" title="Filter list" type="button">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Table of Donations -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider rounded-lg">
+<th class="py-3 px-4 rounded-l-lg">Food Item &amp; Quantity</th>
+<th class="py-3 px-4">Category</th>
+<th class="py-3 px-4">Status &amp; Recipient</th>
+<th class="py-3 px-4">Timeline / Urgency</th>
+<th class="py-3 px-4 text-right rounded-r-lg">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1: Veg Biryani -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-headline-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">lunch_dining</span>
+</div>
+<div class="min-w-0">
+<span class="font-title-md text-title-md font-bold text-on-surface block truncate">Veg Biryani</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">50 servings • 18 kg</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-block px-2.5 py-1 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">Cooked Meals</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                          AVAILABLE
+                        </span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block mt-1">3 NGOs notified</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold animate-pulse">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                        Expires in 42m
+                      </span>
+</td>
+<td class="py-4 px-4 text-right">
+<a class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold hover:bg-primary-container shadow-sm transition-all whitespace-nowrap" data-path="matching-results" href="#">
+<span>View Matches</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 2: Mixed Veg Curry -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-bold text-headline-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">soup_kitchen</span>
+</div>
+<div class="min-w-0">
+<span class="font-title-md text-title-md font-bold text-on-surface block truncate">Mixed Veg Curry</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">30 servings • 12 kg</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-block px-2.5 py-1 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">Cooked Meals</span>
+</td>
+<td class="py-4 px-4">
+<div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold">
+                          ACCEPTED
+                        </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant block mt-1">Hope Foundation</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                        Pickup in 1h 15m
+                      </span>
+</td>
+<td class="py-4 px-4 text-right">
+<a class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-low text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container shadow-sm transition-all whitespace-nowrap" data-path="pickup-details" href="#">
+<span class="material-symbols-outlined text-[16px]">pin_drop</span>
+<span>Track Pickup</span>
+</a>
+</td>
+</tr>
+<!-- Row 3: Bread and Buns -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-headline-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">bakery_dining</span>
+</div>
+<div class="min-w-0">
+<span class="font-title-md text-title-md font-bold text-on-surface block truncate">Bread and Buns</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">80 pieces • 6 crates</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-block px-2.5 py-1 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">Bakery</span>
+</td>
+<td class="py-4 px-4">
+<div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[12px]">local_shipping</span>
+                          IN TRANSIT
+                        </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant block mt-1">Rohan Verma (Vol)</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                        Picked Up 13:40
+                      </span>
+</td>
+<td class="py-4 px-4 text-right">
+<a class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-low text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container shadow-sm transition-all whitespace-nowrap" data-path="pickup-details" href="#">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+<span>View OTP</span>
+</a>
+</td>
+</tr>
+<!-- Row 4: Paneer Wraps -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center font-bold text-headline-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">takeout_dining</span>
+</div>
+<div class="min-w-0">
+<span class="font-title-md text-title-md font-bold text-on-surface block truncate">Paneer Wraps</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">40 pieces • 8 kg</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-block px-2.5 py-1 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">Cooked Meals</span>
+</td>
+<td class="py-4 px-4">
+<div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-medium">
+                          DELIVERED
+                        </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant block mt-1">Care Kitchen</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Yesterday, 19:20</span>
+</td>
+<td class="py-4 px-4 text-right">
+<a class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-low text-secondary font-label-sm text-label-sm font-semibold hover:bg-surface-container shadow-sm transition-all whitespace-nowrap" data-path="impact-dashboard" href="#">
+<span class="material-symbols-outlined text-[16px]">analytics</span>
+<span>View Impact</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table footer link -->
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing active &amp; most recent donations</span>
+<a class="font-label-md text-label-md text-secondary font-semibold hover:underline flex items-center gap-1" data-path="my-donations" href="#">
+<span>View All 148 Donations</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Rescue Pipeline Live Status Strip -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">route</span>
+<h4 class="font-title-md text-title-md font-bold text-primary">Active Rescue Transit Live Radar</h4>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Updated 30s ago</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[24px]">electric_moped</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md font-bold text-primary">Bread and Buns • 80 pieces</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">En Route</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Courier: Rohan Verma (Hero Volunteer #1042) • Delivery Target: Care Shelter Hub</p>
+</div>
+</div>
+<div class="w-full md:w-56 flex flex-col items-end">
+<div class="w-full flex justify-between font-label-sm text-label-sm text-primary font-bold mb-1">
+<span>Progress</span>
+<span>70% (ETA 12 min)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 70%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Sidebar Panels (4 Columns) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Panel 1: Needs Attention Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error animate-ping"></span>
+<h3 class="font-title-md text-title-md font-bold text-primary">Needs Attention</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">2 Alerts</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Urgent Alert 1 -->
+<div class="p-space-md rounded-xl bg-error-container/30 shadow-sm relative overflow-hidden">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-error text-on-error flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">emergency_heat</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-error-container font-bold uppercase tracking-wider block">Critical Expiration</span>
+<p class="font-title-md text-title-md font-bold text-on-surface mt-0.5 leading-snug">Veg Biryani expires in 42 min!</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">3 NGOs matched nearby. Priority broadcast triggered to ensure quick pickup.</p>
+<div class="mt-space-sm flex items-center gap-2">
+<a class="px-3 py-1.5 rounded-lg bg-error text-on-error font-label-sm text-label-sm font-semibold hover:opacity-90 transition-opacity" data-path="matching-results" href="#">
+                        Review Matches
+                      </a>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container transition-colors" type="button">
+                        Extend Buffer
+                      </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Dispatch Alert 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">person_pin_circle</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider block">Pickup Scheduled</span>
+<p class="font-title-md text-title-md font-bold text-primary mt-0.5 leading-snug">Volunteer assigned to Mixed Veg Curry</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Volunteer Rohan Verma is assigned for pickup with ETA 14:15.</p>
+<div class="mt-space-sm">
+<a class="font-label-sm text-label-sm text-secondary font-semibold hover:underline flex items-center gap-1" data-path="pickup-details" href="#">
+<span>Check Verification Code</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel 2: Donation Status Overview -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+<h3 class="font-title-md text-title-md font-bold text-primary mb-space-sm">Donation Status Overview</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Live distribution across current operational states</p>
+<!-- Visual Bar Breakdown -->
+<div class="flex h-3 w-full rounded-full overflow-hidden bg-surface-container mb-space-md gap-0.5">
+<div class="bg-secondary-fixed h-full" style="width: 3%" title="Available (1)"></div>
+<div class="bg-secondary-container h-full" style="width: 3%" title="Accepted (1)"></div>
+<div class="bg-secondary h-full" style="width: 3%" title="In Transit (1)"></div>
+<div class="bg-primary h-full" style="width: 91%" title="Completed (142)"></div>
+</div>
+<!-- Breakdown Legends -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-secondary-fixed"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Available (Matching)</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">1 donation</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Accepted (Awaiting Pickup)</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">1 donation</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">In Transit (Dispatched)</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">1 donation</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Completed &amp; Verified</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">142 donations</span>
+</div>
+</div>
+</div>
+<!-- Panel 3: Quick NGO Partners -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-title-md text-title-md font-bold text-primary">Quick NGO Partners</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Top Affinity</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Frequent community shelters matching your kitchen's food items</p>
+<div class="space-y-space-sm">
+<!-- Partner 1 -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-body-sm">
+                    HF
+                  </div>
+<div>
+<h5 class="font-title-md text-title-md font-bold text-primary leading-snug">Hope Foundation</h5>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2.4 km • 48 pickups</span>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-block px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+                    96% affinity
+                  </span>
+</div>
+</div>
+<!-- Partner 2 -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-body-sm">
+                    CK
+                  </div>
+<div>
+<h5 class="font-title-md text-title-md font-bold text-primary leading-snug">Care Kitchen</h5>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4.1 km • 62 pickups</span>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-block px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+                    91% affinity
+                  </span>
+</div>
+</div>
+<!-- Partner 3 -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-body-sm">
+                    HH
+                  </div>
+<div>
+<h5 class="font-title-md text-title-md font-bold text-primary leading-snug">Helping Hands Trust</h5>
+<span class="font-body-sm text-body-sm text-on-surface-variant">5.8 km • 29 pickups</span>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-block px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+                    88% affinity
+                  </span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<a class="w-full py-2.5 rounded-xl bg-surface-container text-primary font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1 hover:bg-surface-container-high transition-colors" data-path="matching-results" href="#">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+<span>Explore Network NGOs</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SKELETON / LOADING STATE VIEW (Toggled via Pill Bar) -->
+<div class="hidden flex-col w-full animate-pulse" id="view-loading">
+<div class="h-10 w-64 bg-surface-container-high rounded-xl mb-3"></div>
+<div class="h-5 w-96 bg-surface-container-high rounded-lg mb-space-lg"></div>
+<!-- Metric Cards Skeleton -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-xl">
+<div class="h-32 bg-surface-container-high rounded-2xl"></div>
+<div class="h-32 bg-surface-container-high rounded-2xl"></div>
+<div class="h-32 bg-surface-container-high rounded-2xl"></div>
+<div class="h-32 bg-surface-container-high rounded-2xl"></div>
+</div>
+<!-- Hero Skeleton -->
+<div class="h-44 bg-surface-container-high rounded-3xl mb-space-xl"></div>
+<!-- Split Grid Skeleton -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-8 h-96 bg-surface-container-high rounded-2xl"></div>
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<div class="h-44 bg-surface-container-high rounded-2xl"></div>
+<div class="h-44 bg-surface-container-high rounded-2xl"></div>
+</div>
+</div>
+</div>
+<!-- EMPTY STATE VIEW (Toggled via Pill Bar) -->
+<div class="hidden flex-col w-full" id="view-empty">
+<div class="bg-surface-container-lowest p-space-xl rounded-3xl shadow-sm text-center py-20 flex flex-col items-center max-w-2xl mx-auto my-6">
+<div class="w-20 h-20 rounded-full bg-surface-container-low text-secondary flex items-center justify-center mb-space-md shadow-inner">
+<span class="material-symbols-outlined text-[40px]">volunteer_activism</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-primary mb-2">No Donations Active Right Now</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-space-lg">
+          Your kitchen doesn't have any active food listings today. Post excess meals or ingredients to prevent waste and nourish someone in need.
+        </p>
+<div class="flex items-center gap-space-md">
+<a class="h-11 px-space-lg rounded-xl bg-secondary text-on-secondary font-label-md text-label-md font-semibold flex items-center gap-2 hover:bg-primary-container shadow-sm transition-all" data-path="create-donation" href="#">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Create First Donation</span>
+</a>
+<button class="h-11 px-space-md rounded-xl bg-surface-container text-primary font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-colors" onclick="switchDashboardState('default')" type="button">
+            Return to Live Feed
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchDashboardState(state) {
+    const viewDefault = document.getElementById('view-default');
+    const viewLoading = document.getElementById('view-loading');
+    const viewEmpty = document.getElementById('view-empty');
+    const offlineAlert = document.getElementById('offline-alert-banner');
+    
+    // Reset all buttons
+    document.querySelectorAll('.state-pill-btn').forEach(btn => {
+      btn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      btn.classList.add('text-on-surface-variant');
+    });
+
+    const activeBtn = document.getElementById('btn-state-' + state);
+    if (activeBtn) {
+      activeBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      activeBtn.classList.remove('text-on-surface-variant');
+    }
+
+    // Hide all views first
+    viewDefault.classList.add('hidden');
+    viewLoading.classList.add('hidden');
+    viewEmpty.classList.add('hidden');
+    offlineAlert.classList.add('hidden');
+
+    if (state === 'default') {
+      viewDefault.classList.remove('hidden');
+    } else if (state === 'loading') {
+      viewLoading.classList.remove('hidden');
+    } else if (state === 'empty') {
+      viewEmpty.classList.remove('hidden');
+    } else if (state === 'offline') {
+      viewDefault.classList.remove('hidden');
+      offlineAlert.classList.remove('hidden');
+    }
+  }
+</script></div></main><footer class="w-full bg-surface-container-lowest py-space-md px-space-xl shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant"><span>© 2025 FoodBridge AI. Real-Time Food Rescue &amp; Logistics Network.</span><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" href="#">Network Health</a></div></div></footer></div></body></html>

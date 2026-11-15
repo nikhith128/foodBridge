@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed": "#002110", "surface-container-high": "#deecdf", "error-container": "#ffdad6", "secondary-container": "#9ff1bd", "primary-fixed-dim": "#9cd2b5", "surface-container-lowest": "#ffffff", "surface-container-highest": "#d8e6da", "tertiary-fixed": "#ffdcc1", "on-secondary-container": "#1b7046", "error": "#ba1a1a", "on-surface": "#131e17", "on-tertiary": "#ffffff", "outline": "#717973", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#00522f", "on-surface-variant": "#404943", "outline-variant": "#c0c9c1", "inverse-on-surface": "#e6f4e8", "on-primary-container": "#86bc9f", "on-primary-fixed": "#002114", "secondary-fixed-dim": "#87d8a5", "surface-variant": "#d8e6da", "tertiary-container": "#673700", "on-error-container": "#93000a", "on-error": "#ffffff", "tertiary-fixed-dim": "#ffb778", "on-primary-fixed-variant": "#1b5039", "surface-dim": "#d0ded1", "surface-tint": "#356850", "on-tertiary-fixed-variant": "#6c3a00", "primary-fixed": "#b8efd0", "on-tertiary-container": "#ed9f55", "surface-bright": "#effdf0", "surface-container-low": "#e9f7eb", "inverse-surface": "#27332b", "on-tertiary-fixed": "#2e1500", "secondary": "#156c42", "secondary-fixed": "#a2f4bf", "tertiary": "#472400", "inverse-primary": "#9cd2b5", "primary": "#003422", "on-background": "#131e17", "primary-container": "#174c36", "background": "#effdf0", "surface-container": "#e4f1e5", "on-secondary": "#ffffff", "surface": "#effdf0" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "space-md": "1rem", "gutter-mobile": "1rem", "margin-mobile": "1rem", "gutter": "1.5rem", "margin": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, "fontFamily": { "body-lg": ["Inter"], "label-sm": ["Inter"], "headline-lg-mobile": ["Manrope"], "display-mobile": ["Manrope"], "headline-lg": ["Manrope"], "title-md": ["Manrope"], "headline-md-mobile": ["Manrope"], "body-sm": ["Inter"], "headline-md": ["Manrope"], "display": ["Manrope"], "label-md": ["Inter"], "headline-sm": ["Manrope"], "body-md": ["Inter"] }, "fontSize": { "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.005em", "fontWeight": "400" }], "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-md": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "600" }], "headline-md-mobile": ["1.375rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display": ["3.5rem", { "lineHeight": "4rem", "letterSpacing": "-0.03em", "fontWeight": "800" }], "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0em", "fontWeight": "600" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[260px] bg-primary z-50 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.18)]"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-[72px] px-space-md flex items-center justify-between bg-primary"><div class="flex items-center gap-space-sm"><img alt="FoodBridge AI modern logo icon combining leaf, organic loop, bridge connection and warm accent core" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF2-4qPXZcIgIokxbhIsc23Xi-dfeMCu1iTV1CrshxlNxljOvvniLC_PL3P5795WPSl9JLp8fNbuzIEnqYvrVkuIO6Q-6diN9A5VCQ4ysDsNDKUqNL0amD-VcHrTXaL332IDICKyu2L6tWvczR0VEfQAqe6ydnH6--N6gWcgA77vwzUTI2V59bUMzz-ue4zuqd3D6E2V7-HPGlBHoWQ1urfORssBlfrmsPxoeOPw"/><span class="font-title-md text-title-md text-on-primary tracking-tight font-bold">FoodBridge AI</span></div><button aria-label="Collapse sidebar" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-primary/70 hover:text-on-primary hover:bg-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><nav class="flex-1 px-space-sm py-space-md flex flex-col gap-1.5" data-active-classes="bg-primary-container text-on-primary relative before:content-[''] before:absolute before:left-0 before:top-2 before:bottom-2 before:w-1.5 before:bg-secondary-fixed before:rounded-r"><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="create-donation" href="#"><span class="material-symbols-outlined text-[20px]">add_circle</span><span class="font-label-md text-label-md">Create Donation</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="my-donations" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-label-md text-label-md">My Donations</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="matching-results" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-label-md text-label-md">Matching Results</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="pickup-details" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span class="font-label-md text-label-md">Pickup Details</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="impact-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">eco</span><span class="font-label-md text-label-md">Impact Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="font-label-md text-label-md">Notifications</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">account_circle</span><span class="font-label-md text-label-md">Profile</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-primary/75 hover:bg-primary-container hover:text-on-primary transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-md text-label-md">Settings</span></a></nav></div><div class="p-space-sm m-space-sm rounded-xl bg-primary-container/60 shadow-[0_4px_16px_rgba(0,0,0,0.12)]"><div class="flex items-center gap-space-sm mb-space-sm"><div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-title-md text-title-md font-bold">AS</div><div class="flex-1 min-w-0"><div class="font-label-md text-label-md text-on-primary font-semibold truncate">Aarav Sharma</div><span class="inline-block px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold leading-none">Donor</span></div></div><button class="w-full flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg text-on-primary/80 hover:text-on-primary hover:bg-primary transition-colors font-label-sm text-label-sm" type="button"><span class="material-symbols-outlined text-[16px]">logout</span><span>Log Out</span></button></div></aside><div class="pl-[260px] min-h-screen flex flex-col"><header class="fixed top-0 left-[260px] right-0 h-[72px] bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="flex items-center text-on-surface-variant font-label-sm text-label-sm"><span>Portal</span><span class="material-symbols-outlined text-[16px] mx-1">chevron_right</span><span class="text-secondary font-semibold">Operations</span></div></div><div class="flex-1 max-w-md mx-auto hidden md:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">search</span><input class="w-full h-10 pl-9 pr-space-md rounded-lg bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] transition-all" placeholder="Search donations, food banks, pickup routes..." type="search"/></div></div><div class="flex items-center gap-space-md"><a class="hidden sm:flex items-center gap-space-xs h-11 px-space-md rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-primary-container shadow-[0_2px_8px_rgba(21,108,66,0.25)] transition-all" data-path="create-donation" href="#"><span class="material-symbols-outlined text-[20px]">add</span><span>Create Donation</span></a><button aria-label="Notifications" class="relative p-2 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-xs pl-space-xs rounded-full hover:bg-surface-container p-1 cursor-pointer transition-colors"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div></header><main class="flex-1 pt-[72px] bg-surface-container-lowest"><div class="flex flex-col w-full">
+<div class="px-space-md sm:px-space-lg lg:px-space-xl py-space-lg max-w-[1440px] mx-auto w-full flex flex-col gap-space-lg">
+<!-- Top Action Breadcrumb & Live Tracking Banner -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span>Portal</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Operations</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-semibold text-secondary">Batch #FB-2025-02</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">Pickup Details</span>
+</div>
+<div class="flex flex-wrap items-center gap-3 mt-1">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Pickup Details &amp; Verification Handoff</h1>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold animate-pulse">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+            COURIER ARRIVING (~8 MIN)
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">
+          Live logistics telemetry, verified volunteer dispatch contact, geofenced route tracking, and secure 4-digit gate release OTP code.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm self-start md:self-auto shrink-0">
+<button class="inline-flex items-center gap-1.5 h-10 px-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">phone_in_talk</span>
+<span>Call Dispatch Desk</span>
+</button>
+<button class="inline-flex items-center gap-1.5 h-10 px-4 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim font-label-md text-label-md font-semibold transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span>Emergency Support</span>
+</button>
+</div>
+</div>
+<!-- Interactive State Switcher Preview Bar -->
+<div class="flex items-center justify-between gap-space-sm p-1.5 bg-surface-container-low rounded-xl overflow-x-auto shadow-sm">
+<div class="flex items-center gap-1 min-w-max">
+<span class="px-3 py-1 text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+          Lifecycle Simulator:
+        </span>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-all bg-primary-container text-on-primary shadow-sm flex items-center gap-1" id="pill-stage-1" onclick="setPreviewStage(1)" type="button">
+<span class="material-symbols-outlined text-[15px]">radio_button_checked</span>
+          Courier En Route (Active - Show OTP)
+        </button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface flex items-center gap-1" id="pill-stage-2" onclick="setPreviewStage(2)" type="button">
+<span class="material-symbols-outlined text-[15px]">hourglass_empty</span>
+          Waiting for Volunteer
+        </button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface flex items-center gap-1" id="pill-stage-3" onclick="setPreviewStage(3)" type="button">
+<span class="material-symbols-outlined text-[15px]">local_shipping</span>
+          Picked Up / In Transit
+        </button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface flex items-center gap-1" id="pill-stage-4" onclick="setPreviewStage(4)" type="button">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+          Delivered &amp; Verified
+        </button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-all text-error hover:bg-error-container/50 flex items-center gap-1" id="pill-stage-5" onclick="setPreviewStage(5)" type="button">
+<span class="material-symbols-outlined text-[15px]">lock_person</span>
+          Access Restricted
+        </button>
+</div>
+<span class="hidden xl:inline-block px-3 font-label-sm text-label-sm text-on-surface-variant shrink-0">Demo Modes</span>
+</div>
+<!-- Top Stepper: 4-Stage Operational Tracker -->
+<div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative">
+<!-- Step 1: Accepted -->
+<div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low/70">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Step 1 • Completed</span>
+<span class="font-title-md text-title-md font-bold text-on-surface truncate">Accepted by NGO</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Hope Foundation • 12:38 PM</span>
+</div>
+</div>
+<!-- Step 2: En Route (Active) -->
+<div class="flex items-start gap-3 p-3 rounded-xl bg-secondary-container/40 ring-2 ring-secondary shadow-sm relative overflow-hidden">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm relative">
+<span class="material-symbols-outlined text-[20px] animate-pulse">moped</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-on-secondary-container font-semibold uppercase tracking-wider">Step 2 • Active</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+</div>
+<span class="font-title-md text-title-md font-bold text-on-surface truncate">En Route to Kitchen</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Rohan Verma • ETA 14:15 PM</span>
+</div>
+</div>
+<!-- Step 3: Picked Up -->
+<div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low opacity-80">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="font-title-md text-title-md font-bold">3</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">Step 3 • Pending</span>
+<span class="font-title-md text-title-md font-semibold text-on-surface truncate">Gate OTP Handoff</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Container scan required</span>
+</div>
+</div>
+<!-- Step 4: Delivered -->
+<div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low opacity-60">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="font-title-md text-title-md font-bold">4</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">Step 4 • Scheduled</span>
+<span class="font-title-md text-title-md font-semibold text-on-surface truncate">Shelter Delivery</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Est. 14:40 PM • 55 Meals</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Dual-Column Layout (~62% Left, ~38% Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN (Span 7 / 12) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Card 1: Secure 4-Digit Pickup Verification OTP -->
+<div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm relative overflow-hidden bg-gradient-to-br from-surface-container-lowest via-surface-container-low/40 to-surface-container-lowest">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">key</span>
+</span>
+<div>
+<h2 class="font-title-md text-title-md font-bold text-on-surface">Secure Gate Release OTP</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Custody Transfer Protocol</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+              Confidential Gate Pass
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+            Share this 4-digit code <span class="font-semibold text-on-surface">ONLY with Courier Rohan Verma</span> once food chafer containers are physically loaded into the vehicle carrier box.
+          </p>
+<!-- OTP Digits Box Grid -->
+<div class="my-space-md flex flex-wrap items-center justify-center gap-3 sm:gap-4 py-space-sm bg-surface-container-low rounded-xl">
+<div class="w-16 h-20 sm:w-20 sm:h-24 bg-surface-container-lowest rounded-xl shadow-sm flex items-center justify-center text-primary font-display text-display font-extrabold select-all">
+              7
+            </div>
+<div class="w-16 h-20 sm:w-20 sm:h-24 bg-surface-container-lowest rounded-xl shadow-sm flex items-center justify-center text-primary font-display text-display font-extrabold select-all">
+              4
+            </div>
+<div class="w-16 h-20 sm:w-20 sm:h-24 bg-surface-container-lowest rounded-xl shadow-sm flex items-center justify-center text-primary font-display text-display font-extrabold select-all">
+              9
+            </div>
+<div class="w-16 h-20 sm:w-20 sm:h-24 bg-surface-container-lowest rounded-xl shadow-sm flex items-center justify-center text-primary font-display text-display font-extrabold select-all">
+              2
+            </div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 h-9 px-4 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors shadow-sm" onclick="navigator.clipboard?.writeText('7492'); alert('OTP 7492 copied to clipboard!');" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy Code</span>
+</button>
+<button class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 h-9 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors" onclick="alert('New verification token requested. Generating fresh encrypted handshake.');" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Regenerate OTP</span>
+</button>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+              Auto-invalidates immediately after courier confirmation
+            </span>
+</div>
+</div>
+<!-- Card 2: Interactive Live GPS Route & Turn-by-Turn Telemetry Map Card -->
+<div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">navigation</span>
+</span>
+<div>
+<h2 class="font-title-md text-title-md font-bold text-on-surface">Live Courier Telemetry</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Real-time GPS Sensor Ping (2.4s sync)</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">my_location</span>
+<span>Recenter</span>
+</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">layers</span>
+<span>Traffic: Light</span>
+</button>
+</div>
+</div>
+<!-- Simulated High-Fidelity Logistics Canvas -->
+<div class="relative w-full h-80 sm:h-96 rounded-xl overflow-hidden bg-surface-container shadow-inner">
+<!-- Simulated GIS Map Graphic -->
+<svg class="absolute inset-0 w-full h-full text-outline-variant/30" fill="none" preserveaspectratio="none" viewbox="0 0 600 400">
+<!-- Grid Roads -->
+<path d="M-50 120 L650 110" stroke="currentColor" stroke-width="12"></path>
+<path d="M-20 260 L620 290" stroke="currentColor" stroke-width="16"></path>
+<path d="M120 -20 L150 420" stroke="currentColor" stroke-width="14"></path>
+<path d="M430 -20 L400 420" stroke="currentColor" stroke-width="10"></path>
+<path d="M-10 380 L610 360" stroke="currentColor" stroke-width="8"></path>
+<!-- Diagonal Flyover Route -->
+<path d="M 90 320 Q 220 200 360 140 T 510 80" fill="none" stroke="rgba(21, 108, 66, 0.25)" stroke-linecap="round" stroke-width="10"></path>
+<path d="M 90 320 Q 220 200 360 140" fill="none" stroke="#156c42" stroke-dasharray="8 6" stroke-linecap="round" stroke-width="6"></path>
+<!-- Geofence Zone Circle -->
+<circle cx="360" cy="140" fill="rgba(159, 241, 189, 0.25)" r="60" stroke="#156c42" stroke-dasharray="4 4" stroke-width="1.5"></circle>
+</svg>
+<!-- Map Overlay: Origin Marker (Courier Position) -->
+<div class="absolute left-[13%] bottom-[22%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none">
+<div class="relative flex items-center justify-center">
+<span class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-lg ring-4 ring-secondary-container/70 animate-bounce">
+<span class="material-symbols-outlined text-[20px]">two_wheeler</span>
+</span>
+</div>
+<div class="mt-1 px-2 py-0.5 rounded-md bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm font-semibold shadow">
+                Rohan (1.2 km)
+              </div>
+</div>
+<!-- Map Overlay: Destination Marker (Green Leaf Restaurant Bay 2) -->
+<div class="absolute left-[60%] top-[35%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg ring-4 ring-primary-fixed/50">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+</div>
+<div class="mt-1 px-2.5 py-0.5 rounded-md bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow">
+                Loading Bay 2 (You)
+              </div>
+</div>
+<!-- Map Overlay: Destination 2 (Hope Foundation NGO) -->
+<div class="absolute right-[12%] top-[18%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center opacity-85">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest text-secondary flex items-center justify-center shadow ring-2 ring-secondary">
+<span class="material-symbols-outlined text-[16px]">volunteer_activism</span>
+</div>
+<div class="mt-1 px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold shadow text-center">
+                Hope Food Bank
+              </div>
+</div>
+<!-- Floating In-Map Telemetry HUD Card -->
+<div class="absolute bottom-3 left-3 right-3 sm:right-auto sm:max-w-xs bg-surface-container-lowest/90 backdrop-blur-md p-space-sm rounded-xl shadow-lg">
+<div class="flex items-center justify-between gap-2 border-b-0 pb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">speed</span>
+                  Speed: 28 km/h
+                </span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Live GPS</span>
+</div>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">1.2 km</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">remaining (~8 mins)</span>
+</div>
+<div class="mt-1 text-[11px] leading-tight text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-secondary">alt_route</span>
+                Light congestion cleared on Richmond Flyover
+              </div>
+</div>
+</div>
+<!-- Bottom Telemetry Metric Strips -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hot Holding Temp</span>
+<span class="font-title-md text-title-md font-bold text-primary mt-0.5">68.4°C</span>
+<span class="text-[11px] text-secondary font-medium">Within safe range</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dispatch Protocol</span>
+<span class="font-title-md text-title-md font-bold text-on-surface mt-0.5">Direct Route</span>
+<span class="text-[11px] text-on-surface-variant">No multi-stops</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Vehicle Class</span>
+<span class="font-title-md text-title-md font-bold text-on-surface mt-0.5">EV Scooter</span>
+<span class="text-[11px] text-secondary font-medium">Zero-emission run</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sensor Telemetry</span>
+<span class="font-title-md text-title-md font-bold text-secondary mt-0.5">Active</span>
+<span class="text-[11px] text-on-surface-variant">IoT sealed lid #441</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Pickup Facility & Gate Protocol -->
+<div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">domain</span>
+</span>
+<div>
+<h2 class="font-title-md text-title-md font-bold text-on-surface">Pickup Facility &amp; Gate Protocol</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Green Leaf Restaurant Operations</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+              Loading Bay 2
+            </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Physical Location Info -->
+<div class="flex flex-col gap-2 p-space-sm bg-surface-container-low rounded-xl">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">location_on</span>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface">Physical Address</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    42 Brigade Road, Ashok Nagar, Bengaluru, Karnataka 560025
+                  </p>
+</div>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-lowest p-2 rounded-lg">
+<span class="font-label-sm text-label-sm font-semibold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">info</span>
+                  Access &amp; Entry Instructions:
+                </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Enter via rear commercial alleyway off Residency Road. Ring buzzer at Gate 2. Staff contact: <strong class="text-on-surface">Chef Aarav Sharma</strong> (Ext. 104).
+                </p>
+</div>
+</div>
+<!-- Containers & Food Safety Protocol -->
+<div class="flex flex-col gap-2 p-space-sm bg-surface-container-low rounded-xl">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] shrink-0 mt-0.5">soup_kitchen</span>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface">Container Protocol &amp; Batch Assets</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    4x Insulated Stainless Steel Chafer Trays (Returnable Donor Asset Tag <strong class="text-on-surface">#GN-8841</strong>)
+                  </p>
+</div>
+</div>
+<div class="mt-2 flex flex-col gap-1.5 bg-surface-container-lowest p-2 rounded-lg">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Scheduled Window:</span>
+<span class="font-semibold text-on-surface">14:00 PM – 14:25 PM</span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Hot-Holding Compliance:</span>
+<span class="font-semibold text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 68.4°C Verified
+                  </span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Return Inspection Due:</span>
+<span class="font-semibold text-on-surface">Tomorrow 10:00 AM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (Span 5 / 12) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Card 4: Assigned Rescue Volunteer -->
+<div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Assigned Volunteer</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">military_tech</span>
+              Hero Tier 4
+            </span>
+</div>
+<div class="flex items-start gap-3.5">
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-xl bg-surface-container-high overflow-hidden shadow-sm flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Close up professional headshot of Rohan Verma, an Indian male food rescue logistics volunteer in his late twenties wearing a friendly smile, green uniform vest, and clean outdoor natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5pde8eaQ73RggkyTxzKD1Ua1OITEM7mA3Qep7Z5mcZgXNNV6vQY-naKInEiGepiVh6zAILyKnR8jgHToeNWhYWMEDP6smPSpjli7Rcvh6PSI6RJxjF9BYEPWiNe5j1y6tTdM7iquHFc0URBsbkQ54eWrZog8Q6xBFigVLXzNZhKbiFdpvB8HJlrtsQlS9E4gJ2W0pIbOGTaLm2ORlZVTQIHGUN0DUHTXqMcEDOw"/>
+</div>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center ring-2 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[12px]">check</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-title-md text-title-md font-bold text-on-surface leading-tight">Rohan Verma</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Bengaluru Volunteer Logistics Corps</p>
+<div class="flex items-center gap-2 mt-1.5 flex-wrap">
+<span class="inline-flex items-center gap-0.5 font-label-sm text-label-sm font-bold text-on-surface">
+<span class="material-symbols-outlined text-tertiary-container text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  4.9
+                </span>
+<span class="text-on-surface-variant text-[12px]">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">84 Missions Completed</span>
+</div>
+</div>
+</div>
+<!-- Vehicle Details -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">electric_moped</span>
+                Hero Electric Photon
+              </span>
+<span class="font-semibold text-on-surface uppercase bg-surface-container-lowest px-2 py-0.5 rounded shadow-sm">
+                KA-01-EQ-4421
+              </span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Carrier Type:</span>
+<span class="text-secondary font-semibold">FoodBridge Certified Thermal Box</span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Live Proximity:</span>
+<span class="text-on-surface font-semibold">~8 mins away (1.2 km)</span>
+</div>
+</div>
+<!-- Direct Volunteer Contact Actions -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+<a class="inline-flex items-center justify-center gap-1.5 h-11 px-3 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors shadow-sm text-center" href="tel:+919820144552">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Call Rohan</span>
+</a>
+<button class="inline-flex items-center justify-center gap-1.5 h-11 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors text-center" onclick="alert('Opening secure messaging channel with Rohan Verma...');" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Message in Chat</span>
+</button>
+</div>
+</div>
+<!-- Card 5: Receiving NGO Partner -->
+<div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Receiving NGO Partner</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+              Tier-1 Verified
+            </span>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high overflow-hidden shadow-sm flex items-center justify-center shrink-0">
+<img class="w-full h-full object-cover" data-alt="Emblematic documentary photo of community volunteers preparing warm meal distributions in a clean, organized dining hall at Hope Foundation in Bengaluru with gentle morning sunbeams." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWMaMcZ0jfcaHmonDDqpvwxu-M2wyWiko2jfZ6FRBbuVG_mbqoAMjBGfKOr5rbe1Fug0gU5senrrmGg2aneHEdfxR5ugnB3bsMf0mzBiSj1t4bhllHkXXwPtbVeSAEAT_4e4TtjTwO5axc0MAjbVWbwEQvqkeZw4rRSm5SDMAILktJE-SCQJBWMZTeY_vJ-to7uuCT1azHIJx8F7j95fNd8Qm1MSmqEkMVpUitdg"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-title-md text-title-md font-bold text-on-surface leading-snug">Hope Foundation Food Bank</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Sector 4 Community Shelter &amp; Kitchen</p>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">NGO Coordinator:</span>
+<span class="font-semibold text-on-surface">Vikram R. (+91 98201 44552)</span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Beneficiary Impact:</span>
+<span class="font-semibold text-secondary">55 children &amp; seniors queued</span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Meal Intake Deadline:</span>
+<span class="font-semibold text-tertiary-container">Strictly 14:50 PM max</span>
+</div>
+</div>
+</div>
+<!-- Card 6: Live Logistics Updates Timeline -->
+<div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Logistics Activity Stream</h3>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span> Live
+            </span>
+</div>
+<div class="relative pl-6 flex flex-col gap-4 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<!-- Event 1 -->
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="font-semibold text-on-surface">Courier crossed Richmond Flyover</span>
+<span class="text-on-surface-variant text-[11px]">14:05 PM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Geofence triggered • ~8 min arrival window</span>
+</div>
+<!-- Event 2 -->
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="font-semibold text-on-surface">Thermal Prep Confirmed</span>
+<span class="text-on-surface-variant text-[11px]">13:40 PM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Kitchen staff checked chafer temperature (68.4°C)</span>
+</div>
+<!-- Event 3 -->
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-surface-container-highest ring-2 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="font-semibold text-on-surface">Volunteer Rohan Accepted Run</span>
+<span class="text-on-surface-variant text-[11px]">12:52 PM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dispatched via FoodBridge AI Match Engine</span>
+</div>
+<!-- Event 4 -->
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-surface-container-highest ring-2 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="font-semibold text-on-surface">Donation Accepted by NGO</span>
+<span class="text-on-surface-variant text-[11px]">12:38 PM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hope Foundation approved batch specifications</span>
+</div>
+</div>
+</div>
+<!-- Safety & Statutory Shield Reminder -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">policy</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Good Samaritan Immunity Act Shield</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] leading-relaxed">
+              Donation certified under FSSAI Good Samaritan Guidelines &amp; Food Safety Act Sec. 31. An immutable cryptographic handover receipt and liability waiver is executed upon OTP validation.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function setPreviewStage(stage) {
+    const pills = [1, 2, 3, 4, 5].map(i => document.getElementById(`pill-stage-${i}`));
+    pills.forEach((p, idx) => {
+      if (!p) return;
+      if (idx + 1 === stage) {
+        p.className = "px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-all bg-primary-container text-on-primary shadow-sm flex items-center gap-1";
+      } else {
+        p.className = "px-3 py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface flex items-center gap-1";
+      }
+    });
+
+    if (stage === 5) {
+      alert("Notice: Simulating Restricted Access Mode. Only authorized kitchen dispatchers and primary donors have permission to view verification tokens.");
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-lowest py-space-md px-space-xl shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant"><span>© 2025 FoodBridge AI. Real-Time Food Rescue &amp; Logistics Network.</span><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" href="#">Network Health</a></div></div></footer></div></body></html>

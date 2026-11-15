@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"inverse-primary":"#9cd2b5","surface-container-high":"#deecdf","tertiary-container":"#673700","on-background":"#131e17","error":"#ba1a1a","inverse-surface":"#27332b","outline-variant":"#c0c9c1","on-secondary-container":"#1b7046","surface-variant":"#d8e6da","on-tertiary-fixed":"#2e1500","primary-container":"#174c36","outline":"#717973","tertiary":"#472400","surface-bright":"#effdf0","secondary-container":"#9ff1bd","inverse-on-surface":"#e6f4e8","on-primary-container":"#86bc9f","primary-fixed":"#b8efd0","secondary-fixed":"#a2f4bf","surface-container-highest":"#d8e6da","surface-container-low":"#e9f7eb","on-error":"#ffffff","on-surface":"#131e17","on-primary-fixed":"#002114","tertiary-fixed":"#ffdcc1","on-secondary-fixed-variant":"#00522f","on-error-container":"#93000a","surface-container-lowest":"#ffffff","error-container":"#ffdad6","background":"#effdf0","secondary":"#156c42","on-tertiary-container":"#ed9f55","on-tertiary-fixed-variant":"#6c3a00","on-secondary-fixed":"#002110","surface-dim":"#d0ded1","on-primary-fixed-variant":"#1b5039","on-primary":"#ffffff","on-secondary":"#ffffff","surface-tint":"#356850","primary-fixed-dim":"#9cd2b5","secondary-fixed-dim":"#87d8a5","on-tertiary":"#ffffff","primary":"#003422","surface-container":"#e4f1e5","surface":"#effdf0","on-surface-variant":"#404943","tertiary-fixed-dim":"#ffb778"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","space-lg":"1.5rem","space-xs":"0.25rem","gutter":"1.5rem","gutter-mobile":"1rem","margin-mobile":"1rem","margin":"2rem","space-xl":"2.5rem","space-sm":"0.5rem"},"fontFamily":{"headline-md":["Manrope"],"body-sm":["Inter"],"label-sm":["Inter"],"headline-md-mobile":["Manrope"],"headline-sm":["Manrope"],"display":["Manrope"],"title-md":["Manrope"],"body-lg":["Inter"],"headline-lg":["Manrope"],"label-md":["Inter"],"display-mobile":["Manrope"],"body-md":["Inter"],"headline-lg-mobile":["Manrope"]},"fontSize":{"headline-md":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"label-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"headline-md-mobile":["1.375rem",{"lineHeight":"1.875rem","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"0em","fontWeight":"600"}],"display":["3.5rem",{"lineHeight":"4rem","letterSpacing":"-0.03em","fontWeight":"800"}],"title-md":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"600"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-lg":["2.5rem",{"lineHeight":"3rem","letterSpacing":"-0.02em","fontWeight":"700"}],"label-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}],"display-mobile":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"800"}],"body-md":["1rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"headline-lg-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.01em","fontWeight":"700"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-primary-container z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col h-full"><div class="h-20 flex items-center gap-3 px-space-lg"><div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-secondary-container text-[24px]">eco</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface-bright leading-none tracking-tight">FoodBridge AI</span><span class="font-label-sm text-label-sm text-on-primary-container mt-1">NGO Portal</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs"><span class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider">NGO Navigation</span></div></div><nav class="flex-1 px-space-md space-y-1 overflow-y-auto" data-active-classes="bg-secondary-container text-on-secondary-container font-semibold rounded-xl"><a class="flex items-center gap-3 px-space-md py-3 rounded-xl text-surface-container-high hover:bg-surface-container-high/10 hover:text-surface-bright transition-colors font-body-md text-body-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl text-surface-container-high hover:bg-surface-container-high/10 hover:text-surface-bright transition-colors font-body-md text-body-md" data-path="available-donations" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Available Donations</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl text-surface-container-high hover:bg-surface-container-high/10 hover:text-surface-bright transition-colors font-body-md text-body-md" data-path="matching-recommendations" href="#"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span>Matching Recommendations</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl text-surface-container-high hover:bg-surface-container-high/10 hover:text-surface-bright transition-colors font-body-md text-body-md" data-path="my-accepted-donations" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span>My Accepted Donations</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl text-surface-container-high hover:bg-surface-container-high/10 hover:text-surface-bright transition-colors font-body-md text-body-md" data-path="pickup-management" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span>Pickup Management</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl text-surface-container-high hover:bg-surface-container-high/10 hover:text-surface-bright transition-colors font-body-md text-body-md" data-path="donation-history" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span>Donation History</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl text-surface-container-high hover:bg-surface-container-high/10 hover:text-surface-bright transition-colors font-body-md text-body-md" data-path="impact-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">volunteer_activism</span><span>Impact Dashboard</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl text-surface-container-high hover:bg-surface-container-high/10 hover:text-surface-bright transition-colors font-body-md text-body-md" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span>Notifications</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl text-surface-container-high hover:bg-surface-container-high/10 hover:text-surface-bright transition-colors font-body-md text-body-md" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Profile</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl text-surface-container-high hover:bg-surface-container-high/10 hover:text-surface-bright transition-colors font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav><div class="p-space-md mt-auto"><div class="bg-primary/40 rounded-xl p-space-md flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed animate-pulse"></span><span class="font-label-sm text-label-sm text-surface-bright">AI Engine Online</span></div><span class="font-label-sm text-label-sm text-on-primary-container">v2.4</span></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center w-full max-w-xl"><div class="w-full flex items-center bg-surface-container-lowest rounded-lg px-space-md py-2.5 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-outline text-[20px] mr-space-sm">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder-outline focus:outline-none" placeholder="Search available donations, food types, donors, pickup routes..." type="text"/></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm flex items-center justify-center text-[10px]">3</span></button><div class="flex items-center gap-3 pl-space-sm"><div class="flex flex-col text-right"><div class="flex items-center justify-end gap-1.5"><span class="font-title-md text-title-md text-on-surface">Hope Foundation</span><span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm"><span class="material-symbols-outlined text-[13px]">verified</span>Verified</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">Meera Nair (NGO Coordinator)</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full pt-20 px-space-lg pb-space-lg bg-background"><div class="flex flex-col w-full">
+<!-- Interactive Prototype Scenario Switcher (Floating Control Rail) -->
+<aside aria-label="Interactive Prototype Scenarios" class="w-full mb-6 bg-surface-container-lowest rounded-xl shadow-sm p-4 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">NGO Interactive State Switcher</span>
+<span class="text-outline text-xs">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Batch #FB-8841 Simulation</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5" id="state-switcher-rail">
+<button class="state-btn px-3 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-primary-container text-on-primary font-semibold shadow-sm" id="btn-state-default" onclick="switchSimulationState('default')">Default NGO View</button>
+<button class="state-btn px-3 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" id="btn-state-accept" onclick="switchSimulationState('modal-accept')">Accept Modal</button>
+<button class="state-btn px-3 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" id="btn-state-success" onclick="switchSimulationState('success')">Success (Claimed)</button>
+<button class="state-btn px-3 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" id="btn-state-claimed" onclick="switchSimulationState('claimed')">Claimed by Other</button>
+<button class="state-btn px-3 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" id="btn-state-expired" onclick="switchSimulationState('expired')">Window Expired</button>
+<button class="state-btn px-3 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" id="btn-state-restricted" onclick="switchSimulationState('restricted')">Unverified NGO</button>
+<button class="state-btn px-3 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" id="btn-state-reject" onclick="switchSimulationState('modal-reject')">Reject Modal</button>
+</div>
+</aside>
+<!-- State Banner Overlays (Dynamic Notification Area) -->
+<div class="w-full mb-6 hidden" id="status-banner-container">
+<!-- Rendered dynamically by JS -->
+</div>
+<!-- Breadcrumb Navigation -->
+<nav class="flex items-center gap-2 mb-4 text-on-surface-variant font-body-sm text-body-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>Portal</span>
+</a>
+<span class="text-outline text-xs">/</span>
+<a class="hover:text-primary transition-colors" href="#">NGO Portal</a>
+<span class="text-outline text-xs">/</span>
+<a class="hover:text-primary transition-colors" href="#">Available Donations</a>
+<span class="text-outline text-xs">/</span>
+<span class="text-on-surface font-medium truncate max-w-xs md:max-w-md">Veg Biryani &amp; Mirchi Ka Salan (Batch #FB-8841)</span>
+</nav>
+<!-- Main Hero Header / Master Batch Controller -->
+<header class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-6 mb-8 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-6">
+<div class="flex flex-col gap-3 max-w-2xl">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+          Available for Intake
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary-container font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+          Tier-1 Verified Donor
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[15px]">thermostat</span>
+          HACCP Safe Hot Zone (&gt;65°C)
+        </span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Fresh Veg Biryani &amp; Salan</h1>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">Batch #FB-8841</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Prepared by Green Leaf Commercial Kitchen • Allocated for emergency noon midday distribution</p>
+</div>
+</div>
+<!-- Live Urgent Countdown Pill & Primary Actions -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full xl:w-auto">
+<!-- Live Dynamic Countdown -->
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed shadow-sm">
+<div class="w-9 h-9 rounded-lg bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px] animate-pulse">timer</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wide opacity-80">Remaining Claim Window</span>
+<span class="font-title-md text-title-md font-bold font-mono" id="countdown-timer">01h 44m 32s</span>
+</div>
+</div>
+<!-- Action Group -->
+<div class="flex items-center gap-2 self-end sm:self-auto w-full sm:w-auto justify-end">
+<button class="px-3.5 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-md text-label-md flex items-center gap-1.5 shadow-sm" onclick="triggerFSSAIDownload()" title="Export FSSAI compliance passport &amp; food spec sheet">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Spec Sheet</span>
+</button>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-lowest hover:bg-error-container hover:text-error text-on-surface-variant transition-colors font-label-md text-label-md flex items-center gap-1.5 shadow-sm" id="action-reject-btn" onclick="switchSimulationState('modal-reject')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Reject</span>
+</button>
+<button class="px-6 py-2.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary transition-all font-label-md text-label-md flex items-center gap-2 shadow-md hover:shadow-lg font-bold" id="action-accept-btn" onclick="switchSimulationState('modal-accept')">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+<span>Accept Donation</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Two-Column Asymmetric Logistics Grid (62% Left, 38% Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- ==================== LEFT COLUMN (Logistics & Manifest - 62% ~ cols 7/12) ==================== -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- 1. FOOD INFORMATION CARD -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-6 flex flex-col gap-6">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">restaurant</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Food Manifest &amp; Culinary Specs</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-mono">Cambro Unit Hot Seal #4</span>
+</div>
+<!-- Metric Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Category</span>
+<div class="mt-2">
+<span class="font-title-md text-title-md text-on-surface font-bold">Cooked Banquet Meals</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Fresh Lunch Surplus</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Quantity &amp; Net Yield</span>
+<div class="mt-2">
+<span class="font-title-md text-title-md text-on-surface font-bold">50 Servings</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">~20 kg net (feeds 55 people)</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Dietary Profile</span>
+<div class="mt-2 flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-secondary inline-block"></span>
+<span class="font-title-md text-title-md text-on-surface font-bold">100% Lacto-Veg</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Halal Certified Prep</p>
+</div>
+</div>
+<!-- Detailed Description & Kitchen Notes -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2 text-on-surface font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary text-[18px]">soup_kitchen</span>
+<span>Culinary Log &amp; Preparation Description</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Prepared fresh at 12:00 PM for an executive luncheon banquet. Untouched chafers were decanted directly into pre-sanitized food-grade Cambro hot-boxes at 12:28 PM under supervised temperature control. Includes 10L Mirchi Ka Salan (spiced peanut-sesame-chilli gravy) safely sealed in dual leak-proof thermal canisters.
+          </p>
+</div>
+<!-- Allergen Declaration & Packaging Specs -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Allergens -->
+<div class="p-4 rounded-xl bg-surface-container-high/40 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[18px]">warning</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Declared Allergens</span>
+</div>
+<div class="flex flex-wrap gap-1.5 mt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm">Dairy (Desi Ghee, Paneer)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm">Tree Nuts (Cashew)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Gluten-Free</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">No Peanuts</span>
+</div>
+</div>
+<!-- Packaging Tags -->
+<div class="p-4 rounded-xl bg-surface-container-high/40 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">inventory</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Packaging &amp; Returnable Assets</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              4x Stainless Steel Gastro-norm 1/1 inserts (GN 65mm). Tagged with RFID returnable barcode <strong class="text-on-surface font-mono">#FB-8841-RT</strong>. Please return pans within 48h.
+            </p>
+</div>
+</div>
+</div>
+<!-- 2. SAFETY & THERMAL TELEMETRY CARD -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-6 flex flex-col gap-6">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">sensors</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Thermal Telemetry &amp; Food Safety Audit</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live IoT Probe ID: PRB-BLR-094 • 4-minute sync interval</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+            Telemetry Active
+          </span>
+</div>
+<!-- Temperature Sensor Highlight Gauge Bar -->
+<div class="p-4 rounded-xl bg-surface-container flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="relative w-16 h-16 rounded-2xl bg-secondary text-on-secondary flex flex-col items-center justify-center shadow-md">
+<span class="font-headline-md text-headline-md font-bold leading-none">68.4°</span>
+<span class="font-label-sm text-label-sm leading-none mt-1">Celsius</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-secondary font-bold font-title-md text-title-md">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Optimal Hot Holding Zone</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Regulated above 60.0°C safety compliance minimum for cooked pulses &amp; rice.</span>
+</div>
+</div>
+<!-- Graphic Sensor Range Indicator -->
+<div class="w-full sm:w-48 flex flex-col gap-1.5">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Risk &lt;60°</span>
+<span class="text-secondary font-bold">68.4°C Target</span>
+<span>85°C Max</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-high overflow-hidden flex">
+<div class="h-full bg-tertiary-container" style="width: 25%"></div>
+<div class="h-full bg-secondary flex-1"></div>
+<div class="h-full bg-error" style="width: 15%"></div>
+</div>
+</div>
+</div>
+<!-- Timeline / Critical Timestamps -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Preparation Time</span>
+<span class="font-title-md text-title-md font-bold text-on-surface mt-1">12:00 PM</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">1h 15m elapsed</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hot Box Sealing</span>
+<span class="font-title-md text-title-md font-bold text-on-surface mt-1">12:28 PM</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Digital HACCP logged</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Storage Condition</span>
+<span class="font-title-md text-title-md font-bold text-on-surface mt-1">Cambro Insulated</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">&gt;65°C maintained</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Collection Deadline</span>
+<span class="font-title-md text-title-md font-bold text-tertiary-container mt-1">14:15 PM</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Strict safety cutoff</span>
+</div>
+</div>
+<!-- FSSAI Legal Protection Shield -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px] mt-0.5">verified_user</span>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Good Samaritan Protection &amp; Safe Food Guarantee</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-mono">FSSAI Sec 31</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Donation certified under statutory safe-harbor immunity for surplus food distribution. Donor has executed mandatory digital log of kitchen hygenic handling and thermal verification.
+            </p>
+</div>
+</div>
+</div>
+<!-- 3. PICKUP LOCATION CARD WITH ROUTE PREVIEW -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-6 flex flex-col gap-5">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">pin_drop</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Pickup Logistics &amp; Kitchen Access</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2.4 km from Hope Foundation Central Dispatch</span>
+</div>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-colors" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">navigation</span>
+<span>External Map</span>
+</a>
+</div>
+<!-- Donor Address & Access Instructions -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Facility Address</span>
+<span class="font-title-md text-title-md font-bold text-on-surface mt-1">Green Leaf Restaurant</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Main Kitchen Loading Bay 2, 42 Brigade Road, Ashok Nagar, Bengaluru, Karnataka 560025</p>
+</div>
+<div class="flex items-center gap-2 mt-3 pt-3">
+<span class="material-symbols-outlined text-secondary text-[18px]">call</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">080-4921-XXXX (Unlocks on Accept)</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Bay Access Guidelines</span>
+<span class="font-title-md text-title-md font-bold text-on-surface mt-1">Rear Alley Commercial Gate</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Enter via rear alley off Residency Road. Ring buzzer at Gate 2. Inform Chef Aarav Sharma or Security Lead.</p>
+</div>
+<div class="flex items-center gap-2 mt-3 pt-3">
+<span class="material-symbols-outlined text-tertiary text-[18px]">local_parking</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Van / EV Two-Wheeler Bay Available</span>
+</div>
+</div>
+</div>
+<!-- Embedded Interactive Visual Route Preview -->
+<div class="w-full rounded-xl overflow-hidden relative shadow-inner h-52 bg-surface-container">
+<!-- Stylized Mock Map Canvas -->
+<div class="w-full h-full bg-cover bg-center" data-alt="Stylized top-down GPS navigation route map showing a crisp green polyline path between Ashok Nagar and Shivaji Nagar in Bengaluru with location pin markers and transit time indicator" data-location="Brigade Road, Bengaluru, Karnataka" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDyqHQd91PQszQe_6RpitLqd-pwtP4aI77rQva064cknkNusIM5UOt2AxBPMwdvGNvOPHGHFP90LnlScY8s2Ab3SFXz33b89GP6zDn3eDxyyWnVyCRHa5t7fgpDmiFVxPgvfkYIaHJpeYbWaupJrAO7h_GbU4s0-ti56OxEOFaE6zc2T4rxinE45TvcdtDIun1-xsN4p6QHfLsoYxflFNaOETn-nEf5BOPoUJ-7yg')"></div>
+<!-- Route Info Glass Floating Overlay -->
+<div class="absolute bottom-3 left-3 right-3 bg-surface/90 backdrop-blur-md rounded-xl p-3 shadow-md flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">directions_car</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-on-surface">2.4 km • 8-12 min transit</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Via Brigade Rd &amp; Richmond Cir • Moderate lunch traffic</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Priority Corridor</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== RIGHT COLUMN (AI Engine, Capacity, Donor - 38% ~ cols 5/12) ==================== -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- 1. AI MATCH SUMMARY CARD (CORE HERO CARD) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-6 flex flex-col gap-6">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">AI Match Intelligence</h2>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+            Top Recommendation
+          </span>
+</div>
+<!-- Big AI Match Score Radial Display -->
+<div class="p-5 rounded-2xl bg-surface-container-low flex items-center gap-6">
+<!-- Circular Ring Score Gauge -->
+<div class="relative w-24 h-24 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<!-- Background Circle Track -->
+<circle class="text-surface-container-high" cx="50" cy="50" fill="none" r="42" stroke="currentColor" stroke-width="8"></circle>
+<!-- Animated / Filled Path for 96% -->
+<circle class="text-secondary stroke-round transition-all duration-1000" cx="50" cy="50" fill="none" r="42" stroke="currentColor" stroke-dasharray="263.89" stroke-dashoffset="10.5" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-display-mobile text-display-mobile font-extrabold text-on-surface leading-none">96<span class="text-sm font-normal text-secondary">%</span></span>
+<span class="font-label-sm text-label-sm uppercase text-outline text-[10px] mt-0.5 font-bold">Match</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Exceptional Match</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">High compatibility with Hope Foundation's Shivaji Nagar distribution shelter.</span>
+<div class="flex items-center gap-2 mt-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Ranked #1 of 14 Available Batches</span>
+</div>
+</div>
+</div>
+<!-- 4 Factor Breakdown Bars -->
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Multi-Factor Weight Breakdown</span>
+<!-- Factor 1: Capacity Fit -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">warehouse</span>
+<span class="text-on-surface font-semibold">Capacity Fit (30% weight)</span>
+</div>
+<span class="font-bold text-on-surface">100%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 100%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fits inside remaining 80-serving intake ceiling</span>
+</div>
+<!-- Factor 2: Food Compatibility -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">egg_alt</span>
+<span class="text-on-surface font-semibold">Food Compatibility (25% weight)</span>
+</div>
+<span class="font-bold text-on-surface">98%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 98%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Matches vegetarian dietary guidelines for senior feeding program</span>
+</div>
+<!-- Factor 3: Distance & Transit -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">near_me</span>
+<span class="text-on-surface font-semibold">Distance &amp; Transit (25% weight)</span>
+</div>
+<span class="font-bold text-on-surface">94%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 94%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2.4 km is well within your 5.0 km primary rescue perimeter</span>
+</div>
+<!-- Factor 4: Window / Urgency -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+<span class="text-on-surface font-semibold">Collection Window (20% weight)</span>
+</div>
+<span class="font-bold text-on-surface">92%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 92%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1h 45m window leaves 40m safe dispatch buffer</span>
+</div>
+</div>
+<!-- AI Editorial Commentary -->
+<div class="p-3.5 rounded-xl bg-surface-container-high/40 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0">psychology</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface">AI Recommendation Log:</strong> Ideal candidate for Hope Foundation’s Shivaji Nagar distribution shelter (42 registered beneficiaries currently queued for 13:00 PM hot meal distribution).
+          </p>
+</div>
+</div>
+<!-- 2. CAPACITY IMPACT CHECK CARD -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-6 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">stacked_bar_chart</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Shelter Capacity Status</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Healthy Buffer</span>
+</div>
+<!-- Status Banner -->
+<div class="p-3 rounded-lg bg-secondary-container/60 text-on-secondary-container flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="font-body-sm text-body-sm font-semibold">This donation fits your remaining capacity!</span>
+</div>
+<!-- Capacity Utilization Gauge -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-baseline">
+<span class="font-label-md text-label-md text-on-surface-variant">Daily Quota Utilization</span>
+<span class="font-title-md text-title-md font-bold text-on-surface">170 <span class="text-outline font-normal">/ 200 Servings</span></span>
+</div>
+<!-- Stacked Progress Bar: Current (120) + This Donation (50) + Remaining (30) -->
+<div class="w-full h-3.5 rounded-full bg-surface-container overflow-hidden flex">
+<!-- Already utilized -->
+<div class="h-full bg-primary-container" style="width: 60%" title="120 Servings already accepted today"></div>
+<!-- This donation increment -->
+<div class="h-full bg-secondary-container" style="width: 25%" title="+50 Servings from Batch #FB-8841"></div>
+<!-- Headroom -->
+<div class="h-full bg-surface-container-high flex-1" title="30 Servings remaining headroom"></div>
+</div>
+<div class="flex items-center justify-between text-xs text-on-surface-variant pt-1 font-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded bg-primary-container inline-block"></span>
+<span>Accepted (120)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded bg-secondary-container inline-block"></span>
+<span>+This Batch (50)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded bg-surface-container-high inline-block"></span>
+<span>Available (30)</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Accepting this batch puts Hope Foundation at <strong class="text-on-surface font-semibold">85% daily volume</strong>, retaining a 30-serving emergency buffer for late-evening arrivals.
+        </p>
+</div>
+<!-- 3. DONOR PROFILE & CREDENTIALS CARD -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-6 flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">store</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Donor Credentials</h2>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">star</span>
+            Hygiene 5/5
+          </span>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high overflow-hidden shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Square brand avatar icon showing Green Leaf Restaurant logo with a stylized emerald leaf and culinary fork emblem against clean cream background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS46woS5ahDpJNEm7DEql6TqpYtKDlng6sCMKZGbF6H5aM14I68SBsyl-jlfwKBUTz0taGiDi778yMI656hqy0fmkoVQZMUDIlMgvJFPvQwGx94JyAa5-Xdgu-x0p7WYc3DquAQ5lG8SF0tRn7glpGcZxXCTRpe7K3LCvdDLnyKmUG-taWoYNPapKNbKGNNBflVrZsECFwHfo5JDXprA9OrCPilgQHpJJ48xESeA"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md font-bold text-on-surface">Green Leaf Restaurant</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" title="FSSAI Verified Commercial Donor">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Executive Dining &amp; Banquet Services</span>
+<div class="flex items-center gap-3 mt-1 text-xs text-on-surface-variant font-label-sm">
+<span>FSSAI Lic: 1122033400192</span>
+<span>•</span>
+<span class="text-secondary font-semibold">Tier-1 Donor</span>
+</div>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0 mt-0.5">lock</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+            Direct dispatch extension desk and direct mobile number for Chef Aarav Sharma unlock automatically immediately upon donation intake acceptance.
+          </p>
+</div>
+</div>
+<!-- 4. FOOD SAFETY ADVISORY (Calm Earthy Tone) -->
+<div class="p-4 rounded-xl bg-surface-container-high/60 flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">info</span>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">Statutory NGO Sensory Inspection Notice</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            AI telemetry provides indicative prioritization and does not waive recipient inspection duties. NGO coordinators must perform an on-site sensory audit (visual clarity &amp; probe thermal spot-check) before signing out containers at donor premises.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== MODALS & OVERLAYS ==================== -->
+<!-- MODAL 1: ACCEPT DONATION CONFIRMATION -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden flex items-center justify-center p-4" id="modal-accept-container">
+<div class="bg-surface-container-lowest rounded-2xl shadow-xl max-w-lg w-full p-6 flex flex-col gap-5 transform transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">task_alt</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Accept Donation Intake?</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">Batch #FB-8841 (50 Servings Veg Biryani)</span>
+</div>
+</div>
+<button class="p-1 rounded-lg text-outline hover:text-on-surface transition-colors" onclick="closeModals()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+          By accepting, <strong>Hope Foundation</strong> commits to dispatching a vehicle or courier to collect this batch before the strict safety deadline:
+        </p>
+<div class="flex items-center gap-2 mt-1 text-tertiary-container font-semibold font-title-md text-title-md">
+<span class="material-symbols-outlined text-[20px]">alarm</span>
+<span>14:15 PM Today (in 1h 44m)</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 rounded text-secondary focus:ring-0" id="chk-volunteer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Auto-assign nearest field volunteer (<strong class="text-on-surface">Rohan Verma</strong>, EV-Cargo, 1.2 km away)</span>
+</label>
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 rounded text-secondary focus:ring-0" id="chk-fssai" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">I acknowledge receipt of digital HACCP thermal record &amp; statutory responsibility</span>
+</label>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="closeModals()">
+          Cancel
+        </button>
+<button class="px-5 py-2.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md font-bold transition-all shadow-md" onclick="confirmAcceptDonation()">
+          Confirm Intake &amp; Claim Batch
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL 2: REJECT DONATION WITH REASON -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden flex items-center justify-center p-4" id="modal-reject-container">
+<div class="bg-surface-container-lowest rounded-2xl shadow-xl max-w-lg w-full p-6 flex flex-col gap-5 transform transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">cancel</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Decline Batch Intake</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">Batch #FB-8841 (Green Leaf Restaurant)</span>
+</div>
+</div>
+<button class="p-1 rounded-lg text-outline hover:text-on-surface transition-colors" onclick="closeModals()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Declining releases this food surplus back into FoodBridge AI's routing engine instantly so secondary NGOs on the queue can be notified without delay.
+      </p>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Primary Reason for Rejection</label>
+<select class="w-full h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none" id="reject-reason-select">
+<option value="capacity">Shelter Capacity Full / No storage space</option>
+<option value="dietary">Outside specific dietary intake guidelines</option>
+<option value="transit">Volunteer transit delay / Courier unavailable before 14:15</option>
+<option value="allergens">Allergen restriction at receiving shelter</option>
+<option value="other">Other operational reason</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Optional Feedback for AI Routing Optimization</label>
+<textarea class="w-full p-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none" placeholder="E.g., Only accepting meals with cold storage options today..." rows="2"></textarea>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="closeModals()">
+          Keep Reviewing
+        </button>
+<button class="px-5 py-2.5 rounded-lg bg-error hover:bg-error/90 text-on-error font-label-md text-label-md font-bold transition-all shadow-md" onclick="confirmRejectDonation()">
+          Confirm Decline
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Client-side Script logic -->
+<script>
+    // Live Countdown Timer Simulation
+    let totalSeconds = 1 * 3600 + 44 * 60 + 32;
+    const timerElement = document.getElementById('countdown-timer');
+
+    setInterval(() => {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+        if (timerElement) {
+          timerElement.textContent = 
+            String(hours).padStart(2, '0') + 'h ' + 
+            String(minutes).padStart(2, '0') + 'm ' + 
+            String(seconds).padStart(2, '0') + 's';
+        }
+      }
+    }, 1000);
+
+    function triggerFSSAIDownload() {
+      alert("Downloading FSSAI Compliance Spec Sheet & Thermal Telemetry Manifest for Batch #FB-8841 (PDF format)...");
+    }
+
+    function closeModals() {
+      document.getElementById('modal-accept-container').classList.add('hidden');
+      document.getElementById('modal-reject-container').classList.add('hidden');
+    }
+
+    function confirmAcceptDonation() {
+      closeModals();
+      switchSimulationState('success');
+    }
+
+    function confirmRejectDonation() {
+      closeModals();
+      const banner = document.getElementById('status-banner-container');
+      banner.innerHTML = `
+        <div class="p-4 rounded-xl bg-surface-container text-on-surface flex items-center justify-between shadow-sm">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-outline text-[24px]">cancel</span>
+            <div>
+              <span class="font-title-md text-title-md font-bold text-on-surface">Batch Declined</span>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Donation returned to dispatch pool. An alternative NGO has been pinged.</p>
+            </div>
+          </div>
+          <button onclick="switchSimulationState('default')" class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-sm text-label-sm">Reset</button>
+        </div>
+      `;
+      banner.classList.remove('hidden');
+      disableActionButtons();
+    }
+
+    function disableActionButtons() {
+      const acceptBtn = document.getElementById('action-accept-btn');
+      const rejectBtn = document.getElementById('action-reject-btn');
+      if (acceptBtn) {
+        acceptBtn.disabled = true;
+        acceptBtn.classList.add('opacity-40', 'cursor-not-allowed');
+      }
+      if (rejectBtn) {
+        rejectBtn.disabled = true;
+        rejectBtn.classList.add('opacity-40', 'cursor-not-allowed');
+      }
+    }
+
+    function enableActionButtons() {
+      const acceptBtn = document.getElementById('action-accept-btn');
+      const rejectBtn = document.getElementById('action-reject-btn');
+      if (acceptBtn) {
+        acceptBtn.disabled = false;
+        acceptBtn.classList.remove('opacity-40', 'cursor-not-allowed');
+      }
+      if (rejectBtn) {
+        rejectBtn.disabled = false;
+        rejectBtn.classList.remove('opacity-40', 'cursor-not-allowed');
+      }
+    }
+
+    function switchSimulationState(stateKey) {
+      // Update rail active styles
+      const buttons = document.querySelectorAll('.state-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-on-primary', 'font-semibold');
+        btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+
+      const banner = document.getElementById('status-banner-container');
+      closeModals();
+      enableActionButtons();
+
+      if (stateKey === 'default') {
+        const activeBtn = document.getElementById('btn-state-default');
+        if (activeBtn) {
+          activeBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          activeBtn.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold');
+        }
+        banner.classList.add('hidden');
+        banner.innerHTML = '';
+      } 
+      else if (stateKey === 'modal-accept') {
+        const activeBtn = document.getElementById('btn-state-accept');
+        if (activeBtn) {
+          activeBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          activeBtn.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold');
+        }
+        document.getElementById('modal-accept-container').classList.remove('hidden');
+      }
+      else if (stateKey === 'modal-reject') {
+        const activeBtn = document.getElementById('btn-state-reject');
+        if (activeBtn) {
+          activeBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          activeBtn.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold');
+        }
+        document.getElementById('modal-reject-container').classList.remove('hidden');
+      }
+      else if (stateKey === 'success') {
+        const activeBtn = document.getElementById('btn-state-success');
+        if (activeBtn) {
+          activeBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          activeBtn.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold');
+        }
+        banner.innerHTML = `
+          <div class="p-4 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-between shadow-sm animate-fadeIn">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-[28px] text-secondary">check_circle</span>
+              <div>
+                <span class="font-title-md text-title-md font-bold">Donation Accepted! Intake Manifest Created</span>
+                <p class="font-body-sm text-body-sm opacity-90">Field volunteer <strong>Rohan Verma (EV-Cargo #KA-03-9122)</strong> has been auto-dispatched. Est. arrival at donor: 12:52 PM.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="alert('Viewing live GPS route tracker for Volunteer Rohan Verma...')" class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold shadow-sm hover:bg-surface-bright">Track Courier</button>
+            </div>
+          </div>
+        `;
+        banner.classList.remove('hidden');
+        disableActionButtons();
+      }
+      else if (stateKey === 'claimed') {
+        const activeBtn = document.getElementById('btn-state-claimed');
+        if (activeBtn) {
+          activeBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          activeBtn.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold');
+        }
+        banner.innerHTML = `
+          <div class="p-4 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-[28px] text-tertiary">lock_clock</span>
+              <div>
+                <span class="font-title-md text-title-md font-bold">Batch Claimed by Another NGO</span>
+                <p class="font-body-sm text-body-sm opacity-90">Bangalore Food Bank claimed Batch #FB-8841 at 12:31 PM. You can explore 13 other surplus batches in your zone.</p>
+              </div>
+            </div>
+            <button onclick="switchSimulationState('default')" class="px-3.5 py-1.5 rounded-lg bg-tertiary text-on-tertiary font-label-sm text-label-sm">View Next Batch</button>
+          </div>
+        `;
+        banner.classList.remove('hidden');
+        disableActionButtons();
+      }
+      else if (stateKey === 'expired') {
+        const activeBtn = document.getElementById('btn-state-expired');
+        if (activeBtn) {
+          activeBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          activeBtn.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold');
+        }
+        banner.innerHTML = `
+          <div class="p-4 rounded-xl bg-surface-container-highest text-on-surface flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-[28px] text-outline">history_toggle_off</span>
+              <div>
+                <span class="font-title-md text-title-md font-bold">Safety Cutoff Expired</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">The 2-hour cooked food holding window has lapsed without pickup. In accordance with HACCP rules, this batch has been reallocated to biomass composting.</p>
+              </div>
+            </div>
+            <button onclick="switchSimulationState('default')" class="px-3.5 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">Dismiss</button>
+          </div>
+        `;
+        banner.classList.remove('hidden');
+        disableActionButtons();
+      }
+      else if (stateKey === 'restricted') {
+        const activeBtn = document.getElementById('btn-state-restricted');
+        if (activeBtn) {
+          activeBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          activeBtn.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold');
+        }
+        banner.innerHTML = `
+          <div class="p-4 rounded-xl bg-error-container text-on-error-container flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-[28px] text-error">gpp_maybe</span>
+              <div>
+                <span class="font-title-md text-title-md font-bold">Restricted Account Action (Unverified NGO)</span>
+                <p class="font-body-sm text-body-sm opacity-90">Hot cooked banquet intake requires Tier-1 FSSAI Darpan portal verification. Upload your NGO trust registration documents to claim.</p>
+              </div>
+            </div>
+            <button onclick="alert('Redirecting to NGO Document Verification Portal...')" class="px-3.5 py-1.5 rounded-lg bg-error text-on-error font-label-sm text-label-sm font-semibold">Verify Now</button>
+          </div>
+        `;
+        banner.classList.remove('hidden');
+        disableActionButtons();
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-space-md px-space-lg"><div class="w-full flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-2"><span>© 2025 FoodBridge AI. All rights reserved.</span><span class="hidden md:inline">•</span><span class="hidden md:inline">Empowering NGOs &amp; Eliminating Food Waste</span></div><div class="flex items-center gap-6"><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" href="#">Dispatch Support</a><a class="hover:text-on-surface transition-colors" href="#">API Status</a></div></div></footer></div></body></html>

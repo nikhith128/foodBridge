@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c0c9c1", "surface-tint": "#356850", "inverse-primary": "#9cd2b5", "outline": "#717973", "on-secondary-fixed": "#002110", "tertiary-container": "#673700", "on-surface-variant": "#404943", "surface-container-highest": "#d8e6da", "background": "#effdf0", "primary": "#003422", "secondary-fixed-dim": "#87d8a5", "tertiary-fixed-dim": "#ffb778", "on-error": "#ffffff", "primary-container": "#174c36", "surface-variant": "#d8e6da", "surface-container-low": "#e9f7eb", "tertiary-fixed": "#ffdcc1", "on-primary-container": "#86bc9f", "on-error-container": "#93000a", "on-primary-fixed-variant": "#1b5039", "on-primary-fixed": "#002114", "surface-container-lowest": "#ffffff", "error": "#ba1a1a", "secondary-fixed": "#a2f4bf", "on-tertiary-container": "#ed9f55", "surface-container": "#e4f1e5", "surface": "#effdf0", "inverse-surface": "#27332b", "on-secondary-fixed-variant": "#00522f", "error-container": "#ffdad6", "surface-dim": "#d0ded1", "tertiary": "#472400", "on-tertiary-fixed": "#2e1500", "surface-bright": "#effdf0", "inverse-on-surface": "#e6f4e8", "on-secondary-container": "#1b7046", "secondary": "#156c42", "primary-fixed": "#b8efd0", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#6c3a00", "secondary-container": "#9ff1bd", "surface-container-high": "#deecdf", "on-surface": "#131e17", "primary-fixed-dim": "#9cd2b5", "on-background": "#131e17", "on-primary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "margin": "2rem", "space-md": "1rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "gutter-mobile": "1rem" }, "fontFamily": { "body-lg": ["Inter"], "headline-sm": ["Manrope"], "headline-lg-mobile": ["Manrope"], "display-mobile": ["Manrope"], "headline-md-mobile": ["Manrope"], "headline-lg": ["Manrope"], "label-md": ["Inter"], "title-md": ["Manrope"], "label-sm": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "display": ["Manrope"], "headline-md": ["Manrope"] }, "fontSize": { "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-md-mobile": ["1.375rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "600" }], "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0em", "fontWeight": "400" }], "display": ["3.5rem", { "lineHeight": "4rem", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-primary-container z-50 flex flex-col justify-between shadow-[0_12px_32px_-4px_rgba(23,76,54,0.18)]"><div class="flex flex-col"><div class="p-space-lg flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="FoodBridge AI modern logo icon combining leaf, organic loop, bridge connection and warm accent core" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrCGsR6sP-TNnFy_njxt6ehrD6gVR52nkxP1xy_Ve-_ypUCvONvXcarLr4BkRsBvmyr9tvlIEMEyKXZfpZIqmTzPXqBJ7WWE95BHSHdwq79xbj_NLNaGn_iFsIvhuMrCMIYgQetKA8oKCBi_ZISAfeM1UIdgIpxjmrWMeCC-SEXQvH7o3Vw1UFALyP-KJ17YPXnYzEpIXz_3NUsXbdvI2DRxTj9-v5FBsZJs8mYgel4"/><span class="font-title-md text-title-md text-on-primary tracking-tight">FoodBridge AI</span></div><div class="flex items-center gap-space-xs"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">verified</span>Verified Volunteer</span><span class="font-label-sm text-label-sm text-on-primary-container">Portal</span></div></div><nav class="flex flex-col gap-1 px-space-md mt-space-sm" data-active-classes="bg-primary text-on-primary font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]"><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-primary/50 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></div><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-primary/50 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="available-tasks" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">explore</span><span>Available Tasks</span></div><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">3</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-primary/50 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="my-tasks" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">assignment</span><span>My Tasks</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-primary/50 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="impact-dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">eco</span><span>Impact Dashboard</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-primary/50 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="notifications" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">notifications</span><span>Notifications</span></div><span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">2</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-primary/50 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="profile" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">person</span><span>Profile</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-primary-container hover:bg-primary/50 hover:text-on-primary transition-colors font-label-md text-label-md" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings</span></div></a></nav></div><div class="p-space-md m-space-md rounded-xl bg-primary/40"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-title-md text-title-md"><span class="material-symbols-outlined text-[20px]">military_tech</span></div><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider">Role Status</span><span class="font-label-md text-label-md text-on-primary truncate font-semibold">Tier 4 Hero • Volunteer</span></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[20px] pointer-events-none">search</span><input class="w-full h-11 pl-10 pr-4 bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-sm font-body-sm rounded-lg outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search active tasks, donors, shelters, batch IDs..." type="search"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high"><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface font-medium">Online &amp; Ready</span></div><button class="inline-flex items-center gap-1.5 h-10 px-3.5 rounded-lg bg-on-tertiary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-tertiary-container transition-colors shadow-[0_4px_20px_-2px_rgba(23,76,54,0.05)]" type="button"><span class="material-symbols-outlined text-[18px]">crisis_alert</span><span>Emergency Dispatch</span></button><a class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></a><div class="h-6 w-px bg-outline-variant/40"></div><div class="flex items-center gap-space-sm pl-1"><div class="flex flex-col text-right"><span class="font-title-md text-label-md text-on-surface font-semibold">Rohan Verma</span><span class="font-label-sm text-label-sm text-outline flex items-center justify-end gap-1"><span class="material-symbols-outlined text-[13px] text-on-tertiary-container">star</span>4.9 • 148 rescues</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Simulation State Switcher Bar (Interactive sticky testing toolbar) -->
+<div class="w-full bg-primary text-on-primary px-space-lg py-2.5 flex flex-wrap items-center justify-between gap-space-sm shadow-md">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-on-secondary">
+<span class="material-symbols-outlined text-[15px]">tune</span>
+</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider uppercase text-secondary-fixed">Interactive Mission State Simulator</span>
+</div>
+<div class="flex items-center flex-wrap gap-1.5" id="simulation-pills">
+<button class="state-pill px-3 py-1 rounded-full text-label-sm font-label-sm bg-primary-container text-on-primary-container hover:text-on-primary transition-all" data-state="assigned" onclick="setSimState('assigned')">
+        1. Assigned (Pre-OTP)
+      </button>
+<button class="state-pill px-3 py-1 rounded-full text-label-sm font-label-sm bg-secondary-container text-on-secondary-container font-semibold shadow-sm transition-all" data-state="transit" onclick="setSimState('transit')">
+        2. In Transit (Active)
+      </button>
+<button class="state-pill px-3 py-1 rounded-full text-label-sm font-label-sm bg-primary-container text-on-primary-container hover:text-on-primary transition-all" data-state="delivered" onclick="setSimState('delivered')">
+        3. Completed
+      </button>
+<button class="state-pill px-3 py-1 rounded-full text-label-sm font-label-sm bg-primary-container text-on-primary-container hover:text-on-primary transition-all" data-state="preview" onclick="setSimState('preview')">
+        4. Unclaimed Preview
+      </button>
+<button class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-tertiary-container text-on-tertiary-container hover:bg-tertiary-container/80 transition-all flex items-center gap-1" onclick="toggleAlertBanner()">
+<span class="material-symbols-outlined text-[13px]">traffic</span>
+<span>Toggle Delay</span>
+</button>
+<button class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-error text-on-error hover:bg-error/90 transition-all flex items-center gap-1" onclick="openModal('issue-modal')">
+<span class="material-symbols-outlined text-[13px]">report_problem</span>
+<span>Report Issue</span>
+</button>
+</div>
+</div>
+<!-- Delay / Incident Warning Banner (Togglable) -->
+<div class="w-full bg-tertiary-fixed text-on-tertiary-fixed px-space-lg py-3 flex items-center justify-between shadow-sm" id="delay-banner">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-tertiary text-[22px] animate-bounce">warning</span>
+<div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-space-md">
+<span class="font-label-md text-label-md font-bold text-on-tertiary-fixed">Dynamic Alert: Heavy Congestion on 4th Cross Road</span>
+<span class="text-body-sm font-body-sm text-tertiary">Safe temperature window buffer reduced by 8 mins. AI reroute suggested via Inner Ring.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-3 py-1 bg-tertiary text-on-tertiary font-label-sm text-label-sm rounded-lg hover:bg-tertiary-container transition-colors shadow-sm" onclick="applyReroute()">
+        Accept Reroute (-4m)
+      </button>
+<button class="p-1 text-on-tertiary-fixed hover:bg-tertiary-fixed-dim rounded" onclick="toggleAlertBanner()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Main Container -->
+<div class="px-space-lg py-space-lg flex flex-col gap-space-lg max-w-[1440px] mx-auto w-full">
+<!-- Breadcrumb & Top Utility -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-outline text-body-sm font-body-sm">
+<span>Volunteer Portal</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>My Tasks</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-secondary font-semibold">Mission #FB-2025-0819</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md mt-1">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Veg Biryani &amp; Mirchi Ka Salan</h1>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium">Batch #HYD-2025-0819</span>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold shadow-sm" id="status-badge">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>IN TRANSIT • PICKUP CONFIRMED</span>
+</div>
+<div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container animate-pulse">timer</span>
+<span id="countdown-timer">38m remaining safe window</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Toolbar -->
+<div class="flex items-center gap-2 self-start md:self-auto">
+<button class="h-10 px-3.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-medium shadow-sm hover:bg-surface-container transition-colors flex items-center gap-1.5" onclick="shareTrip()">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Share Trip</span>
+</button>
+<button class="h-10 px-3.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-medium shadow-sm hover:bg-surface-container transition-colors flex items-center gap-1.5" onclick="openModal('dispatch-modal')">
+<span class="material-symbols-outlined text-[18px]">headset_mic</span>
+<span>Dispatch Voice</span>
+</button>
+<button class="h-10 px-3 rounded-lg bg-surface-container-lowest text-outline font-label-md text-label-md hover:text-on-surface hover:bg-surface-container transition-colors" onclick="window.print()">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Mission Step Progression Pipeline -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg relative">
+<!-- Step 1 -->
+<div class="flex items-start gap-space-md" id="step-node-1">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Step 01 • Completed</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">Assigned &amp; Accepted</span>
+<span class="text-body-sm font-body-sm text-outline">12:45 PM • Automated AI Claim</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-space-md relative" id="step-node-2">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0 shadow-sm ring-4 ring-secondary/20">
+<span class="material-symbols-outlined text-[20px] animate-spin">cyclone</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-bold">Step 02 • In Progress</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">Picked Up (OTP #7842 Verified)</span>
+<span class="text-body-sm font-body-sm text-outline">13:05 PM • Green Leaf Kitchen Gate 2</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-space-md" id="step-node-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-outline flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-medium">Step 03 • Next Target</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">Delivered to Shelter</span>
+<span class="text-body-sm font-body-sm text-outline">Target ETA: 13:25 PM • Hope Foundation Hub</span>
+</div>
+</div>
+</div>
+<!-- Linear Route Health Strip -->
+<div class="mt-space-lg pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md bg-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center gap-space-md w-full sm:w-auto">
+<div class="flex items-center gap-1.5 text-secondary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">sensors</span>
+<span>Real-time Cold Chain Live Link</span>
+</div>
+<span class="h-4 w-px bg-outline-variant/60 hidden sm:block"></span>
+<div class="flex items-center gap-2">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Thermal sensor pinged 24s ago</span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg w-full sm:w-auto justify-between sm:justify-end">
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-outline block">Transit Velocity</span>
+<span class="font-title-md text-title-md text-primary font-bold">22 km/h • EV-Eco</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-outline block">Thermal Integrity</span>
+<span class="font-title-md text-title-md text-secondary font-bold">100% Sealed</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content 2-Column Split: ~65% / ~35% -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN (~65% / 8 Columns on lg) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- CARD 1: Donor & Pickup Location -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Pickup Origin #P-01</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Green Leaf Restaurant</h3>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">verified</span>Tier 1 Certified Donor
+              </span>
+</div>
+</div>
+<!-- Pickup Details & Contact Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md p-space-md bg-surface-container-low rounded-xl">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Physical Address</span>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-relaxed">
+                Gate 2, Plot 42 Jubilee Enclave Corridor, Road No. 36, Jubilee Hills
+              </p>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">forklift</span> Service elevator &amp; ramp available
+              </span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Kitchen Contact &amp; Window</span>
+<p class="font-body-md text-body-md text-on-surface font-medium">Suresh K. (Head Expeditor)</p>
+<p class="font-body-sm text-body-sm text-outline">Scheduled: 13:00 PM • Confirmed: 13:05 PM</p>
+<div class="flex items-center gap-2 mt-2">
+<a class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold shadow-sm hover:bg-surface-container transition-colors inline-flex items-center gap-1" href="tel:+919876543210">
+<span class="material-symbols-outlined text-[14px]">call</span>Call Donor
+                </a>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold shadow-sm hover:bg-surface-container transition-colors inline-flex items-center gap-1" onclick="openExternalMaps('Green Leaf Restaurant, Jubilee Hills')">
+<span class="material-symbols-outlined text-[14px]">navigation</span>Directions
+                </button>
+</div>
+</div>
+</div>
+<!-- OTP Handoff Verification Block (Dynamic based on state) -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-secondary-container/30 gap-space-sm" id="otp-verified-block">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</span>
+<div>
+<span class="font-label-md text-label-md text-on-secondary-container font-bold">Pickup OTP #7842 Verified</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Validated by Manager Suresh K. at 13:05:12 PM via NFC digital handshake.</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold self-start sm:self-auto">Passed Protocol</span>
+</div>
+<!-- Simulated OTP Entry Input Box (Visible in Assigned Pre-Pickup State) -->
+<div class="hidden flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-high" id="otp-entry-box">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">pin</span>
+<span class="font-label-md text-label-md font-bold text-primary">Enter 4-Digit Pickup Verification Code</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Provided by kitchen manager</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<input class="w-12 h-12 text-center text-headline-sm font-headline-sm font-bold bg-surface-container-lowest rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" maxlength="1" value="7"/>
+<input class="w-12 h-12 text-center text-headline-sm font-headline-sm font-bold bg-surface-container-lowest rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" maxlength="1" value="8"/>
+<input class="w-12 h-12 text-center text-headline-sm font-headline-sm font-bold bg-surface-container-lowest rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" maxlength="1" value="4"/>
+<input class="w-12 h-12 text-center text-headline-sm font-headline-sm font-bold bg-surface-container-lowest rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" maxlength="1" value="2"/>
+<button class="ml-2 px-4 h-12 bg-primary text-on-primary font-label-md text-label-md font-semibold rounded-lg hover:bg-primary-container transition-colors shadow-sm" onclick="setSimState('transit')">
+                Confirm Pickup
+              </button>
+</div>
+</div>
+</div>
+<!-- CARD 2: Delivery & Destination Shelter -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">night_shelter</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Drop-off Destination #D-03</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Hope Foundation Central Hub #3</h3>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">pin_drop</span>1.1 km from live EV position
+              </span>
+</div>
+</div>
+<!-- Destination Details -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md p-space-md bg-surface-container-low rounded-xl">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Shelter Facility Intake</span>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-relaxed">
+                4th Cross, Shivaji Nagar Sector 7, Hyderabad
+              </p>
+<div class="mt-2 p-2 rounded-lg bg-surface-container-lowest text-on-surface-variant font-body-sm text-body-sm flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">info</span>
+<span>Drop-off Protocol: Ring rear loading dock buzzer #2 for direct pantry intake.</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Shelter Coordinator</span>
+<p class="font-body-md text-body-md text-on-surface font-medium">Sister Mary (Pantry Lead)</p>
+<p class="font-body-sm text-body-sm text-secondary font-semibold">Target ETA: 13:25 PM (~18 mins left)</p>
+<div class="flex items-center gap-2 mt-2">
+<a class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold shadow-sm hover:bg-surface-container transition-colors inline-flex items-center gap-1" href="tel:+919876543211">
+<span class="material-symbols-outlined text-[14px]">call</span>Call Shelter Lead
+                </a>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm hover:bg-primary-container transition-colors inline-flex items-center gap-1" onclick="openExternalMaps('Hope Foundation Hub 3, Shivaji Nagar')">
+<span class="material-symbols-outlined text-[14px]">turn_sharp_right</span>Start Live Route
+                </button>
+</div>
+</div>
+</div>
+<!-- Community Impact Snapshot -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold font-title-md">
+                50
+              </div>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-bold">Direct Meals Nourished</span>
+<p class="font-body-sm text-body-sm text-outline">Reserved for after-school tutoring children &amp; elderly day residents.</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold hidden sm:inline-block">Impact ID: #IMP-819</span>
+</div>
+</div>
+<!-- CARD 3: Food Manifest & Cold-Chain Compliance -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">restaurant_menu</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Consignment Manifest</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Food Safety &amp; Quality Telemetry</h3>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">
+                Hot Cooked Batch
+              </span>
+</div>
+</div>
+<!-- Detailed Items Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Net Volume</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">20.0 kg</span>
+<span class="text-body-sm font-body-sm text-outline">50 standardized meal portions</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Dietary Class</span>
+<span class="font-headline-md text-headline-md text-secondary font-bold">Pure Veg</span>
+<span class="text-body-sm font-body-sm text-outline">Contains Paneer &amp; Ghee • Nut-Free</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Transport Hardware</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">2x Cambro</span>
+<span class="text-body-sm font-body-sm text-outline">Heavy-duty insulated containers</span>
+</div>
+</div>
+<!-- Food Safety & Real-time IoT Core Probe Telemetry -->
+<div class="p-space-lg rounded-xl bg-surface-container-high flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">thermostat</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">Active IoT Temperature Probe #TMP-914</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">
+                Optimal Safe Zone
+              </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md items-center">
+<!-- Live Temperature Gauge Component -->
+<div class="flex items-baseline gap-2 bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<span class="font-display text-display text-primary font-extrabold" id="probe-temp">68.4</span>
+<span class="font-title-md text-title-md text-outline">°C</span>
+<div class="flex flex-col ml-auto text-right">
+<span class="font-label-sm text-label-sm text-secondary font-bold">Target &gt;60°C</span>
+<span class="font-label-sm text-label-sm text-outline">+8.4°C Headroom</span>
+</div>
+</div>
+<!-- Battery & Signal -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Sensor Battery</span>
+<span class="font-bold text-on-surface">84%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="w-[84%] h-full bg-secondary rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-1">BLE mesh connected</span>
+</div>
+<!-- Hermetic Seal Status -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Seal Integrity</span>
+<span class="font-bold text-secondary">Secured 100%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="w-full h-full bg-secondary rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-1">Zero tamper flags</span>
+</div>
+</div>
+<!-- Mandatory Compliance Note -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest flex items-start gap-space-sm text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">gavel</span>
+<p>
+<strong class="text-on-surface">FSSAI / FoodBridge Standard:</strong> Maintain core temperature above 60°C throughout carriage. Do not open Cambro latches until arrival inside the shelter intake vestibule.
+              </p>
+</div>
+</div>
+<!-- Proof of Food Visual Photo Feed -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-title-md text-title-md text-on-surface font-bold">Handoff Visual Documentation</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="relative rounded-xl overflow-hidden shadow-sm aspect-video bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="High quality overhead view of stainless steel gastronomic pans filled with aromatic authentic Hyderabadi vegetable biryani layered with saffron rice, caramelized onions, fresh mint leaves, and tender vegetables, sealed inside a commercial kitchen setting under warm ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1IveajHwui87Xj4DRse_gYg1czH3xiRqtIuICNN5HvMAtdLAHvtjQmbJheeNPPSSeAFEgaddSpGca36HqH7WysZAi_L9z-3jYgzU5y1CsaSqm5NODVx6jkJcZsO_lLKOca2loiwqJd7cLre_etv0WJn2Bnkqclc81fIwohEJyyBmFyKsk1ADZxuW5Ok5J4getf0idYLP_JIGryrsksPT8qmaB7D8KrPfQbwPesQ"/>
+<div class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur-sm">
+                  Donor Batch Verification Photo
+                </div>
+</div>
+<div class="relative rounded-xl overflow-hidden shadow-sm aspect-video bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up photo of two heavy duty forest-green Cambro insulated food carrier boxes securely buckled with digital IoT temperature logger mounted on top showing a green glowing status light on an EV scooter rack." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMFHRu9gybr1m6xc9ufAq2KkKm6iXfMV-vv2Ot2dvZdqmToTEls0_gngccoV-sJc10tLQgxfkn6mCIdo4MqFijp_cqkM_T9qaeLfUvWDaKLFwPQCoq81neXeTyXVIsIpxsDRnX48NR_hGz_eTDAvwqqXlz1mF92XIFZQ2geNqaZ7nmRdKIE5hi7WZHFiZpS4DaTwRSHJYSPtUGeEmsdcOakvvy_vRt7IuBjAxQxg"/>
+<div class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur-sm">
+                  Loaded &amp; Sealed in Cargo EV Rack
+                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (~35% / 4 Columns on lg) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg lg:sticky lg:top-20">
+<!-- Active Interactive Map & Geo Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm overflow-hidden">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">near_me</span>
+<span class="font-title-md text-title-md font-bold text-on-surface">Live Rescue Route</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">GPS Active</span>
+</div>
+<!-- Static Map Component Container with Route Overlay -->
+<div class="relative w-full h-72 rounded-xl overflow-hidden shadow-sm bg-surface-container">
+<div class="w-full h-full bg-cover bg-center" data-alt="A clean topographic vector style street map view of Jubilee Hills and Shivaji Nagar Hyderabad showing a highlighted green delivery route line connecting Green Leaf Restaurant to Hope Foundation Shelter, with an electric scooter delivery marker and waypoint pins in a modern organic green color palette." data-location="Jubilee Hills to Shivaji Nagar, Hyderabad" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhiQKt4J-uxKU873Hy2CToup3MErGRuzPz-sqlhBx-_RfK2TW78yFP96W5NVKrUI7l1qj4rv1Y93PBwgAFLSPqUhIGsS4CIMptrb6tFGEwnfKpodHVvfwzbTwtx22VX8o7KPE5T9O1FNFKsSHQnm8dngY3Z2VqhnZQQrUadCSqmWqf9zayApKs4_07N_rTJTPM2ysF2aU-kqd_lC2Gy3i6zcdgWNIgzBTwLjONqQ')"></div>
+<!-- Floating Geo Hud Overlay -->
+<div class="absolute top-3 left-3 right-3 bg-surface-container-lowest/95 backdrop-blur-md rounded-lg p-space-sm shadow-md flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Remaining Distance</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">1.1 km <span class="text-body-sm font-body-sm text-outline font-normal">/ 3.1 km</span></span>
+</div>
+<div class="h-8 w-px bg-outline-variant/40"></div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-outline">Estimated Arrival</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">13:25 PM</span>
+</div>
+</div>
+<!-- Bottom Floating Current Street -->
+<div class="absolute bottom-3 left-3 right-3 bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface rounded-lg px-3 py-2 flex items-center justify-between shadow-md">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">navigation</span>
+<span class="font-label-sm text-label-sm truncate">Approaching 4th Cross Rd Junction</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary-fixed font-bold flex-shrink-0">In 200m</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="h-10 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-colors" onclick="openExternalMaps('Hope Foundation Hub 3 Hyderabad')">
+<span class="material-symbols-outlined text-[18px]">map</span>
+<span>Google Maps</span>
+</button>
+<button class="h-10 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-colors" onclick="openExternalMaps('Hope Foundation Hub 3 Hyderabad')">
+<span class="material-symbols-outlined text-[18px]">explore</span>
+<span>Waze App</span>
+</button>
+</div>
+</div>
+<!-- Sticky Immediate Mission Directive & Execution Box -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md border-2 border-secondary/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">target</span>
+<span class="font-title-md text-title-md font-bold text-on-surface">Next Immediate Action</span>
+</div>
+<div class="p-space-md rounded-lg bg-secondary-container/30 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-bold">Destination Protocol</span>
+<p class="font-body-md text-body-md text-on-surface font-semibold leading-snug">
+              Deliver 2 Cambro units to Hope Foundation Hub #3 rear intake dock.
+            </p>
+<span class="font-body-sm text-body-sm text-outline mt-1">Obtain Sister Mary's 4-digit intake signature OTP.</span>
+</div>
+<!-- Main CTA Buttons -->
+<div class="flex flex-col gap-2.5 pt-2">
+<button class="w-full h-12 bg-primary text-on-primary font-label-md text-label-md font-bold rounded-lg shadow-md hover:bg-primary-container transition-all flex items-center justify-center gap-2" id="primary-action-btn" onclick="openModal('delivery-modal')">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+<span>Confirm Delivery &amp; Log Intake</span>
+</button>
+<button class="w-full h-10 bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold rounded-lg hover:bg-surface-container transition-colors flex items-center justify-center gap-2" onclick="openModal('dispatch-modal')">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span>Call Dispatch Operations</span>
+</button>
+<button class="w-full h-9 text-error font-label-sm text-label-sm font-semibold hover:bg-error-container/40 rounded-lg transition-colors flex items-center justify-center gap-1" onclick="openModal('issue-modal')">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Report Delivery Delay or Incident</span>
+</button>
+</div>
+<!-- Volunteer Trust Badge Mini -->
+<div class="pt-space-sm border-t border-surface-container flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Hero Escort:</span>
+<span class="font-semibold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+              Rohan Verma (4.9 ★)
+            </span>
+</div>
+</div>
+<!-- Comparative Preview Block: How task appears before claiming -->
+<div class="hidden p-space-md rounded-xl bg-tertiary-fixed/40 flex flex-col gap-space-sm shadow-sm" id="unclaimed-notice-block">
+<div class="flex items-center gap-2 text-on-tertiary-fixed font-title-md text-title-md font-bold">
+<span class="material-symbols-outlined text-tertiary text-[20px]">lock</span>
+<span>Pre-Acceptance Mode Preview</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed">
+            In unclaimed state, exact donor &amp; recipient phone numbers remain masked to prevent disintermediation. The volunteer must click "Accept Task" to initiate active dispatch.
+          </p>
+<button class="h-10 bg-primary text-on-primary font-label-md text-label-md font-bold rounded-lg shadow-sm hover:bg-primary-container transition-colors" onclick="setSimState('assigned')">
+            Accept &amp; Claim Task #FB-2025-0819
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL 1: Confirm Delivery & Shelter Intake Modal -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden items-center justify-center p-4" id="delivery-modal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-space-lg shadow-xl flex flex-col gap-space-md animate-in fade-in zoom-in-95 duration-200">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Confirm Shelter Intake</h3>
+</div>
+<button class="p-1 text-outline hover:text-on-surface rounded-lg" onclick="closeModal('delivery-modal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Recipient Handover OTP</label>
+<p class="font-body-sm text-body-sm text-outline">Ask Sister Mary at Hope Foundation Hub #3 for the 4-digit recipient verification pin.</p>
+<div class="flex items-center gap-2 mt-1">
+<input class="w-12 h-12 text-center text-headline-sm font-bold bg-surface-container-high rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="delivery-otp-1" maxlength="1" placeholder="•"/>
+<input class="w-12 h-12 text-center text-headline-sm font-bold bg-surface-container-high rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="delivery-otp-2" maxlength="1" placeholder="•"/>
+<input class="w-12 h-12 text-center text-headline-sm font-bold bg-surface-container-high rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="delivery-otp-3" maxlength="1" placeholder="•"/>
+<input class="w-12 h-12 text-center text-headline-sm font-bold bg-surface-container-high rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="delivery-otp-4" maxlength="1" placeholder="•"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Pantry Condition Check</label>
+<label class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-secondary focus:ring-secondary" type="checkbox"/>
+<span>Cambro boxes unsealed in presence of intake supervisor.</span>
+</label>
+<label class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-secondary focus:ring-secondary" type="checkbox"/>
+<span>Thermal reading retained above 60°C requirement.</span>
+</label>
+</div>
+<div class="flex items-center gap-space-sm pt-space-sm">
+<button class="flex-1 h-11 bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold rounded-lg hover:bg-surface-container transition-colors" onclick="closeModal('delivery-modal')">
+          Cancel
+        </button>
+<button class="flex-1 h-11 bg-primary text-on-primary font-label-md text-label-md font-bold rounded-lg hover:bg-primary-container shadow-md transition-all" onclick="completeDeliveryAction()">
+          Verify &amp; Finish Rescue
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL 2: Report Incident or Delay -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden items-center justify-center p-4" id="issue-modal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">report_problem</span>
+</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Report Issue or Delay</h3>
+</div>
+<button class="p-1 text-outline hover:text-on-surface rounded-lg" onclick="closeModal('issue-modal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Select Issue Category</span>
+<div class="grid grid-cols-2 gap-2">
+<button class="p-3 text-left rounded-lg bg-surface-container-low hover:bg-surface-container text-body-sm font-body-sm font-medium border border-transparent focus:border-error focus:bg-error-container/20 transition-all">
+            🛵 Vehicle Breakdown
+          </button>
+<button class="p-3 text-left rounded-lg bg-surface-container-low hover:bg-surface-container text-body-sm font-body-sm font-medium border border-transparent focus:border-error focus:bg-error-container/20 transition-all">
+            📦 Packaging Leaking
+          </button>
+<button class="p-3 text-left rounded-lg bg-surface-container-low hover:bg-surface-container text-body-sm font-body-sm font-medium border border-transparent focus:border-error focus:bg-error-container/20 transition-all">
+            🛑 Gate Locked / No Access
+          </button>
+<button class="p-3 text-left rounded-lg bg-surface-container-low hover:bg-surface-container text-body-sm font-body-sm font-medium border border-transparent focus:border-error focus:bg-error-container/20 transition-all">
+            ⏳ Severe Traffic Delay
+          </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Volunteer Situation Notes</label>
+<textarea class="w-full p-space-sm bg-surface-container-low rounded-lg text-body-sm font-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-error" placeholder="Describe the current status so dispatch can alert Sister Mary..." rows="3"></textarea>
+</div>
+<div class="flex items-center gap-space-sm pt-space-sm">
+<button class="flex-1 h-11 bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold rounded-lg hover:bg-surface-container transition-colors" onclick="closeModal('issue-modal')">
+          Dismiss
+        </button>
+<button class="flex-1 h-11 bg-error text-on-error font-label-md text-label-md font-bold rounded-lg hover:bg-error/90 shadow-md transition-all" onclick="submitIssueReport()">
+          Broadcast to Dispatch
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL 3: Dispatch Voice Link -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden items-center justify-center p-4" id="dispatch-modal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-md w-full p-space-lg shadow-xl flex flex-col items-center text-center gap-space-md">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-[32px]">headset_mic</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Connecting to Central Ops</h3>
+<p class="font-body-sm text-body-sm text-outline mt-1">Priority routing line for active cold-chain missions.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low w-full flex items-center justify-between text-body-sm">
+<span class="text-outline">Active Dispatcher:</span>
+<span class="font-bold text-primary">Kiran R. (Desk #4)</span>
+</div>
+<div class="flex items-center gap-space-sm w-full">
+<button class="flex-1 h-11 bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold rounded-lg hover:bg-surface-container transition-colors" onclick="closeModal('dispatch-modal')">
+          End Call
+        </button>
+<a class="flex-1 h-11 bg-primary text-on-primary font-label-md text-label-md font-bold rounded-lg hover:bg-primary-container shadow-md flex items-center justify-center gap-1" href="tel:1800555FOOD">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>Dial VoIP</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Vanilla Interactive Orchestrator Script -->
+<script>
+  function setSimState(state) {
+    const pills = document.querySelectorAll('.state-pill');
+    pills.forEach(p => {
+      if (p.getAttribute('data-state') === state) {
+        p.className = 'state-pill px-3 py-1 rounded-full text-label-sm font-label-sm bg-secondary-container text-on-secondary-container font-semibold shadow-sm transition-all';
+      } else {
+        p.className = 'state-pill px-3 py-1 rounded-full text-label-sm font-label-sm bg-primary-container text-on-primary-container hover:text-on-primary transition-all';
+      }
+    });
+
+    const statusBadge = document.getElementById('status-badge');
+    const otpVerified = document.getElementById('otp-verified-block');
+    const otpEntry = document.getElementById('otp-entry-box');
+    const unclaimedNotice = document.getElementById('unclaimed-notice-block');
+    const primaryBtn = document.getElementById('primary-action-btn');
+    const step1 = document.getElementById('step-node-1');
+    const step2 = document.getElementById('step-node-2');
+    const step3 = document.getElementById('step-node-3');
+
+    if (state === 'assigned') {
+      statusBadge.innerHTML = '<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span>ASSIGNED • AWAITING PICKUP OTP</span>';
+      statusBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md font-bold shadow-sm';
+      otpVerified.classList.add('hidden');
+      otpEntry.classList.remove('hidden');
+      unclaimedNotice.classList.add('hidden');
+      primaryBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">pin</span><span>Verify Pickup OTP at Kitchen</span>';
+      primaryBtn.onclick = () => { otpEntry.scrollIntoView({ behavior: 'smooth' }); };
+      step2.className = 'flex items-start gap-space-md opacity-60';
+      step3.className = 'flex items-start gap-space-md opacity-40';
+    } else if (state === 'transit') {
+      statusBadge.innerHTML = '<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span>IN TRANSIT • PICKUP CONFIRMED</span>';
+      statusBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold shadow-sm';
+      otpVerified.classList.remove('hidden');
+      otpEntry.classList.add('hidden');
+      unclaimedNotice.classList.add('hidden');
+      primaryBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">task_alt</span><span>Confirm Delivery & Log Intake</span>';
+      primaryBtn.onclick = () => openModal('delivery-modal');
+      step2.className = 'flex items-start gap-space-md relative';
+      step3.className = 'flex items-start gap-space-md opacity-70';
+    } else if (state === 'delivered') {
+      statusBadge.innerHTML = '<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span><span>DELIVERED & VERIFIED</span>';
+      statusBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold shadow-sm';
+      otpVerified.classList.remove('hidden');
+      otpEntry.classList.add('hidden');
+      unclaimedNotice.classList.add('hidden');
+      primaryBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">eco</span><span>Mission Complete • View Impact</span>';
+      primaryBtn.onclick = () => alert('Mission successfully logged! You earned 150 Karma points and saved 20kg of CO2.');
+      step2.className = 'flex items-start gap-space-md';
+      step3.className = 'flex items-start gap-space-md';
+      step3.querySelector('div').className = 'w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center flex-shrink-0 shadow-md';
+      step3.querySelector('span.material-symbols-outlined').textContent = 'check';
+    } else if (state === 'preview') {
+      statusBadge.innerHTML = '<span class="material-symbols-outlined text-[16px] text-tertiary">lock_open</span><span>AVAILABLE FOR RESCUE</span>';
+      statusBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-bold shadow-sm';
+      otpVerified.classList.add('hidden');
+      otpEntry.classList.add('hidden');
+      unclaimedNotice.classList.remove('hidden');
+      primaryBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">handshake</span><span>Accept & Claim Task</span>';
+      primaryBtn.onclick = () => setSimState('assigned');
+    }
+  }
+
+  function toggleAlertBanner() {
+    const banner = document.getElementById('delay-banner');
+    banner.classList.toggle('hidden');
+  }
+
+  function applyReroute() {
+    alert('AI Reroute Applied: Navigating via Jubilee Hills Checkpost Bypass. Estimated time saved: 4 minutes.');
+    toggleAlertBanner();
+  }
+
+  function openModal(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.classList.remove('hidden');
+      el.classList.add('flex');
+    }
+  }
+
+  function closeModal(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.classList.add('hidden');
+      el.classList.remove('flex');
+    }
+  }
+
+  function shareTrip() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'FoodBridge Rescue Mission #FB-2025-0819',
+        text: 'Live cold-chain food rescue escort by Rohan Verma: Jubilee Hills to Hope Foundation Hub 3.',
+        url: window.location.href,
+      }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      alert('Trip tracker link copied to clipboard!');
+    }
+  }
+
+  function openExternalMaps(query) {
+    window.open('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(query), '_blank');
+  }
+
+  function completeDeliveryAction() {
+    closeModal('delivery-modal');
+    setSimState('delivered');
+  }
+
+  function submitIssueReport() {
+    closeModal('issue-modal');
+    alert('Issue broadcasted to Central Dispatch operations. Stand by for live audio ping.');
+  }
+
+  // Micro countdown simulation
+  let minutes = 38;
+  setInterval(() => {
+    const timer = document.getElementById('countdown-timer');
+    if (timer && minutes > 1) {
+      minutes = minutes - 0.05;
+      const mins = Math.floor(minutes);
+      const secs = Math.floor((minutes - mins) * 60);
+      timer.textContent = `${mins}m ${secs < 10 ? '0' : ''}${secs}s safe window`;
+    }
+  }, 3000);
+</script></main></div></body></html>

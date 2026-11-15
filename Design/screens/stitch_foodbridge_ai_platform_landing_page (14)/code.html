@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"primary-container":"#174c36","primary-fixed":"#b8efd0","surface-bright":"#effdf0","on-error-container":"#93000a","on-secondary-fixed-variant":"#00522f","outline":"#717973","error":"#ba1a1a","surface-container":"#e4f1e5","primary-fixed-dim":"#9cd2b5","on-background":"#131e17","outline-variant":"#c0c9c1","on-error":"#ffffff","secondary-fixed-dim":"#87d8a5","on-primary":"#ffffff","tertiary-fixed":"#ffdcc1","secondary-container":"#9ff1bd","surface-container-low":"#e9f7eb","on-secondary-fixed":"#002110","on-secondary":"#ffffff","background":"#effdf0","on-primary-fixed-variant":"#1b5039","surface-variant":"#d8e6da","surface-container-lowest":"#ffffff","error-container":"#ffdad6","tertiary-fixed-dim":"#ffb778","surface-container-high":"#deecdf","primary":"#003422","surface-dim":"#d0ded1","inverse-on-surface":"#e6f4e8","on-surface-variant":"#404943","inverse-primary":"#9cd2b5","tertiary":"#472400","surface":"#effdf0","on-surface":"#131e17","surface-container-highest":"#d8e6da","on-tertiary":"#ffffff","on-secondary-container":"#1b7046","on-tertiary-fixed":"#2e1500","tertiary-container":"#673700","on-tertiary-container":"#ed9f55","on-primary-fixed":"#002114","secondary-fixed":"#a2f4bf","on-primary-container":"#86bc9f","on-tertiary-fixed-variant":"#6c3a00","secondary":"#156c42","inverse-surface":"#27332b","surface-tint":"#356850"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","gutter":"1.5rem","space-xl":"2.5rem","space-xs":"0.25rem","space-sm":"0.5rem","margin":"2rem","space-lg":"1.5rem","margin-mobile":"1rem","gutter-mobile":"1rem"},"fontFamily":{"headline-md-mobile":["Manrope"],"headline-lg-mobile":["Manrope"],"headline-sm":["Manrope"],"title-md":["Manrope"],"body-md":["Inter"],"label-sm":["Inter"],"display-mobile":["Manrope"],"label-md":["Inter"],"display":["Manrope"],"body-lg":["Inter"],"headline-md":["Manrope"],"headline-lg":["Manrope"],"body-sm":["Inter"]},"fontSize":{"headline-md-mobile":["1.375rem",{"lineHeight":"1.875rem","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"0em","fontWeight":"600"}],"title-md":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"600"}],"body-md":["1rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"label-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"display-mobile":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"800"}],"label-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}],"display":["3.5rem",{"lineHeight":"4rem","letterSpacing":"-0.03em","fontWeight":"800"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-md":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["2.5rem",{"lineHeight":"3rem","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}]}}}</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="FoodBridge AI modern logo icon combining leaf, organic loop, bridge connection and warm accent core" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrCGsR6sP-TNnFy_njxt6ehrD6gVR52nkxP1xy_Ve-_ypUCvONvXcarLr4BkRsBvmyr9tvlIEMEyKXZfpZIqmTzPXqBJ7WWE95BHSHdwq79xbj_NLNaGn_iFsIvhuMrCMIYgQetKA8oKCBi_ZISAfeM1UIdgIpxjmrWMeCC-SEXQvH7o3Vw1UFALyP-KJ17YPXnYzEpIXz_3NUsXbdvI2DRxTj9-v5FBsZJs8mYgel4"/><h1 class="font-title-md text-title-md text-on-surface font-semibold truncate">Dashboard</h1></div><div class="flex items-center gap-space-xs flex-shrink-0"><a aria-label="Notifications" class="w-12 h-12 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors relative" data-path="notifications" href="#"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2.5 h-2.5 bg-tertiary-container rounded-full"></span></a><a aria-label="Rohan Verma Hero Tier 4 Profile" class="flex items-center gap-space-xs p-1 rounded-full hover:bg-surface-container transition-colors" data-path="profile" href="#"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="hidden sm:inline-block font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold">T4</span></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface px-gutter-mobile"><div class="flex flex-col w-full pb-6 space-y-4">
+<!-- Simulation State Switcher Bar (Audition different volunteer flows) -->
+<div class="w-full bg-surface-container-low p-2 rounded-xl shadow-sm flex items-center justify-between gap-1 overflow-x-auto no-scrollbar">
+<button class="sim-btn flex-1 min-w-[76px] py-1.5 px-2 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold transition-all shadow-sm text-center" id="sim-active" onclick="switchState('active')">
+      Active
+    </button>
+<button class="sim-btn flex-1 min-w-[76px] py-1.5 px-2 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-all text-center" id="sim-offduty" onclick="switchState('offduty')">
+      Off-Duty
+    </button>
+<button class="sim-btn flex-1 min-w-[76px] py-1.5 px-2 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-all text-center" id="sim-empty" onclick="switchState('empty')">
+      Empty
+    </button>
+<button class="sim-btn flex-1 min-w-[76px] py-1.5 px-2 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-all text-center" id="sim-skeleton" onclick="switchState('skeleton')">
+      Skeleton
+    </button>
+</div>
+<!-- Main Dynamic View Container -->
+<div class="flex flex-col space-y-4" id="view-normal">
+<!-- Header & Personal Greeting -->
+<div class="flex items-start justify-between gap-2 pt-1">
+<div class="flex flex-col min-w-0">
+<div class="inline-flex items-center gap-1.5 self-start px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container mb-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-sm text-label-sm font-bold tracking-tight">Tier 4 Hero • 148 Rescues</span>
+</div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary font-bold tracking-tight truncate">
+          Hi Rohan 👋
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Ready to rescue some food today?
+        </p>
+</div>
+<!-- Rating & Badge Avatar Thumbnail -->
+<div class="flex flex-col items-end flex-shrink-0">
+<div class="flex items-center gap-1 bg-surface-container-lowest px-2.5 py-1.5 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-primary">4.9</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(112)</span>
+</div>
+</div>
+</div>
+<!-- Availability Interactive Toggle Card -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col gap-3 transition-all" id="availability-card">
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0" id="toggle-indicator-icon">
+<span class="material-symbols-outlined text-[22px]">sensors</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-bold truncate">I'm available for pickups</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium flex items-center gap-1.5" id="availability-substatus">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+              Online • Ready for dispatch
+            </span>
+</div>
+</div>
+<!-- Touch-Friendly Custom Switch (Min 48px touch target wrapper) -->
+<label class="relative inline-flex items-center justify-center cursor-pointer min-w-[48px] min-h-[48px] flex-shrink-0" for="duty-toggle">
+<input checked="" class="sr-only peer" id="duty-toggle" onchange="handleDutyToggle(this.checked)" type="checkbox"/>
+<div class="w-14 h-8 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-6 peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[12px] after:left-[5px] after:bg-surface-container-lowest after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary-container shadow-inner"></div>
+</label>
+</div>
+<!-- Warning Callout Container (Hidden by default, shown when off duty) -->
+<div class="hidden flex items-start gap-2.5 p-3 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed animate-fadeIn" id="unavailable-callout">
+<span class="material-symbols-outlined text-[20px] text-tertiary flex-shrink-0 mt-0.5">notification_important</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-tertiary">Standby mode active</span>
+<span class="font-body-sm text-body-sm text-on-tertiary-fixed-variant leading-snug">
+            You won't receive incoming match alerts or automatic AI dispatch while marked unavailable.
+          </span>
+</div>
+</div>
+</div>
+<!-- Row of 3 Stat Cards (Compact responsive 3-column grid) -->
+<div class="grid grid-cols-3 gap-2 w-full">
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Active</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">alt_route</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-secondary font-extrabold" id="stat-active">1</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container">task</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Rescues</span>
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-primary font-extrabold">148</span>
+<span class="font-label-sm text-label-sm text-outline">done</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Meals</span>
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">local_dining</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-tertiary-fixed font-extrabold">4.9k</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">fed</span>
+</div>
+</div>
+</div>
+<!-- Current Task Highlight Card (Featured Active Flow) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3 relative overflow-hidden" id="current-task-section">
+<!-- Decorative Organic Accent Edge -->
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-secondary"></div>
+<div class="flex items-center justify-between gap-2 pl-1">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          In Transit • Pickup Confirmed
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+          38m remaining
+        </span>
+</div>
+<div class="pl-1">
+<h3 class="font-title-md text-title-md text-primary font-bold">Veg Biryani &amp; Mirchi Ka Salan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">50 Servings (~20 kg) • 2 Warm Cambros</p>
+</div>
+<!-- Live Logistics Route Progression -->
+<div class="pl-1 bg-surface-container-low p-3 rounded-lg flex flex-col gap-2">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-secondary mt-0.5 flex-shrink-0">near_me</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-outline font-semibold">CURRENT DIRECTIVE</span>
+<span class="font-label-md text-label-md text-primary font-bold">Head to Green Leaf Restaurant</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Plot 42, Jubilee Enclave (0.8 km away)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">pin_drop</span>
+            3.1 km total trip
+          </span>
+<span class="flex items-center gap-1 text-on-secondary-container font-semibold">
+<span class="material-symbols-outlined text-[15px] text-secondary">verified_user</span>
+            Pickup OTP: Verified
+          </span>
+</div>
+</div>
+<!-- Primary Action CTA Button (Min 48px height touch target) -->
+<div class="pt-1">
+<button class="w-full min-h-[48px] px-4 py-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-2 shadow-sm active:scale-[0.99] transition-transform" onclick="handleContinueTask()">
+<span>Continue Task</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Pickup Hotspots Mini Map View -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-secondary">explore</span>
+<h3 class="font-title-md text-title-md text-primary font-bold">Pickup Hotspots</h3>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Central Corridor</span>
+</div>
+<!-- Map Canvas Mockup with Interactive Location Markers -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden bg-cover bg-center shadow-inner flex flex-col justify-between p-3" data-alt="Stylized top-down vector GPS navigation map of a modern green city corridor with soft parchment roads, delicate green parks, and high-tech delivery route markers in emerald and warm amber." data-location="Madhapur Hyderabad Central Food Hub" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3YYB2jOxQEP7Q1bJusv8tJiIdKo81JLpr0XwALYRKkM4n5HuijFBQvbZ8OAHXjpE4vzxJdJ-T32Akqh7Mzhtvitu0M1J3Q2wAo-P4et9sYqiFz2urqcMrYGJALssBLF5CE4N1l3RzETuZgR34yENmnhS1wn1eUa3EsyRhyR69U89elH3DEQ1BJ7ygCCTPsuIHN9BjhucAk9yC92HHbuUHijc2FKMNxsCQQq-5cQ')">
+<!-- Floating Corridor Status Pill -->
+<div class="self-start px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">Live Sector Density: High</span>
+</div>
+<!-- Overlaid Visual Pins on Map -->
+<div class="absolute inset-0 pointer-events-none p-4 flex flex-col justify-around">
+<!-- Volunteer Location Pin -->
+<div class="self-center flex flex-col items-center animate-bounce">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg ring-4 ring-secondary-container/60">
+<span class="material-symbols-outlined text-[16px]">navigation</span>
+</div>
+<span class="mt-1 px-1.5 py-0.5 rounded bg-surface-container-lowest/95 text-primary font-label-sm text-label-sm font-bold shadow-sm">You</span>
+</div>
+</div>
+<!-- Bottom Pin Badges Bar -->
+<div class="w-full flex items-center gap-1.5 overflow-x-auto no-scrollbar pointer-events-auto">
+<div class="px-2 py-1 rounded-lg bg-surface-container-lowest/95 backdrop-blur-sm shadow-sm flex items-center gap-1 flex-shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm font-bold text-primary">Green Leaf</span>
+<span class="font-label-sm text-label-sm text-outline">0.8km</span>
+</div>
+<div class="px-2 py-1 rounded-lg bg-surface-container-lowest/95 backdrop-blur-sm shadow-sm flex items-center gap-1 flex-shrink-0">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="font-label-sm text-label-sm font-bold text-primary">Daily Bake</span>
+<span class="font-label-sm text-label-sm text-outline">1.2km</span>
+</div>
+<div class="px-2 py-1 rounded-lg bg-surface-container-lowest/95 backdrop-blur-sm shadow-sm flex items-center gap-1 flex-shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm font-bold text-primary">City College</span>
+<span class="font-label-sm text-label-sm text-outline">2.1km</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Nearby Tasks Section -->
+<div class="flex flex-col gap-3" id="nearby-tasks-container">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md text-primary font-bold">Nearby Tasks</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold" id="nearby-count-badge">2</span>
+</div>
+<a class="font-label-md text-label-md text-secondary font-bold hover:underline flex items-center gap-0.5 min-h-[44px] flex items-center" data-path="tasks" href="#">
+<span>See all</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- Task Card 1 (URGENT) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+                URGENT
+              </span>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">schedule</span>
+                ⏳ 24m cutoff
+              </span>
+</div>
+<h4 class="font-title-md text-title-md text-primary font-bold truncate">Bread &amp; Artisan Buns</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">80 pieces (~14 kg) • Packed crates</span>
+</div>
+<div class="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Freshly baked artisan golden-brown bread loaves and sandwich buns arranged neatly in eco-friendly kraft delivery crates on a rustic wooden table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZWpG--h-4IilTQVQMoBOoQ5DwWZGH1tmH_H6t0h3v4KcOFR60NbZV5UZVuCDQ3KyuVfV83a0H3o3K9Q3JnCmZDHj78HBG0zAttPnAkrOVZ-UZPioXNOjIhoExchhLUFGrBxaI9J91dz0cLgfsdEyw1aAcBaUXCecNUXkpgAq1yJqURpxaFQO4cwolth98G-Xz_chSZ7C65rslZSUGogy8SixdevtZCjD8rpt6NA"/>
+</div>
+</div>
+<!-- Route Micro Flow -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1.5 font-label-sm text-label-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">store</span>
+<span class="font-semibold truncate">Daily Bake Bakery</span>
+<span class="text-outline">→</span>
+<span class="font-semibold truncate">Care Kitchen Shelter</span>
+</div>
+<div class="flex items-center justify-between text-outline">
+<span>4.5 km total roundtrip</span>
+<span class="text-secondary font-semibold">AI Best Match 94%</span>
+</div>
+</div>
+<!-- Action Row (Large 48px touch target) -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 min-h-[48px] px-4 py-2.5 rounded-xl bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-colors" onclick="handleViewTask('Daily Bake Bakery')">
+<span>View Task Details</span>
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="min-h-[48px] px-5 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-transform" onclick="handleAcceptTask('Bread &amp; Artisan Buns')">
+<span>Claim</span>
+</button>
+</div>
+</div>
+<!-- Task Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+                Standard Priority
+              </span>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                ⏳ 1h 15m left
+              </span>
+</div>
+<h4 class="font-title-md text-title-md text-primary font-bold truncate">Paneer Wraps &amp; Rolls</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">40 pieces (~10 kg) • Foil wrapped boxes</span>
+</div>
+<div class="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Warm savory paneer wraps neatly rolled in silver foil containers prepared for community charity distribution with fresh mint herb garnish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1GtbFcMDVevBA1Ag0ogKIdakjblxNwhQZDCckcZLmZkYCS6FU0x3P5qzjya9ON5KHXdcYQVChumm6NawZSkPIFzFUbEcyMRE6YSm-G5RDU-DZ8m8SjGVM4Mqunij5Un0EiEm7CiB73Fu_8Zbm34RXbCaicrKevFhCjSc49C_JNOEQOOBhE2J-MvSsBJP5t18CAExKM-cpK4OpcaoAFUjIIUEjcPLP2uKAThL0ng"/>
+</div>
+</div>
+<!-- Route Micro Flow -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1.5 font-label-sm text-label-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">school</span>
+<span class="font-semibold truncate">City College Canteen</span>
+<span class="text-outline">→</span>
+<span class="font-semibold truncate">Helping Hands Trust</span>
+</div>
+<div class="flex items-center justify-between text-outline">
+<span>2.2 km total distance</span>
+<span class="text-secondary font-semibold">AI Best Match 89%</span>
+</div>
+</div>
+<!-- Action Row (Large 48px touch target) -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 min-h-[48px] px-4 py-2.5 rounded-xl bg-surface-container text-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-colors" onclick="handleViewTask('City College Canteen')">
+<span>View Task Details</span>
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="min-h-[48px] px-5 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-transform" onclick="handleAcceptTask('Paneer Wraps &amp; Rolls')">
+<span>Claim</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State View (Toggled via simulation bar or state) -->
+<div class="hidden flex-col items-center justify-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-sm space-y-4 my-2" id="view-empty">
+<div class="w-20 h-20 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[40px]">task_alt</span>
+</div>
+<div class="flex flex-col space-y-1">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">No tasks right now</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[260px] mx-auto">
+        All nearby surplus food is currently claimed! We'll notify you as soon as a donor posts new surplus.
+      </p>
+</div>
+<div class="pt-2 w-full">
+<button class="w-full min-h-[48px] px-4 py-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold shadow-sm" onclick="switchState('active')">
+        Check Again
+      </button>
+</div>
+</div>
+<!-- Loading Skeletons State View -->
+<div class="hidden flex-col space-y-4 animate-pulse" id="view-skeleton">
+<!-- Header skeleton -->
+<div class="flex justify-between items-center">
+<div class="space-y-2">
+<div class="h-4 w-32 bg-surface-variant rounded-full"></div>
+<div class="h-6 w-48 bg-surface-variant rounded-md"></div>
+</div>
+<div class="h-8 w-16 bg-surface-variant rounded-xl"></div>
+</div>
+<!-- Card skeleton -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm space-y-3">
+<div class="h-6 w-3/4 bg-surface-variant rounded"></div>
+<div class="h-4 w-1/2 bg-surface-variant rounded"></div>
+<div class="h-20 w-full bg-surface-variant rounded-lg"></div>
+<div class="h-12 w-full bg-surface-variant rounded-xl"></div>
+</div>
+<!-- Stats skeleton -->
+<div class="grid grid-cols-3 gap-2">
+<div class="h-16 bg-surface-container-lowest rounded-xl"></div>
+<div class="h-16 bg-surface-container-lowest rounded-xl"></div>
+<div class="h-16 bg-surface-container-lowest rounded-xl"></div>
+</div>
+<!-- Tasks skeleton -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm space-y-3">
+<div class="h-5 w-40 bg-surface-variant rounded"></div>
+<div class="h-14 bg-surface-variant rounded-lg"></div>
+<div class="h-10 bg-surface-variant rounded-xl"></div>
+</div>
+</div>
+<!-- Interactive Feedback Toast (Delight micro-interaction) -->
+<div class="fixed bottom-24 left-4 right-4 z-40 bg-primary text-on-primary p-3 rounded-xl shadow-xl flex items-center justify-between gap-2 transform translate-y-28 opacity-0 pointer-events-none transition-all duration-300" id="toast-notification">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">check_circle</span>
+<span class="font-label-md text-label-md truncate" id="toast-message">Status updated successfully</span>
+</div>
+<button class="min-w-[40px] min-h-[40px] flex items-center justify-center text-on-primary/80 hover:text-on-primary" onclick="dismissToast()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  let toastTimer = null;
+
+  function showToast(message) {
+    const toast = document.getElementById('toast-notification');
+    const label = document.getElementById('toast-message');
+    if (!toast || !label) return;
+    
+    label.textContent = message;
+    toast.classList.remove('translate-y-28', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      dismissToast();
+    }, 3200);
+  }
+
+  function dismissToast() {
+    const toast = document.getElementById('toast-notification');
+    if (!toast) return;
+    toast.classList.add('translate-y-28', 'opacity-0', 'pointer-events-none');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+  }
+
+  function handleDutyToggle(isOn) {
+    const substatus = document.getElementById('availability-substatus');
+    const callout = document.getElementById('unavailable-callout');
+    const iconContainer = document.getElementById('toggle-indicator-icon');
+
+    if (isOn) {
+      substatus.className = 'font-label-sm text-label-sm text-secondary font-medium flex items-center gap-1.5';
+      substatus.innerHTML = `
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+        </span>
+        Online • Ready for dispatch
+      `;
+      callout.classList.add('hidden');
+      iconContainer.className = 'w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0';
+      showToast('You are now Online and receiving pickup dispatches');
+    } else {
+      substatus.className = 'font-label-sm text-label-sm text-tertiary-fixed-variant font-medium flex items-center gap-1.5';
+      substatus.innerHTML = `
+        <span class="inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+        Paused • Off-duty
+      `;
+      callout.classList.remove('hidden');
+      iconContainer.className = 'w-10 h-10 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center flex-shrink-0';
+      showToast('Status set to Off-Duty. Tasks paused.');
+    }
+  }
+
+  function switchState(stateName) {
+    const normalView = document.getElementById('view-normal');
+    const emptyView = document.getElementById('view-empty');
+    const skeletonView = document.getElementById('view-skeleton');
+    const currentTaskSection = document.getElementById('current-task-section');
+    const dutyCheckbox = document.getElementById('duty-toggle');
+    const statActive = document.getElementById('stat-active');
+
+    // Reset button appearances
+    document.querySelectorAll('.sim-btn').forEach(btn => {
+      btn.className = 'sim-btn flex-1 min-w-[76px] py-1.5 px-2 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-all text-center';
+    });
+
+    const activeBtn = document.getElementById(`sim-${stateName}`);
+    if (activeBtn) {
+      activeBtn.className = 'sim-btn flex-1 min-w-[76px] py-1.5 px-2 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold transition-all shadow-sm text-center';
+    }
+
+    if (stateName === 'active') {
+      normalView.classList.remove('hidden');
+      emptyView.classList.add('hidden');
+      skeletonView.classList.add('hidden');
+      currentTaskSection.classList.remove('hidden');
+      dutyCheckbox.checked = true;
+      handleDutyToggle(true);
+      statActive.textContent = '1';
+    } else if (stateName === 'offduty') {
+      normalView.classList.remove('hidden');
+      emptyView.classList.add('hidden');
+      skeletonView.classList.add('hidden');
+      dutyCheckbox.checked = false;
+      handleDutyToggle(false);
+      showToast('Off-Duty preview loaded');
+    } else if (stateName === 'empty') {
+      normalView.classList.add('hidden');
+      emptyView.classList.remove('hidden');
+      emptyView.classList.add('flex');
+      skeletonView.classList.add('hidden');
+      showToast('Empty task queue preview active');
+    } else if (stateName === 'skeleton') {
+      normalView.classList.add('hidden');
+      emptyView.classList.add('hidden');
+      skeletonView.classList.remove('hidden');
+      skeletonView.classList.add('flex');
+      showToast('Simulating network fetch...');
+    }
+  }
+
+  function handleContinueTask() {
+    showToast('Opening turn-by-turn route to Green Leaf Restaurant');
+  }
+
+  function handleViewTask(restaurantName) {
+    showToast(`Loading verified dispatch details for ${restaurantName}`);
+  }
+
+  function handleAcceptTask(itemName) {
+    showToast(`Claimed: "${itemName}"! Added to your schedule.`);
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(23,76,54,0.06)]" data-active-classes="text-secondary font-semibold"><div class="flex justify-around items-center h-20 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[48px] min-h-[48px] px-2 py-1 transition-colors text-secondary font-semibold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-sm text-label-sm mt-0.5">Dashboard</span></a><a class="flex flex-col items-center justify-center min-w-[48px] min-h-[48px] px-2 py-1 text-on-surface-variant transition-colors" data-path="tasks" href="#"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="font-label-sm text-label-sm mt-0.5">Tasks</span></a><a class="flex flex-col items-center justify-center min-w-[48px] min-h-[48px] px-2 py-1 text-on-surface-variant transition-colors relative" data-path="notifications" href="#"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="font-label-sm text-label-sm mt-0.5">Alerts</span><span class="absolute top-1.5 right-3 w-2 h-2 bg-tertiary-container rounded-full"></span></a><a class="flex flex-col items-center justify-center min-w-[48px] min-h-[48px] px-2 py-1 text-on-surface-variant transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-sm text-label-sm mt-0.5">Profile</span></a></div></nav></body></html>

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-tertiary-fixed": "#2e1500",
+          "surface-bright": "#effdf0",
+          "on-tertiary": "#ffffff",
+          "secondary-fixed": "#a2f4bf",
+          "on-primary-fixed": "#002114",
+          "on-error": "#ffffff",
+          "on-primary": "#ffffff",
+          "primary-fixed-dim": "#9cd2b5",
+          "surface-dim": "#d0ded1",
+          "primary": "#003422",
+          "on-surface": "#131e17",
+          "on-error-container": "#93000a",
+          "tertiary-container": "#673700",
+          "primary-container": "#174c36",
+          "tertiary-fixed": "#ffdcc1",
+          "on-primary-fixed-variant": "#1b5039",
+          "surface-container-high": "#deecdf",
+          "on-secondary-fixed-variant": "#00522f",
+          "on-primary-container": "#86bc9f",
+          "on-tertiary-fixed-variant": "#6c3a00",
+          "on-secondary-fixed": "#002110",
+          "secondary": "#156c42",
+          "surface-container": "#e4f1e5",
+          "surface-variant": "#d8e6da",
+          "surface-container-lowest": "#ffffff",
+          "inverse-surface": "#27332b",
+          "tertiary-fixed-dim": "#ffb778",
+          "outline-variant": "#c0c9c1",
+          "on-secondary": "#ffffff",
+          "surface-container-highest": "#d8e6da",
+          "surface": "#effdf0",
+          "on-secondary-container": "#1b7046",
+          "secondary-fixed-dim": "#87d8a5",
+          "error-container": "#ffdad6",
+          "surface-container-low": "#e9f7eb",
+          "on-background": "#131e17",
+          "inverse-primary": "#9cd2b5",
+          "surface-tint": "#356850",
+          "error": "#ba1a1a",
+          "on-tertiary-container": "#ed9f55",
+          "tertiary": "#472400",
+          "secondary-container": "#9ff1bd",
+          "on-surface-variant": "#404943",
+          "inverse-on-surface": "#e6f4e8",
+          "background": "#effdf0",
+          "primary-fixed": "#b8efd0",
+          "outline": "#717973"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-sm": "0.5rem",
+          "gutter-mobile": "1rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2.5rem",
+          "margin-mobile": "1rem",
+          "space-md": "1rem",
+          "gutter": "1.5rem",
+          "space-xs": "0.25rem",
+          "margin": "2rem"
+        },
+        "fontFamily": {
+          "display": [
+            "Manrope"
+          ],
+          "headline-sm": [
+            "Manrope"
+          ],
+          "headline-lg-mobile": [
+            "Manrope"
+          ],
+          "headline-md": [
+            "Manrope"
+          ],
+          "display-mobile": [
+            "Manrope"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "headline-md-mobile": [
+            "Manrope"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "title-md": [
+            "Manrope"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Manrope"
+          ]
+        },
+        "fontSize": {
+          "display": [
+            "3.5rem",
+            {
+              "lineHeight": "4rem",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "800"
+            }
+          ],
+          "headline-sm": [
+            "1.25rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg-mobile": [
+            "1.75rem",
+            {
+              "lineHeight": "2.25rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "1.75rem",
+            {
+              "lineHeight": "2.25rem",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-mobile": [
+            "2.25rem",
+            {
+              "lineHeight": "2.75rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "800"
+            }
+          ],
+          "body-sm": [
+            "0.875rem",
+            {
+              "lineHeight": "1.25rem",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md-mobile": [
+            "1.375rem",
+            {
+              "lineHeight": "1.875rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "0.875rem",
+            {
+              "lineHeight": "1.25rem",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "1rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "title-md": [
+            "1.125rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "1.125rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "2.5rem",
+            {
+              "lineHeight": "3rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      },
+    },
+  };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(23,76,54,0.06)]"><div class="h-20 w-full max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="FoodBridge AI modern logo icon combining leaf, organic loop, bridge connection and warm accent core" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrCGsR6sP-TNnFy_njxt6ehrD6gVR52nkxP1xy_Ve-_ypUCvONvXcarLr4BkRsBvmyr9tvlIEMEyKXZfpZIqmTzPXqBJ7WWE95BHSHdwq79xbj_NLNaGn_iFsIvhuMrCMIYgQetKA8oKCBi_ZISAfeM1UIdgIpxjmrWMeCC-SEXQvH7o3Vw1UFALyP-KJ17YPXnYzEpIXz_3NUsXbdvI2DRxTj9-v5FBsZJs8mYgel4"/><span class="font-title-md text-title-md text-primary tracking-tight">FoodBridge AI</span></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-label-md text-label-md relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:rounded-full"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="foodbridge-ai-desktop-home" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-us" href="#">About Us</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a></nav><div class="flex items-center gap-space-sm"><a class="inline-flex items-center justify-center px-space-md py-space-sm font-label-md text-label-md text-primary hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors" data-path="login" href="#">Login</a><a class="inline-flex items-center justify-center px-space-md py-space-sm font-label-md text-label-md bg-secondary text-on-secondary hover:bg-primary transition-all rounded-lg shadow-[0_2px_8px_rgba(21,108,66,0.25)] ring-2 ring-secondary/30" data-path="registration" href="#">Register</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Interactive State Controller Bar (Top Utility Pill) -->
+<section class="w-full py-space-md flex flex-col items-center justify-center px-gutter">
+<div class="inline-flex flex-wrap items-center justify-center gap-1.5 p-1.5 bg-surface-container-high rounded-full shadow-sm max-w-4xl">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider px-3 hidden sm:inline">Preview Mode:</span>
+<button class="state-pill px-3.5 py-1 rounded-full text-label-sm font-label-sm transition-all bg-primary-container text-on-primary shadow-sm flex items-center gap-1" id="btn-state-donor" onclick="setDemoState('donor')" type="button">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+<span>Default (Donor)</span>
+</button>
+<button class="state-pill px-3.5 py-1 rounded-full text-label-sm font-label-sm transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1" id="btn-state-ngo" onclick="setDemoState('ngo')" type="button">
+<span class="material-symbols-outlined text-[16px]">volunteer_activism</span>
+<span>NGO Role</span>
+</button>
+<button class="state-pill px-3.5 py-1 rounded-full text-label-sm font-label-sm transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1" id="btn-state-volunteer" onclick="setDemoState('volunteer')" type="button">
+<span class="material-symbols-outlined text-[16px]">directions_bike</span>
+<span>Volunteer Role</span>
+</button>
+<button class="state-pill px-3.5 py-1 rounded-full text-label-sm font-label-sm transition-all text-on-surface-variant hover:text-error flex items-center gap-1" id="btn-state-errors" onclick="setDemoState('errors')" type="button">
+<span class="material-symbols-outlined text-[16px]">error</span>
+<span>Validation Errors</span>
+</button>
+<button class="state-pill px-3.5 py-1 rounded-full text-label-sm font-label-sm transition-all text-on-surface-variant hover:text-secondary flex items-center gap-1" id="btn-state-success" onclick="setDemoState('success')" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Success State</span>
+</button>
+</div>
+</section>
+<!-- Main Registration Centerpiece -->
+<section class="w-full pb-space-xl px-gutter flex items-center justify-center">
+<div class="w-full max-w-[1140px] bg-surface-container-lowest rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 relative min-h-[720px]">
+<!-- ================= LEFT VISUAL / WELCOME PANEL ================= -->
+<aside class="lg:col-span-5 bg-gradient-to-br from-[#14532D] via-primary to-primary-container p-8 lg:p-10 text-on-primary flex flex-col justify-between relative overflow-hidden">
+<!-- Leafy subtle background vectors -->
+<div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-secondary-fixed/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 bottom-24 w-72 h-72 rounded-full bg-on-tertiary-container/10 blur-3xl pointer-events-none"></div>
+<!-- Top branding segment -->
+<div class="relative z-10 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<img alt="FoodBridge AI Logo Icon" class="w-9 h-9 rounded-lg object-contain bg-surface-container-lowest/10 p-1 backdrop-blur-sm" src="https://lh3.googleusercontent.com/aida/ALJJyrCGsR6sP-TNnFy_njxt6ehrD6gVR52nkxP1xy_Ve-_ypUCvONvXcarLr4BkRsBvmyr9tvlIEMEyKXZfpZIqmTzPXqBJ7WWE95BHSHdwq79xbj_NLNaGn_iFsIvhuMrCMIYgQetKA8oKCBi_ZISAfeM1UIdgIpxjmrWMeCC-SEXQvH7o3Vw1UFALyP-KJ17YPXnYzEpIXz_3NUsXbdvI2DRxTj9-v5FBsZJs8mYgel4"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-primary tracking-tight font-display">FoodBridge AI</span>
+<span class="text-label-sm font-label-sm text-primary-fixed-dim">Zero Waste Dispatch Platform</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full bg-surface-container-lowest/15 backdrop-blur-md text-label-sm font-label-sm text-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>AI-Assisted Community Food Rescue</span>
+</div>
+<div class="mt-2">
+<h1 class="font-headline-lg text-headline-lg text-on-primary font-display leading-tight">
+              Join the food rescue community
+            </h1>
+<p class="font-body-md text-body-md text-on-primary-container mt-space-sm leading-relaxed">
+              Create your free account and start turning surplus harvest into nutritious, wholesome meals for local shelters, soup kitchens, and verified aid networks.
+            </p>
+</div>
+<!-- 3 Benefits List -->
+<div class="flex flex-col gap-space-md pt-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed/20 text-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-low">Smart NGO matching with explainable fit scores</p>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed/20 text-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">route</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-low">Track surplus from verified pickup to delivery</p>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed/20 text-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-low">Be part of an auditable zero-food-waste network</p>
+</div>
+</div>
+</div>
+<!-- Visual Inset Card with Donation Crate Inspiration -->
+<div class="relative z-10 mt-8 pt-4">
+<div class="bg-surface-container-lowest/10 backdrop-blur-md rounded-2xl p-4 shadow-lg flex flex-col gap-3">
+<div class="relative w-full h-36 rounded-xl overflow-hidden bg-surface-container-high/20">
+<img class="w-full h-full object-cover" data-alt="Warm sunlight on a rustic wooden donation crate overflowing with crisp farm greens, red bell peppers, ripe tomatoes, carrots and fresh artisan sourdough bread on a clean kitchen table, representing FoodBridge zero-waste initiative" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKjLD64mz89zsk-CaYobzzd8ZkbA7lS-LxEU37xjfzSZYI6uvhnZj6f15xPf727c4uiMNSbSNDH4lQyrN5uaB6zRUwTWCrDEv77KNWZjshnyEWONX-O39kh5iOvCAaNdJzqO2gjbbRkCuGrHAj1FL47l9qw9n6KqOvIkd2yrzh357tegx1bkuR8a3Da2MM2AJxj7mUJpphQqryJESLKLb4lZ1HJBM_dvanA1hOCA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<span class="absolute bottom-2 left-2 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-[11px] font-label-sm text-primary">
+<span class="material-symbols-outlined text-[14px] text-secondary">trending_up</span>
+<span>12,500+ Meals Diverted</span>
+</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim shrink-0">format_quote</span>
+<p class="font-body-sm text-body-sm text-surface-container-low italic leading-snug">
+                "Joining FoodBridge took under 2 minutes. We now rescue over 200 kg of daily bakery surplus with verified NGO pickups."
+              </p>
+</div>
+</div>
+</div>
+</aside>
+<!-- ================= RIGHT FORM CONTAINER ================= -->
+<section class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between bg-surface-container-lowest relative">
+<!-- Standard Registration Form Flow -->
+<div class="flex flex-col gap-6" id="form-container">
+<!-- Form Header -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md font-display text-on-surface">Create your account</h2>
+<span class="text-label-sm font-label-sm text-outline hidden sm:inline">Step 1 of 2</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Already have an account? 
+              <a class="text-secondary font-label-md hover:underline font-semibold ml-1" href="#">Log in</a>
+</p>
+</div>
+<!-- ROLE SELECTOR -->
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">I want to join as</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="role-selector-group">
+<!-- Donor Role Card -->
+<button class="role-card relative p-3.5 rounded-2xl text-left transition-all duration-200 bg-secondary-container/20 shadow-sm flex flex-col justify-between gap-2.5" id="role-btn-donor" onclick="selectRole('donor')" type="button">
+<div class="flex items-center justify-between w-full">
+<div class="w-8 h-8 rounded-xl bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+</div>
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-xs" id="role-check-donor">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-semibold text-primary">Donor</h3>
+<p class="font-body-sm text-[12px] text-on-surface-variant leading-tight mt-0.5">I have surplus food to donate</p>
+</div>
+</button>
+<!-- NGO Role Card -->
+<button class="role-card relative p-3.5 rounded-2xl text-left transition-all duration-200 bg-surface-container-low hover:bg-surface-container flex flex-col justify-between gap-2.5" id="role-btn-ngo" onclick="selectRole('ngo')" type="button">
+<div class="flex items-center justify-between w-full">
+<div class="w-8 h-8 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
+</div>
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary hidden items-center justify-center" id="role-check-ngo">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface">NGO</h3>
+<p class="font-body-sm text-[12px] text-on-surface-variant leading-tight mt-0.5">We collect and distribute meals</p>
+</div>
+</button>
+<!-- Volunteer Role Card -->
+<button class="role-card relative p-3.5 rounded-2xl text-left transition-all duration-200 bg-surface-container-low hover:bg-surface-container flex flex-col justify-between gap-2.5" id="role-btn-volunteer" onclick="selectRole('volunteer')" type="button">
+<div class="flex items-center justify-between w-full">
+<div class="w-8 h-8 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">directions_bike</span>
+</div>
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary hidden items-center justify-center" id="role-check-volunteer">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface">Volunteer</h3>
+<p class="font-body-sm text-[12px] text-on-surface-variant leading-tight mt-0.5">Help with pickup &amp; delivery</p>
+</div>
+</button>
+</div>
+</div>
+<form class="flex flex-col gap-4" id="registration-form" onsubmit="event.preventDefault(); triggerSubmit();">
+<!-- COMMON FIELDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Full Name -->
+<div class="flex flex-col gap-1.5 sm:col-span-2">
+<label class="font-label-md text-label-md text-on-surface" for="reg-fullname">Full Name</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">person</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-xs focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright" id="reg-fullname" placeholder="e.g. Sarah Jenkins" required="" type="text" value="Sarah Jenkins"/>
+</div>
+<p class="hidden text-error text-[12px] font-body-sm items-center gap-1 mt-0.5" id="err-fullname">
+<span class="material-symbols-outlined text-[14px]">error</span> Please enter your full name
+                </p>
+</div>
+<!-- Email Address -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="reg-email">Work / Primary Email</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">mail</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-xs focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright" id="reg-email" placeholder="sarah@greenharvest.org" required="" type="email" value="sarah@greenharvest.org"/>
+</div>
+<p class="hidden text-error text-[12px] font-body-sm items-center gap-1 mt-0.5" id="err-email">
+<span class="material-symbols-outlined text-[14px]">error</span> Email is already registered with another account
+                </p>
+</div>
+<!-- Phone Number -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="reg-phone">Phone Number</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">phone</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-xs focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright" id="reg-phone" placeholder="+1 (555) 019-2834" required="" type="tel" value="+1 (555) 019-2834"/>
+</div>
+<p class="hidden text-error text-[12px] font-body-sm items-center gap-1 mt-0.5" id="err-phone">
+<span class="material-symbols-outlined text-[14px]">error</span> Please enter a valid 10-digit phone number
+                </p>
+</div>
+<!-- Password -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="reg-password">Password</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">lock</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-xs focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright" id="reg-password" type="password" value="PasscodeRescue2026!"/>
+<button class="absolute right-3 text-outline hover:text-on-surface p-1" onclick="togglePasswordVisibility('reg-password', this)" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Confirm Password -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="reg-confirm-password">Confirm Password</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">lock_reset</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-xs focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright" id="reg-confirm-password" type="password" value="PasscodeRescue2026!"/>
+<button class="absolute right-3 text-outline hover:text-on-surface p-1" onclick="togglePasswordVisibility('reg-confirm-password', this)" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+<p class="hidden text-error text-[12px] font-body-sm items-center gap-1 mt-0.5" id="err-password">
+<span class="material-symbols-outlined text-[14px]">error</span> Passwords do not match
+                </p>
+</div>
+<!-- Password Strength Bar (Spans full width) -->
+<div class="sm:col-span-2 flex flex-col gap-1 -mt-1">
+<div class="flex items-center gap-1.5 w-full">
+<div class="h-1.5 flex-1 rounded-full bg-secondary"></div>
+<div class="h-1.5 flex-1 rounded-full bg-secondary"></div>
+<div class="h-1.5 flex-1 rounded-full bg-secondary"></div>
+<div class="h-1.5 flex-1 rounded-full bg-surface-container-highest" id="strength-bar-4"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-sm text-outline">
+<span>Strength: Strong</span>
+<span>At least 8 characters, with letters and numbers</span>
+</div>
+</div>
+</div>
+<!-- ================= ROLE SPECIFIC FIELDS ================= -->
+<div class="pt-2 flex flex-col gap-4">
+<!-- Section Label Header -->
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant text-[11px] font-label-md uppercase tracking-wider">Role Details</span>
+<span class="h-px bg-surface-container-high flex-1"></span>
+</div>
+<!-- DONOR FIELDS CONTAINER -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="donor-specific-fields">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="donor-org">Organization / Business Name <span class="text-outline text-label-sm font-normal">(Optional)</span></label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">domain</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-xs focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright" id="donor-org" placeholder="e.g. Daily Greens Market &amp; Bakery" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="donor-type">Donor Facility Type</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">category</span>
+<select class="w-full h-11 pl-10 pr-8 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-xs focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright appearance-none" id="donor-type">
+<option>Restaurant / Bistro</option>
+<option>Hotel &amp; Hospitality</option>
+<option>Artisan Bakery / Cafe</option>
+<option>Supermarket / Grocer</option>
+<option>College / Corporate Canteen</option>
+<option>Event Organizer / Catering</option>
+<option>Individual Donor</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- NGO FIELDS CONTAINER -->
+<div class="hidden flex-col gap-4" id="ngo-specific-fields">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="ngo-name">NGO / Trust Registered Name</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">corporate_fare</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-xs focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright" id="ngo-name" placeholder="e.g. Hope Harvest Community Foundation" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="ngo-address">Operating Address &amp; City Hub</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">location_on</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-xs focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright" id="ngo-address" placeholder="e.g. 142 Riverway St, Metro Hub" type="text"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="ngo-storage">Storage &amp; Cold Refrigeration Capacity (cu ft or kg/day)</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">ac_unit</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-xs focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright" id="ngo-storage" placeholder="e.g. 450 cu ft walk-in chiller, up to 600 kg fresh capacity" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">Accepted Food Categories</label>
+<div class="flex flex-wrap gap-2">
+<label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-body-sm text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="rounded accent-secondary" type="checkbox"/>
+<span>Cooked Hot Meals</span>
+</label>
+<label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-body-sm text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="rounded accent-secondary" type="checkbox"/>
+<span>Fresh Produce</span>
+</label>
+<label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-body-sm text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="rounded accent-secondary" type="checkbox"/>
+<span>Bakery &amp; Bread</span>
+</label>
+<label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-body-sm text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="rounded accent-secondary" type="checkbox"/>
+<span>Packaged Goods</span>
+</label>
+<label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-body-sm text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="rounded accent-secondary" type="checkbox"/>
+<span>Vegetarian Only</span>
+</label>
+</div>
+</div>
+<!-- Amber Advisory Badge -->
+<div class="p-3 bg-tertiary-fixed/30 rounded-xl flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-fixed-variant shrink-0 mt-0.5">verified_user</span>
+<p class="font-body-sm text-[12px] text-on-tertiary-fixed-variant leading-relaxed">
+                    NGO accounts undergo a quick document validation by regional safety officers to ensure safe handling compliance before routing immediate dispatches.
+                  </p>
+</div>
+</div>
+<!-- VOLUNTEER FIELDS CONTAINER -->
+<div class="hidden flex-col gap-4" id="volunteer-specific-fields">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="vol-hub">City / Preferred Neighborhood Hub</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">near_me</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-xs focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright" id="vol-hub" placeholder="e.g. Downtown Central / Westside Districts" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">Weekly Availability Windows</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+<label class="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container text-body-sm text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="rounded accent-secondary" type="checkbox"/>
+<span>Weekdays</span>
+</label>
+<label class="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container text-body-sm text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="rounded accent-secondary" type="checkbox"/>
+<span>Weekends</span>
+</label>
+<label class="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container text-body-sm text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="rounded accent-secondary" type="checkbox"/>
+<span>Mornings</span>
+</label>
+<label class="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container text-body-sm text-on-surface cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="rounded accent-secondary" type="checkbox"/>
+<span>Evenings</span>
+</label>
+</div>
+</div>
+<!-- Vehicle Toggle Card -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">two_wheeler</span>
+</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface font-semibold text-sm">Own vehicle available?</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Car, cargo bike, electric van, or scooter</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- TERMS CHECKBOX -->
+<div class="pt-2">
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 rounded text-secondary accent-secondary focus:ring-0" id="reg-terms" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+                  I agree to the <a class="text-secondary font-semibold hover:underline" href="#">Terms of Service</a>, safe food handling pledge, and <a class="text-secondary font-semibold hover:underline" href="#">Privacy Policy</a>.
+                </span>
+</label>
+<p class="hidden text-error text-[12px] font-body-sm items-center gap-1 mt-1" id="err-terms">
+<span class="material-symbols-outlined text-[14px]">error</span> Please accept the terms to create your account
+              </p>
+</div>
+<!-- PRIMARY SUBMIT CTA -->
+<button class="w-full py-3.5 px-6 rounded-xl bg-secondary text-on-secondary hover:bg-primary font-label-md text-label-md font-bold transition-all shadow-[0_4px_16px_rgba(21,108,66,0.25)] flex items-center justify-center gap-2 mt-2" id="btn-submit-main" type="submit">
+<span>Create Account</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<!-- SOCIAL SIGN UP DIVIDER -->
+<div class="relative flex items-center justify-center pt-1">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full h-px bg-surface-container-high"></div>
+</div>
+<span class="relative px-4 bg-surface-container-lowest font-label-sm text-label-sm text-outline">or sign up with</span>
+</div>
+<!-- SOCIAL BUTTONS -->
+<div class="grid grid-cols-2 gap-3">
+<button class="h-11 px-4 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-2 shadow-xs" type="button">
+<svg class="w-4 h-4" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+</svg>
+<span>Google</span>
+</button>
+<button class="h-11 px-4 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-2 shadow-xs" type="button">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
+</svg>
+<span>GitHub</span>
+</button>
+</div>
+</div>
+<!-- ================= SUCCESS OVERLAY CARD ================= -->
+<div class="hidden flex-col items-center justify-center text-center p-8 my-auto" id="success-container">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-4 shadow-lg animate-bounce">
+<span class="material-symbols-outlined text-[36px]">check_circle</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold mb-2">
+            Registration Verified
+          </span>
+<h3 class="font-headline-md text-headline-md font-display text-primary mt-1">
+            Account created successfully!
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-2">
+            Welcome to the FoodBridge network! We are pairing you with local city hubs and preparing your live dispatch dashboard.
+          </p>
+<!-- Status tracker card inside success view -->
+<div class="w-full max-w-sm mt-6 p-4 rounded-2xl bg-surface-container-low text-left flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline">Network Status</span>
+<span class="inline-flex items-center gap-1 text-[12px] font-semibold text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> Active Dispatch Node
+              </span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div>
+<p class="font-title-md text-[13px] font-semibold text-on-surface">Auto-matching Engine Initialized</p>
+<p class="font-body-sm text-[11px] text-outline">Ready to broadcast surplus in 0.4 seconds</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 mt-6">
+<button class="px-5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="setDemoState('donor')" type="button">
+              Return to Form
+            </button>
+<a class="px-5 py-2.5 rounded-xl bg-secondary hover:bg-primary text-on-secondary font-label-md text-label-md transition-all shadow-md flex items-center gap-1.5" href="#">
+<span>Go to Dashboard</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+</section>
+</div>
+<!-- Interactive Client-side Script -->
+<script>
+  let currentRole = 'donor';
+
+  function selectRole(role) {
+    currentRole = role;
+    
+    // Reset all card styles
+    ['donor', 'ngo', 'volunteer'].forEach(r => {
+      const btn = document.getElementById(`role-btn-${r}`);
+      const check = document.getElementById(`role-check-${r}`);
+      const specificGroup = document.getElementById(`${r}-specific-fields`);
+      
+      if (btn) {
+        btn.classList.remove('bg-secondary-container/20', 'shadow-sm');
+        btn.classList.add('bg-surface-container-low');
+        const h3 = btn.querySelector('h3');
+        if (h3) {
+          h3.classList.remove('text-primary');
+          h3.classList.add('text-on-surface');
+        }
+      }
+      if (check) {
+        check.classList.add('hidden');
+        check.classList.remove('flex');
+      }
+      if (specificGroup) {
+        specificGroup.classList.add('hidden');
+        specificGroup.classList.remove('flex', 'grid');
+      }
+    });
+
+    // Activate selected
+    const activeBtn = document.getElementById(`role-btn-${role}`);
+    const activeCheck = document.getElementById(`role-check-${role}`);
+    const activeFields = document.getElementById(`${role}-specific-fields`);
+
+    if (activeBtn) {
+      activeBtn.classList.remove('bg-surface-container-low');
+      activeBtn.classList.add('bg-secondary-container/20', 'shadow-sm');
+      const h3 = activeBtn.querySelector('h3');
+      if (h3) {
+        h3.classList.add('text-primary');
+        h3.classList.remove('text-on-surface');
+      }
+    }
+    if (activeCheck) {
+      activeCheck.classList.remove('hidden');
+      activeCheck.classList.add('flex');
+    }
+    if (activeFields) {
+      activeFields.classList.remove('hidden');
+      if (role === 'donor') {
+        activeFields.classList.add('grid');
+      } else {
+        activeFields.classList.add('flex');
+      }
+    }
+  }
+
+  function setDemoState(stateName) {
+    // Update active top pill buttons
+    document.querySelectorAll('.state-pill').forEach(btn => {
+      btn.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+      btn.classList.add('text-on-surface-variant');
+    });
+
+    const activePill = document.getElementById(`btn-state-${stateName}`);
+    if (activePill) {
+      activePill.classList.remove('text-on-surface-variant');
+      activePill.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+    }
+
+    const formWrapper = document.getElementById('form-container');
+    const successWrapper = document.getElementById('success-container');
+
+    // Clear error states by default
+    clearErrorStates();
+
+    if (stateName === 'donor') {
+      formWrapper.classList.remove('hidden');
+      successWrapper.classList.add('hidden');
+      selectRole('donor');
+    } else if (stateName === 'ngo') {
+      formWrapper.classList.remove('hidden');
+      successWrapper.classList.add('hidden');
+      selectRole('ngo');
+    } else if (stateName === 'volunteer') {
+      formWrapper.classList.remove('hidden');
+      successWrapper.classList.add('hidden');
+      selectRole('volunteer');
+    } else if (stateName === 'errors') {
+      formWrapper.classList.remove('hidden');
+      successWrapper.classList.add('hidden');
+      showErrorStates();
+    } else if (stateName === 'success') {
+      formWrapper.classList.add('hidden');
+      successWrapper.classList.remove('hidden');
+      successWrapper.classList.add('flex');
+    }
+  }
+
+  function showErrorStates() {
+    const emailField = document.getElementById('reg-email');
+    const phoneField = document.getElementById('reg-phone');
+    const confirmPwField = document.getElementById('reg-confirm-password');
+
+    if (emailField) {
+      emailField.classList.add('bg-error-container/20');
+      document.getElementById('err-email').classList.remove('hidden');
+      document.getElementById('err-email').classList.add('flex');
+    }
+    if (phoneField) {
+      phoneField.classList.add('bg-error-container/20');
+      document.getElementById('err-phone').classList.remove('hidden');
+      document.getElementById('err-phone').classList.add('flex');
+    }
+    if (confirmPwField) {
+      confirmPwField.classList.add('bg-error-container/20');
+      document.getElementById('err-password').classList.remove('hidden');
+      document.getElementById('err-password').classList.add('flex');
+    }
+  }
+
+  function clearErrorStates() {
+    ['reg-fullname', 'reg-email', 'reg-phone', 'reg-password', 'reg-confirm-password'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.remove('bg-error-container/20');
+      }
+    });
+
+    ['err-fullname', 'err-email', 'err-phone', 'err-password', 'err-terms'].forEach(id => {
+      const err = document.getElementById(id);
+      if (err) {
+        err.classList.add('hidden');
+        err.classList.remove('flex');
+      }
+    });
+  }
+
+  function togglePasswordVisibility(inputId, buttonEl) {
+    const input = document.getElementById(inputId);
+    const icon = buttonEl.querySelector('.material-symbols-outlined');
+    if (input.type === 'password') {
+      input.type = 'text';
+      if (icon) icon.innerText = 'visibility_off';
+    } else {
+      input.type = 'password';
+      if (icon) icon.innerText = 'visibility';
+    }
+  }
+
+  function triggerSubmit() {
+    setDemoState('success');
+  }
+
+  // Initialize on Donor view
+  window.addEventListener('DOMContentLoaded', () => {
+    selectRole('donor');
+  });
+</script></main><footer class="w-full bg-primary text-on-primary pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl pb-space-xl"><div class="flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="FoodBridge AI modern logo icon combining leaf, organic loop, bridge connection and warm accent core" class="h-8 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida/ALJJyrCGsR6sP-TNnFy_njxt6ehrD6gVR52nkxP1xy_Ve-_ypUCvONvXcarLr4BkRsBvmyr9tvlIEMEyKXZfpZIqmTzPXqBJ7WWE95BHSHdwq79xbj_NLNaGn_iFsIvhuMrCMIYgQetKA8oKCBi_ZISAfeM1UIdgIpxjmrWMeCC-SEXQvH7o3Vw1UFALyP-KJ17YPXnYzEpIXz_3NUsXbdvI2DRxTj9-v5FBsZJs8mYgel4"/><span class="font-title-md text-title-md text-on-primary tracking-tight">FoodBridge AI</span></div><p class="font-label-md text-label-md text-secondary-fixed leading-snug">Rescue Food. Connect Communities. Reduce Waste.</p><p class="font-body-sm text-body-sm text-on-primary-container leading-relaxed">An AI-guided surplus logistics network connecting commercial food donors to local food shelters and field response units with zero friction.</p></div><div class="flex flex-col gap-space-sm"><h4 class="font-title-md text-title-md text-on-primary mb-space-xs">Quick Links</h4><nav class="flex flex-col gap-space-sm"><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="foodbridge-ai-desktop-home" href="#">Home</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="about-us" href="#">About Us</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="how-it-works" href="#">How It Works</a></nav></div><div class="flex flex-col gap-space-sm"><h4 class="font-title-md text-title-md text-on-primary mb-space-xs">Account</h4><nav class="flex flex-col gap-space-sm"><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="login" href="#">Login</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="registration" href="#">Register</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="donor-portal" href="#">Donor Portal</a></nav></div><div class="flex flex-col gap-space-sm"><h4 class="font-title-md text-title-md text-on-primary mb-space-xs">Contact &amp; Community</h4><a class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" href="mailto:hello@foodbridge.ai"><span class="material-symbols-outlined text-[18px]">mail</span>hello@foodbridge.ai</a><a class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="city-hubs" href="#"><span class="material-symbols-outlined text-[18px]">location_on</span>City Hubs</a><div class="flex items-center gap-space-sm pt-space-xs"><a aria-label="Community Network" class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-on-primary hover:bg-secondary transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">hub</span></a><a aria-label="Global Impact" class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-on-primary hover:bg-secondary transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">public</span></a><a aria-label="Discussion Forum" class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-on-primary hover:bg-secondary transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">forum</span></a></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-on-primary-container">© 2026 FoodBridge AI. All rights reserved.</p><div class="flex items-center gap-space-md"><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" href="#">Privacy Policy</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" href="#">Terms of Service</a></div></div></div></footer>
+</body></html>
