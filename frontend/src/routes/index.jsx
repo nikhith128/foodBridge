@@ -9,8 +9,10 @@ import Home from '../pages/public/Home.jsx';
 import Login from '../pages/public/Login.jsx';
 import Register from '../pages/public/Register.jsx';
 import CreateDonation from '../pages/donor/CreateDonation.jsx';
+import DonationsList from '../pages/donor/DonationsList.jsx';
 import DonorDashboard from '../pages/donor/DonorDashboard.jsx';
 import MatchingResults from '../pages/donor/MatchingResults.jsx';
+import AcceptedDonations from '../pages/ngo/AcceptedDonations.jsx';
 import AvailableDonations from '../pages/ngo/AvailableDonations.jsx';
 import DonationDetails from '../pages/ngo/DonationDetails.jsx';
 import NgoDashboard from '../pages/ngo/NgoDashboard.jsx';
@@ -57,6 +59,7 @@ export default function AppRoutes() {
           <Route element={<DashboardLayout />}>
             <Route path="/donor" element={<DonorDashboard />} />
             <Route path="/donor/donations/new" element={<CreateDonation />} />
+            <Route path="/donor/donations" element={<DonationsList />} />
             <Route path="/donor/donations/:id/matches" element={<MatchingResults />} />
           </Route>
         </Route>
@@ -66,6 +69,7 @@ export default function AppRoutes() {
             <Route path="/ngo" element={<NgoDashboard />} />
             <Route path="/ngo/donations" element={<AvailableDonations />} />
             <Route path="/ngo/donations/:id" element={<DonationDetails />} />
+            <Route path="/ngo/accepted" element={<AcceptedDonations />} />
             <Route path="/ngo/pickups" element={<PickupManagement />} />
           </Route>
         </Route>
