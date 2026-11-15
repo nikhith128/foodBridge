@@ -1,0 +1,189 @@
+// FoodBridge AI — Prisma schema
+// Database: MySQL
+// Tables: users, ngos, donations, matches, pickups
+// See Architecture.md section 7 for the source specification.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Enums
+// ---------------------------------------------------------------------------
+
+enum Role {
+  DONOR
+  NGO
+  VOLUNTEER
+}
+
+// MVP uses pre-approved demo accounts instead of a full verification workflow.
+enum VerificationStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+// PRD FR-04 requires a vegetarian / non-vegetarian flag.
+enum FoodType {
+  VEG
+  NON_VEG
+}
+
+// Donation lifecycle: AVAILABLE -> ACCEPTED -> ASSIGNED -> PICKED_UP -> COMPLETED
+// plus EXPIRED and CANCELLED.
+enum DonationStatus {
+  AVAILABLE
+  ACCEPTED
+  ASSIGNED
+  PICKED_UP
+  COMPLETED
+  EXPIRED
+  CANCELLED
+}
+
+enum MatchStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+enum PickupStatus {
+  PENDING
+  PICKED_UP
+  COMPLETED
+}
+
+// ---------------------------------------------------------------------------
+// Models
+// ---------------------------------------------------------------------------
+
+/// Account and authentication information for all three roles.
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(150)
+  email     String   @unique @db.VarChar(190)
+  password  String   @db.VarChar(255)
+  role      Role
+  phone     String?  @db.VarChar(30)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  // --- Role-specific profile fields ---------------------------------------
+  // Collected on the Register screen ("Role Details" section). Nullable
+  // because each role fills in only its own set.
+  organizationName String?  @map("organization_name") @db.VarChar(190)
+  donorType        String?  @map("donor_type") @db.VarChar(80)
+  city             String?  @db.VarChar(120)
+  availability     String?  @db.VarChar(190)
+  hasVehicle       Boolean  @default(false) @map("has_vehicle")
+
+  // One user with the NGO role has at most one NGO profile.
+  ngo Ngo?
+
+  donations Donation[]
+  pickups   Pickup[]   @relation("VolunteerPickups")
+
+  @@index([role])
+  @@map("users")
+}
+
+/// Organisation details for users with the NGO role.
+model Ngo {
+  id                 Int                @id @default(autoincrement())
+  userId             Int                @unique @map("user_id")
+  // Prisma field uses US spelling for consistency with the API; the column
+  // keeps the name given in Architecture.md §7.
+  organizationName   String             @map("organisation_name") @db.VarChar(190)
+  address            String             @db.Text
+  latitude           Decimal?           @db.Decimal(10, 7)
+  longitude          Decimal?           @db.Decimal(10, 7)
+  storageCapacity    Decimal            @map("storage_capacity") @db.Decimal(10, 2)
+  // The Register screen asks for capacity as free text ("450 cu ft chiller,
+  // up to 600 kg fresh"). Matching needs a number, so both are stored.
+  capacityNotes      String?            @map("capacity_notes") @db.VarChar(190)
+  foodPreference     String?            @map("food_preference") @db.VarChar(120)
+  isAccepting        Boolean            @default(true) @map("is_accepting")
+  verificationStatus VerificationStatus @default(PENDING) @map("verification_status")
+  createdAt          DateTime           @default(now()) @map("created_at")
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  matches Match[]
+  pickups Pickup[]
+
+  @@index([verificationStatus])
+  @@map("ngos")
+}
+
+/// A surplus-food donation published by a donor.
+model Donation {
+  id               Int            @id @default(autoincrement())
+  donorId          Int            @map("donor_id")
+  foodName         String         @map("food_name") @db.VarChar(190)
+  foodCategory     String         @map("food_category") @db.VarChar(80)
+  foodType         FoodType       @map("food_type")
+  quantity         Decimal        @db.Decimal(10, 2)
+  quantityUnit     String         @default("kg") @map("quantity_unit") @db.VarChar(20)
+  preparationTime  DateTime       @map("preparation_time")
+  storageCondition String         @map("storage_condition") @db.VarChar(190)
+  expiryTime       DateTime       @map("expiry_time")
+  latitude         Decimal?       @db.Decimal(10, 7)
+  longitude        Decimal?       @db.Decimal(10, 7)
+  description      String?        @db.Text
+  status           DonationStatus @default(AVAILABLE)
+  createdAt        DateTime       @default(now()) @map("created_at")
+
+  donor   User    @relation(fields: [donorId], references: [id], onDelete: Cascade)
+  matches Match[]
+  pickup  Pickup?
+
+  @@index([status])
+  @@index([expiryTime])
+  @@index([donorId])
+  @@map("donations")
+}
+
+/// A recommendation of one NGO for one donation, produced by the matching engine.
+model Match {
+  id                 Int         @id @default(autoincrement())
+  donationId         Int         @map("donation_id")
+  ngoId              Int         @map("ngo_id")
+  compatibilityScore Decimal     @map("compatibility_score") @db.Decimal(5, 2)
+  distance           Decimal?    @db.Decimal(8, 2)
+  explanation        String?     @db.Text
+  status             MatchStatus @default(PENDING)
+  createdAt          DateTime    @default(now()) @map("created_at")
+
+  donation Donation @relation(fields: [donationId], references: [id], onDelete: Cascade)
+  ngo      Ngo      @relation(fields: [ngoId], references: [id], onDelete: Cascade)
+
+  // An NGO is only recommended once per donation.
+  @@unique([donationId, ngoId])
+  @@index([donationId])
+  @@index([status])
+  @@map("matches")
+}
+
+/// Collection and delivery record. One donation has at most one pickup.
+model Pickup {
+  id           Int          @id @default(autoincrement())
+  donationId   Int          @unique @map("donation_id")
+  ngoId        Int          @map("ngo_id")
+  volunteerId  Int?         @map("volunteer_id")
+  pickupTime   DateTime?    @map("pickup_time")
+  deliveryTime DateTime?    @map("delivery_time")
+  status       PickupStatus @default(PENDING)
+  createdAt    DateTime     @default(now()) @map("created_at")
+
+  donation  Donation @relation(fields: [donationId], references: [id], onDelete: Cascade)
+  ngo       Ngo      @relation(fields: [ngoId], references: [id])
+  volunteer User?    @relation("VolunteerPickups", fields: [volunteerId], references: [id])
+
+  @@index([ngoId])
+  @@index([status])
+  @@map("pickups")
+}
