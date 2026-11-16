@@ -1,4 +1,4 @@
-import { ArrowRight, Handshake, Leaf, Salad, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowRight, Handshake, Leaf, ShieldCheck, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import { Badge, Button } from '../../components/ui/index.js';
@@ -176,11 +176,19 @@ function Hero() {
             className="pointer-events-none absolute -bottom-10 -right-10 h-44 w-44 rounded-full bg-tertiary-fixed/40 blur-2xl"
           />
 
-          <div className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary-container to-secondary">
-            <Salad className="h-24 w-24 text-on-primary/25" strokeWidth={1.25} aria-hidden="true" />
+          <div className="relative h-[300px] w-full overflow-hidden bg-primary sm:h-[360px] lg:h-[420px]">
+            <picture className="block h-full w-full">
+              <source srcSet="/hero.webp" type="image/webp" />
+              <img
+                src="/hero.jpg"
+                alt="Volunteers handing a crate of fresh food to a community kitchen"
+                loading="eager"
+                className="h-full w-full object-cover"
+              />
+            </picture>
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent"
+              className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,40,20,0.65)_0%,transparent_50%)]"
             />
             <div className="absolute inset-x-4 bottom-3 flex items-center justify-between gap-2 text-on-primary">
               <span className="rounded-full bg-primary/80 px-3 py-1 font-label-sm text-label-sm tracking-wide backdrop-blur-md">
