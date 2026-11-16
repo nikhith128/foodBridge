@@ -65,7 +65,7 @@ function Hero() {
   return (
     <Section className="pt-8 pb-space-xl md:pt-14">
       <div className="grid grid-cols-1 gap-space-lg lg:grid-cols-2 lg:items-center lg:gap-space-xl">
-        <div className="flex flex-col gap-space-lg lg:self-start">
+        <div className="flex flex-col gap-space-lg">
           <span className="inline-flex w-fit items-center gap-2 rounded-full bg-surface-container-high px-3.5 py-1.5 text-primary shadow-sm">
             <span
               aria-hidden="true"
@@ -74,7 +74,7 @@ function Hero() {
             <span className="font-label-sm text-label-sm uppercase tracking-wider">{HOME_HERO.pill}</span>
           </span>
 
-          <div className="flex flex-col gap-space-sm">
+          <div className="flex flex-col gap-space-lg">
             <h1 className="font-display text-display-mobile font-extrabold tracking-tight text-primary sm:text-headline-lg lg:text-display">
               {HOME_HERO.headline}
               <span className="mt-1 block text-secondary">{HOME_HERO.headlineAccent}</span>
