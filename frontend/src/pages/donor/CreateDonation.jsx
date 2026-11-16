@@ -598,9 +598,9 @@ export default function CreateDonation() {
                 onChange={(event) => setField('description', event.target.value)}
                 placeholder="e.g. Buffet surplus kept in sealed stainless-steel trays. Contains dairy and nuts."
                 className={cn(
-                  'w-full rounded-xl bg-surface-container-lowest p-4 font-body-md text-body-md text-on-surface shadow-sm',
-                  'placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright',
-                  errors.description ? 'ring-2 ring-error/60' : ''
+                  'w-full rounded-xl border bg-surface-container-lowest p-4 font-body-md text-body-md text-on-surface shadow-sm',
+                  'placeholder:text-outline focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:bg-surface-bright',
+                  errors.description ? 'border-error ring-2 ring-error/60' : 'border-outline'
                 )}
               />
               <div className="flex items-center justify-between gap-2 font-label-sm text-label-sm text-outline">

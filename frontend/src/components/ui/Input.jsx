@@ -80,14 +80,14 @@ const Input = forwardRef(function Input(
           aria-invalid={hasError || undefined}
           aria-describedby={cn(hint && hintId, hasError && errorId) || undefined}
           className={cn(
-            'w-full h-11 rounded-xl bg-surface-container-lowest text-on-surface',
+            'w-full h-11 rounded-xl border bg-surface-container-lowest text-on-surface',
             'font-body-md text-body-md shadow-sm placeholder:text-outline',
             'focus:outline-none focus:ring-2 focus:bg-surface-bright transition-colors',
             LeadingIcon ? 'pl-10' : 'pl-4',
             isPassword ? 'pr-11' : 'pr-4',
             hasError
-              ? 'ring-2 ring-error/60 focus:ring-error'
-              : 'focus:ring-secondary/40',
+              ? 'border-error ring-2 ring-error/60 focus:ring-error'
+              : 'border-outline focus:border-secondary focus:ring-secondary/40',
             props.disabled && 'cursor-not-allowed opacity-60',
             className
           )}
