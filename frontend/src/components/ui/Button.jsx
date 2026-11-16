@@ -12,6 +12,8 @@ import { cn } from '../../utils/cn.js';
  *   primary    bg-primary text-on-primary          (screen: "px-6 py-2.5 rounded-lg bg-primary")
  *   secondary  bg-secondary text-on-secondary      (screen: "h-11 rounded-lg bg-secondary")
  *   container  bg-primary-container                (large CTAs on the dashboards)
+ *   mint       bg-mint text-primary                (primary CTA on dark banners)
+ *   outline-light  transparent + white border      (secondary CTA on dark banners)
  *   outline    transparent + outline-variant border
  *   ghost      transparent, surface-container hover
  *   danger     error tokens, for Cancel / Delete
@@ -28,6 +30,11 @@ const VARIANTS = {
     'bg-secondary text-on-secondary shadow-button-soft hover:bg-primary-container focus-visible:ring-secondary/40',
   container:
     'bg-primary-container text-on-primary shadow-sm hover:bg-primary focus-visible:ring-primary-container/40',
+  // On dark green banners: a mint fill with dark green ink (10.8:1), and a
+  // white-outlined secondary. Both are full tokens, so no override ordering.
+  mint: 'bg-mint text-primary shadow-sm hover:bg-primary-fixed-dim focus-visible:ring-mint/60',
+  'outline-light':
+    'border border-on-primary/70 bg-transparent text-on-primary hover:bg-on-primary/10 focus-visible:ring-on-primary/60',
   outline:
     'border border-outline-variant bg-transparent text-on-surface hover:bg-surface-container focus-visible:ring-outline/40',
   ghost:
