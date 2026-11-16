@@ -65,7 +65,7 @@ export default function SocialAuthButtons({ className }) {
           </button>
         ))}
       </div>
-      <p className="text-center font-label-sm text-label-sm text-outline">
+      <p className="text-center font-label-sm text-label-sm text-on-surface-variant">
         Social sign-in arrives in a later release. Use email and password for now.
       </p>
     </div>

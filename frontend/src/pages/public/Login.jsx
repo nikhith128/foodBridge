@@ -278,14 +278,14 @@ export default function Login() {
 
             <div className="relative flex items-center justify-center">
               <span aria-hidden="true" className="absolute inset-x-0 h-px bg-surface-container-high" />
-              <span className="relative bg-surface-container-lowest px-3 font-label-sm text-label-sm uppercase tracking-wider text-outline">
+              <span className="relative bg-surface-container-lowest px-3 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
                 or continue with
               </span>
             </div>
 
             <SocialAuthButtons />
 
-            <p className="text-center font-label-sm text-label-sm text-outline">
+            <p className="text-center font-label-sm text-label-sm text-on-surface-variant">
               By logging in, you agree to our{' '}
               <span className="text-secondary underline">Terms of Service</span> and{' '}
               <span className="text-secondary underline">Privacy Policy</span>.

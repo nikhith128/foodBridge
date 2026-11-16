@@ -167,7 +167,7 @@ export default function PublicLayout() {
                 <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
                 hello@foodbridge.ai
               </a>
-              <span className="flex items-center gap-space-xs font-body-sm text-body-sm text-on-primary-container/60">
+              <span className="flex items-center gap-space-xs font-body-sm text-body-sm text-on-primary-container">
                 <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
                 City Hubs — coming soon
               </span>
@@ -191,8 +191,8 @@ export default function PublicLayout() {
               © 2026 FoodBridge AI. All rights reserved.
             </p>
             <div className="flex items-center gap-space-md">
-              <span className="font-body-sm text-body-sm text-on-primary-container/60">Privacy Policy</span>
-              <span className="font-body-sm text-body-sm text-on-primary-container/60">Terms of Service</span>
+              <span className="font-body-sm text-body-sm text-on-primary-container">Privacy Policy</span>
+              <span className="font-body-sm text-body-sm text-on-primary-container">Terms of Service</span>
             </div>
           </div>
         </div>
