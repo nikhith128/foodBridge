@@ -112,7 +112,7 @@ export default function PublicLayout() {
             </Link>
             <Link
               to="/register"
-              className="inline-flex items-center justify-center rounded-lg bg-secondary px-space-md py-space-sm font-label-md text-label-md text-on-secondary shadow-button-soft ring-2 ring-secondary/30 transition-all hover:bg-primary"
+              className="inline-flex items-center justify-center rounded-lg bg-mint px-space-md py-space-sm font-label-md text-label-md text-primary shadow-button-soft ring-2 ring-secondary/30 transition-all hover:bg-primary-fixed-dim"
             >
               Register
             </Link>

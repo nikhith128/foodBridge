@@ -1,30 +1,31 @@
-import { ArrowRight, Award, Globe, Heart, Leaf, ShieldCheck, Sparkles, Users, Zap } from 'lucide-react';
+import { ArrowRight, Globe, Leaf, ShieldCheck, Sparkles, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button, Card } from '../../components/ui/index.js';
 
 export default function About() {
   return (
-    <div className="flex flex-col gap-16 py-12 px-4 sm:px-8 max-w-7xl mx-auto">
+    <div className="mx-auto flex max-w-7xl flex-col gap-16 px-4 py-12 sm:px-8">
       {/* Hero section */}
-      <div className="text-center max-w-3xl mx-auto space-y-6">
+      <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
         <div className="inline-flex items-center gap-2 rounded-full bg-mint px-4 py-1.5 text-primary font-label-md">
-          <Leaf className="h-4 w-4" />
+          <Leaf className="h-4 w-4" aria-hidden="true" />
           <span>About FoodBridge AI</span>
         </div>
         <h1 className="font-headline-lg text-4xl sm:text-5xl font-bold tracking-tight text-on-surface">
           Rescuing Surplus Food with <span className="text-primary">Intelligence &amp; Empathy</span>
         </h1>
-        <p className="font-body-lg text-lg text-on-surface-variant leading-relaxed">
+        {/* pt-5 adds 20px to the 24px flex gap: 44px between headline and subtitle. */}
+        <p className="pt-5 font-body-lg text-lg text-on-surface-variant leading-relaxed">
           FoodBridge AI bridges the gap between commercial food surplus and community hunger through an intelligent, automated matching logistics network.
         </p>
       </div>
 
       {/* Mission & Vision */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card padding="lg" className="flex flex-col justify-between gap-6 border-l-4 border-l-primary">
+        <Card padding="none" className="flex h-full flex-col gap-6 border-l-4 border-l-primary p-8 sm:p-10">
           <div className="space-y-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-mint text-primary">
-              <Globe className="h-6 w-6" />
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-mint text-primary">
+              <Globe className="h-8 w-8" aria-hidden="true" />
             </div>
             <h2 className="font-display text-headline-sm font-bold text-on-surface">Our Mission</h2>
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -33,10 +34,10 @@ export default function About() {
           </div>
         </Card>
 
-        <Card padding="lg" className="flex flex-col justify-between gap-6 border-l-4 border-l-secondary">
+        <Card padding="none" className="flex h-full flex-col gap-6 border-l-4 border-l-primary p-8 sm:p-10">
           <div className="space-y-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary-container text-secondary">
-              <Sparkles className="h-6 w-6" />
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary-container text-secondary">
+              <Sparkles className="h-8 w-8" aria-hidden="true" />
             </div>
             <h2 className="font-display text-headline-sm font-bold text-on-surface">Our Vision</h2>
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -48,59 +49,60 @@ export default function About() {
 
       {/* Core Values */}
       <div className="space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
+        <div className="mx-auto max-w-2xl space-y-6 text-center">
           <h2 className="font-headline-md text-3xl font-bold text-on-surface">What Drives Us Forward</h2>
           <p className="font-body-md text-on-surface-variant">Core principles guiding every match, rescue, and community partnership.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card padding="md" className="space-y-4">
+        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
+          <Card padding="md" className="flex h-full flex-col gap-4">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-mint text-primary">
-              <ShieldCheck className="h-5 w-5" />
+              <ShieldCheck className="h-5 w-5" aria-hidden="true" />
             </div>
             <h3 className="font-title-md text-title-md font-semibold text-on-surface">Safety &amp; Compliance</h3>
-            <p className="font-body-sm text-body-sm text-on-surface-variant">
+            <p className="text-[15px] leading-relaxed text-on-surface-variant">
               Strict eligibility checklists, preparation time tracking, and cold-chain adherence ensure every rescued meal is safe and wholesome.
             </p>
           </Card>
 
-          <Card padding="md" className="space-y-4">
+          <Card padding="md" className="flex h-full flex-col gap-4">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary-container text-secondary">
-              <Zap className="h-5 w-5" />
+              <Zap className="h-5 w-5" aria-hidden="true" />
             </div>
             <h3 className="font-title-md text-title-md font-semibold text-on-surface">Speed &amp; Efficiency</h3>
-            <p className="font-body-sm text-body-sm text-on-surface-variant">
+            <p className="text-[15px] leading-relaxed text-on-surface-variant">
               Haversine distance calculations and multi-factor scoring match surplus food with the nearest capable NGO in seconds.
             </p>
           </Card>
 
-          <Card padding="md" className="space-y-4">
+          <Card padding="md" className="flex h-full flex-col gap-4">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-mint text-primary">
-              <Users className="h-5 w-5" />
+              <Users className="h-5 w-5" aria-hidden="true" />
             </div>
             <h3 className="font-title-md text-title-md font-semibold text-on-surface">Community Trust</h3>
-            <p className="font-body-sm text-body-sm text-on-surface-variant">
+            <p className="text-[15px] leading-relaxed text-on-surface-variant">
               Empowering local shelters, verified donors, and volunteer coordinators with complete transparency and impact tracking.
             </p>
           </Card>
         </div>
       </div>
 
-      {/* Call to Action */}
-      <Card padding="lg" className="bg-primary text-on-primary text-center space-y-6">
+      {/* Call to Action. A plain div, not Card: Card hard-codes a white
+          background, which is what made this banner unreadable. */}
+      <div className="space-y-6 rounded-3xl bg-primary-container px-6 py-10 text-center text-on-primary sm:px-12 sm:py-12">
         <h2 className="font-headline-md text-3xl font-bold text-on-primary">Ready to Make an Impact?</h2>
-        <p className="font-body-lg text-secondary-fixed max-w-xl mx-auto">
+        <p className="mx-auto max-w-xl font-body-lg text-lg leading-relaxed text-on-primary/80">
           Whether you are a food donor with surplus meals or an NGO serving your community, FoodBridge AI connects you instantly.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Button as={Link} to="/register" variant="secondary" size="lg">
-            Get Started <ArrowRight className="ml-2 h-4 w-4" />
+          <Button as={Link} to="/register" variant="mint" size="lg">
+            Get Started <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
           </Button>
-          <Button as={Link} to="/login" variant="outline" size="lg" className="border-on-primary text-on-primary hover:bg-on-primary/10">
+          <Button as={Link} to="/login" variant="outline-light" size="lg">
             Sign In
           </Button>
         </div>
-      </Card>
+      </div>
     </div>
   );
 }
