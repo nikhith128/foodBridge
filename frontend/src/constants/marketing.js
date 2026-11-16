@@ -115,7 +115,6 @@ export const HOME_STEPS = [
     number: '01',
     title: 'Donate Food',
     icon: Package,
-    tone: 'bg-primary-container text-on-primary',
     body: 'Share your surplus by logging items, quantities, prep timestamps, allergen notices, and collection access windows.',
   },
   {
@@ -123,7 +122,6 @@ export const HOME_STEPS = [
     number: '02',
     title: 'Smart AI Matching',
     icon: Network,
-    tone: 'bg-secondary text-on-secondary',
     body: 'The matching engine ranks nearby NGOs by dietary fit, recipient capacity, storage, and travel time.',
   },
   {
@@ -131,7 +129,6 @@ export const HOME_STEPS = [
     number: '03',
     title: 'Coordinate Pickup',
     icon: Navigation,
-    tone: 'bg-primary-container text-on-primary',
     body: 'The chosen NGO accepts the dispatch and coordinates a verified volunteer collection.',
   },
   {
@@ -139,7 +136,6 @@ export const HOME_STEPS = [
     number: '04',
     title: 'Create Impact',
     icon: HandHeart,
-    tone: 'bg-secondary-container text-on-secondary-container',
     body: 'Fresh meals reach communities inside the safe consumption window, diverting food from landfill.',
   },
 ];
@@ -151,28 +147,24 @@ export const HOME_FEATURES = [
     key: 'matching',
     title: 'Smart NGO Matching',
     icon: Brain,
-    iconClass: 'bg-secondary-container/60 text-primary',
     body: 'Find suitable NGOs based on food perishability, current intake capacity, refrigeration availability, and route viability.',
   },
   {
     key: 'speed',
     title: 'Faster Food Connections',
     icon: Gauge,
-    iconClass: 'bg-surface-variant text-primary',
     body: 'Connect surplus donors directly with local dispatchers who can collect and redistribute quickly.',
   },
   {
     key: 'safe',
     title: 'Responsible Food Rescue',
     icon: ShieldCheck,
-    iconClass: 'bg-surface-container text-primary',
     body: 'Handling notes, allergen tags, and temperature validation checks keep every donation accounted for.',
   },
   {
     key: 'impact',
     title: 'Measurable Community Impact',
     icon: TrendingUp,
-    iconClass: 'bg-tertiary-fixed/50 text-tertiary',
     body: 'Export verified diversion metrics, estimated CO2 avoided, and meal counts for reporting.',
   },
 ];

@@ -13,7 +13,9 @@ import { cn } from '../../utils/cn.js';
  *   secondary  bg-secondary text-on-secondary      (screen: "h-11 rounded-lg bg-secondary")
  *   container  bg-primary-container                (large CTAs on the dashboards)
  *   mint       bg-mint text-primary                (primary CTA on dark banners)
+ *   outline-primary   white + 1.5px primary outline (secondary CTA on light surfaces)
  *   outline-light  transparent + white border      (secondary CTA on dark banners)
+ *   outline-light-strong  transparent + 1.5px white border (secondary CTA on dark banners)
  *   outline    transparent + outline-variant border
  *   ghost      transparent, surface-container hover
  *   danger     error tokens, for Cancel / Delete
@@ -33,8 +35,14 @@ const VARIANTS = {
   // On dark green banners: a mint fill with dark green ink (10.8:1), and a
   // white-outlined secondary. Both are full tokens, so no override ordering.
   mint: 'bg-mint text-primary shadow-sm hover:bg-primary-fixed-dim focus-visible:ring-mint/60',
+  // Secondary CTA on a light surface: white fill, 1.5px brand-green outline.
+  'outline-primary':
+    'border-[1.5px] border-primary bg-surface-container-lowest text-primary shadow-button-soft hover:bg-surface-container-low focus-visible:ring-primary/40',
   'outline-light':
     'border border-on-primary/70 bg-transparent text-on-primary hover:bg-on-primary/10 focus-visible:ring-on-primary/60',
+  // Stronger version for dark banners: 1.5px border that brightens on hover.
+  'outline-light-strong':
+    'border-[1.5px] border-on-primary/70 bg-transparent text-on-primary hover:border-on-primary hover:bg-on-primary/10 focus-visible:ring-on-primary/60',
   outline:
     'border border-outline-variant bg-transparent text-on-surface hover:bg-surface-container focus-visible:ring-outline/40',
   ghost:

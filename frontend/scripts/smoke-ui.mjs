@@ -540,9 +540,10 @@ try {
   const navigation = await server.ssrLoadModule('/src/constants/navigation.js');
 
   const publicShell = render(
-    h(
-      MemoryRouter,
-      { initialEntries: ['/'] },
+    withAuthAt(
+      'anonymous',
+      null,
+      '/',
       h(
         Routes,
         null,
@@ -554,6 +555,7 @@ try {
       )
     )
   );
+  const publicHeader = publicShell.split('</header>')[0];
   check('PublicLayout renders the brand wordmark', publicShell.includes('FoodBridge AI'));
   check(
     'PublicLayout renders the footer tagline',
@@ -569,6 +571,66 @@ try {
   );
   check('PublicLayout uses the header shadow token', publicShell.includes('shadow-header'));
   check('PublicLayout pins the header', publicShell.includes('fixed') && publicShell.includes('top-0'));
+
+  // --- the header follows the session (item 1 of the home polish) ---------
+  check(
+    'Signed-out header shows Login and Register',
+    publicHeader.includes('href="/login"') && publicHeader.includes('href="/register"')
+  );
+  check(
+    'Signed-out header has no avatar menu',
+    !publicHeader.includes('Account menu')
+  );
+
+  const signedInShell = render(
+    withAuthAt(
+      'authenticated',
+      'DONOR',
+      '/',
+      h(
+        Routes,
+        null,
+        h(
+          Route,
+          { element: h(PublicLayout) },
+          h(Route, { path: '/', element: h('span', null, 'public-outlet-content') })
+        )
+      )
+    )
+  );
+  const signedInHeader = signedInShell.split('</header>')[0];
+  check(
+    'Signed-in header shows the avatar menu instead of auth links',
+    signedInHeader.includes('Account menu') &&
+      signedInHeader.includes('DA') &&
+      !signedInHeader.includes('href="/login"') &&
+      !signedInHeader.includes('href="/register"')
+  );
+
+  const loginHeader = render(
+    withAuthAt(
+      'anonymous',
+      null,
+      '/login',
+      h(Routes, null, h(Route, { element: h(PublicLayout) }, h(Route, { path: '/login', element: h('span') })))
+    )
+  ).split('</header>')[0];
+  check('Login link is hidden on /login', !loginHeader.includes('href="/login"'));
+
+  const registerHeader = render(
+    withAuthAt(
+      'anonymous',
+      null,
+      '/register',
+      h(Routes, null, h(Route, { element: h(PublicLayout) }, h(Route, { path: '/register', element: h('span') })))
+    )
+  ).split('</header>')[0];
+  check('Register link is hidden on /register', !registerHeader.includes('href="/register"'));
+  check(
+    'Footer link text is at least 15px',
+    publicShell.includes('font-body-md text-body-md text-on-primary-container') &&
+      !publicShell.includes('font-body-sm text-body-sm text-on-primary-container')
+  );
 
   const stat = render(
     h(StatCard, {
