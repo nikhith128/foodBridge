@@ -198,10 +198,6 @@ export default {
         // the Stitch landing screen. The screen pauses these with a
         // prefers-reduced-motion media query; here every animated element also
         // carries `motion-reduce:animate-none`, which does the same thing.
-        'liquid-sheen': {
-          '0%': { transform: 'translateX(-120%) rotate(25deg)' },
-          '50%, 100%': { transform: 'translateX(220%) rotate(25deg)' },
-        },
         'pulse-soft': {
           '0%, 100%': { opacity: '0.9', transform: 'scale(1)' },
           '50%': { opacity: '0.5', transform: 'scale(0.96)' },
@@ -217,7 +213,6 @@ export default {
       },
       animation: {
         'fade-in': 'fade-in 200ms ease-out',
-        'liquid-sheen': 'liquid-sheen 4.5s ease-in-out infinite',
         'pulse-soft': 'pulse-soft 2.8s ease-in-out infinite',
         'float-1': 'float-1 4s ease-in-out infinite',
         'float-2': 'float-2 4.6s ease-in-out infinite',

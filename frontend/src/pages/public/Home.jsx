@@ -2,7 +2,6 @@ import { ArrowRight, Handshake, Leaf, ShieldCheck, Sparkles } from 'lucide-react
 import { Link } from 'react-router-dom';
 
 import { Badge, Button } from '../../components/ui/index.js';
-import Logo from '../../components/shared/Logo.jsx';
 import {
   DEMO_METRIC,
   HOME_FEATURES,
@@ -18,20 +17,19 @@ import { cn } from '../../utils/cn.js';
  *
  * Rebuilt from the Stitch landing screen
  * (Design/screens/stitch_foodbridge_ai_platform_landing_page/code.html), which
- * is a single-column mobile layout. Six sections, in the screen's order:
+ * is a single-column mobile layout. Five sections, in the screen's order:
  *
- *   1  liquid-glass brand reveal card
- *   2  hero (headline, actions, visual card with floating live rows)
- *   3  impact carousel   — labelled "Demo Feed"; the figures are sample copy
- *   4  how it works      — 01..04
- *   5  why FoodBridge    — four feature cards
- *   6  closing call to action
+ *   1  hero (headline, actions, visual card with floating live rows)
+ *   2  impact carousel   — labelled "Demo Feed"; the figures are sample copy
+ *   3  how it works      — 01..04
+ *   4  why FoodBridge    — four feature cards
+ *   5  closing call to action
  *
  * The header and footer come from PublicLayout, so this file owns only the body.
  *
  * Where the mobile screen gives no desktop layout, the sections grow into the
  * grid the content wants (hero 2-up, carousel 4-up, steps 4-up, features 4-up).
- * The visual placeholders in sections 2 and 6 use brand gradients instead of the
+ * The visual placeholders in sections 1 and 5 use brand gradients instead of the
  * screen's hosted photographs: those images are design references on an external
  * host, not assets this repo owns (same call as Logo.jsx).
  */
@@ -63,51 +61,11 @@ function SectionPill({ tone = 'high', children }) {
 
 // --- Sections ---------------------------------------------------------------
 
-function BrandReveal() {
-  return (
-    <Section className="pt-space-md pb-space-xs">
-      <div className="relative flex items-center justify-between gap-space-sm overflow-hidden rounded-2xl bg-surface-container-lowest/80 p-space-md shadow-card backdrop-blur-xl">
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-8 -top-8 left-0 w-1/3 animate-liquid-sheen bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-60 motion-reduce:animate-none"
-        />
-
-        <div className="relative z-10 flex min-w-0 items-center gap-space-sm">
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-surface-container-low p-1.5 shadow-sm">
-            <Logo showWordmark={false} />
-          </span>
-          <div className="flex min-w-0 flex-col">
-            <div className="flex items-center gap-1.5">
-              <span className="truncate font-display text-title-md font-semibold text-primary">
-                FoodBridge AI
-              </span>
-              <Badge variant="positive" size="sm">
-                AI-Powered
-              </Badge>
-            </div>
-            <span className="truncate font-body-sm text-body-sm text-on-surface-variant">
-              Grassroots Rescue Engine
-            </span>
-          </div>
-        </div>
-
-        <span
-          className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface-container text-primary"
-          title="Verified network"
-        >
-          <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-          <span className="sr-only">Verified network</span>
-        </span>
-      </div>
-    </Section>
-  );
-}
-
 function Hero() {
   return (
-    <Section className="pt-space-lg pb-space-xl">
+    <Section className="pt-8 pb-space-xl md:pt-14">
       <div className="grid grid-cols-1 gap-space-lg lg:grid-cols-2 lg:items-center lg:gap-space-xl">
-        <div className="flex flex-col gap-space-lg">
+        <div className="flex flex-col gap-space-lg lg:self-start">
           <span className="inline-flex w-fit items-center gap-2 rounded-full bg-surface-container-high px-3.5 py-1.5 text-primary shadow-sm">
             <span
               aria-hidden="true"
@@ -429,7 +387,6 @@ function ClosingCta() {
 export default function Home() {
   return (
     <div className="flex w-full flex-col">
-      <BrandReveal />
       <Hero />
       <ImpactCarousel />
       <HowItWorks />
