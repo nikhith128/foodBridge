@@ -61,23 +61,6 @@ function SectionPill({ tone = 'high', children }) {
   );
 }
 
-// The two ink treatments the metric cards use: light text on the deep
-// gradients, dark text on the pale ones.
-const STAT_TONES = {
-  dark: {
-    text: 'text-on-primary',
-    sub: 'text-on-primary/70',
-    chip: 'bg-white/20 text-on-primary',
-    icon: 'bg-white/15 text-on-primary',
-  },
-  light: {
-    text: 'text-primary',
-    sub: 'text-on-surface-variant',
-    chip: 'bg-primary/10 text-primary',
-    icon: 'bg-primary/10 text-primary',
-  },
-};
-
 // --- Sections ---------------------------------------------------------------
 
 function BrandReveal() {
@@ -265,34 +248,27 @@ function ImpactCarousel() {
       <div className="flex snap-x snap-mandatory gap-space-md overflow-x-auto pb-space-sm lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0">
         {HOME_STATS.map((stat) => {
           const Icon = stat.icon;
-          const ink = STAT_TONES[stat.tone] || STAT_TONES.dark;
           return (
             <div
               key={stat.key}
-              className={cn(
-                'flex h-[210px] w-[275px] shrink-0 snap-center flex-col justify-between rounded-3xl bg-gradient-to-br p-space-lg shadow-card-hover lg:w-auto',
-                stat.gradient
-              )}
+              className="flex h-[210px] w-[275px] shrink-0 snap-center flex-col justify-between rounded-3xl border border-white/[0.08] bg-primary-container p-space-lg shadow-card-hover lg:w-auto"
             >
               <div className="flex items-start justify-between gap-2">
-                <span className={cn('flex h-10 w-10 items-center justify-center rounded-2xl backdrop-blur-md', ink.icon)}>
+                <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/[0.12] text-on-primary backdrop-blur-md">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
-                <span
-                  className={cn(
-                    'rounded-full px-2.5 py-1 font-label-sm text-label-sm font-semibold backdrop-blur-md',
-                    ink.chip
-                  )}
-                >
+                <span className="rounded-full bg-white/15 px-2.5 py-1 font-label-sm text-label-sm font-semibold text-on-primary backdrop-blur-md">
                   {stat.badge}
                 </span>
               </div>
               <div>
-                <div className={cn('font-display text-display-mobile leading-none tracking-tight', ink.text)}>
+                <div className="font-display text-[2.5rem] font-bold leading-none tracking-tight text-secondary-fixed">
                   {stat.value}
                 </div>
-                <div className={cn('mt-1 font-title-md text-title-md font-medium', ink.text)}>{stat.label}</div>
-                <div className={cn('mt-0.5 font-body-sm text-body-sm', ink.sub)}>{stat.note}</div>
+                <div className="mt-1 font-title-md text-title-md font-semibold text-on-primary">
+                  {stat.label}
+                </div>
+                <div className="mt-0.5 font-body-sm text-body-sm text-on-primary/75">{stat.note}</div>
               </div>
             </div>
           );
