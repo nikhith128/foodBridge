@@ -1,5 +1,5 @@
 import { Globe, Mail, MapPin, MessagesSquare, Share2, User } from 'lucide-react';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 
 import Logo from '../components/shared/Logo.jsx';
 import { PUBLIC_ACCOUNT_LINKS, PUBLIC_NAV } from '../constants/navigation.js';
@@ -85,6 +85,8 @@ const SOCIALS = [
 // --- Layout -----------------------------------------------------------------
 
 export default function PublicLayout() {
+  const { pathname } = useLocation();
+
   return (
     <div className="flex min-h-screen flex-col bg-surface">
       <header className="fixed inset-x-0 top-0 z-50 bg-surface/80 shadow-header backdrop-blur-xl">
@@ -104,18 +106,22 @@ export default function PublicLayout() {
           </nav>
 
           <div className="flex items-center gap-space-sm">
-            <Link
-              to="/login"
-              className="inline-flex items-center justify-center rounded-lg px-space-md py-space-sm font-label-md text-label-md text-primary transition-colors hover:bg-surface-container-high hover:text-on-surface"
-            >
-              Login
-            </Link>
-            <Link
-              to="/register"
-              className="inline-flex items-center justify-center rounded-lg bg-mint px-space-md py-space-sm font-label-md text-label-md text-primary shadow-button-soft ring-2 ring-secondary/30 transition-all hover:bg-primary-fixed-dim"
-            >
-              Register
-            </Link>
+            {pathname !== '/login' && (
+              <Link
+                to="/login"
+                className="inline-flex items-center justify-center rounded-lg px-space-md py-space-sm font-label-md text-label-md text-primary transition-colors hover:bg-surface-container-high hover:text-on-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40"
+              >
+                Login
+              </Link>
+            )}
+            {pathname !== '/register' && (
+              <Link
+                to="/register"
+                className="inline-flex items-center justify-center rounded-xl bg-primary px-space-md py-space-sm font-label-md text-label-md text-on-primary shadow-button-soft transition-colors hover:bg-primary-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+              >
+                Register
+              </Link>
+            )}
             <span
               className="ml-space-xs flex h-8 w-8 items-center justify-center rounded-full bg-primary text-on-primary"
               aria-hidden="true"

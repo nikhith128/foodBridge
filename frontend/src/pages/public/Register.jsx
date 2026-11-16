@@ -19,7 +19,8 @@ import {
 
 import SocialAuthButtons from '../../components/public/SocialAuthButtons.jsx';
 import Logo from '../../components/shared/Logo.jsx';
-import { Badge, Banner, Button, Input, Select, useToast } from '../../components/ui/index.js';
+import { Banner, Button, Input, Select, useToast } from '../../components/ui/index.js';
+import { SHOW_SOCIAL_LOGIN } from '../../constants/features.js';
 import { AUTH_BENEFITS, DEMO_METRIC } from '../../constants/marketing.js';
 import {
   AVAILABILITY_WINDOWS,
@@ -164,12 +165,14 @@ function RoleCard({ card, active, onSelect }) {
       onClick={() => onSelect(card.value)}
       aria-pressed={active}
       className={cn(
-        'flex flex-col justify-between gap-2.5 rounded-2xl p-3.5 text-left transition-all duration-200',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40',
-        active ? 'bg-secondary-container/20 shadow-sm' : 'bg-surface-container-low hover:bg-surface-container'
+        'flex h-full flex-col items-start gap-2.5 rounded-2xl border-2 p-3.5 text-left transition-all duration-200',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-surface',
+        active
+          ? 'border-primary bg-secondary-container/30 shadow-sm'
+          : 'border-transparent bg-surface-container-low hover:bg-surface-container'
       )}
     >
-      <div className="flex w-full items-center justify-between">
+      <div className="flex w-full items-start justify-between">
         <span
           className={cn(
             'flex h-8 w-8 items-center justify-center rounded-xl',
@@ -184,7 +187,7 @@ function RoleCard({ card, active, onSelect }) {
           </span>
         )}
       </div>
-      <div>
+      <div className="w-full">
         <h3 className={cn('font-title-md text-title-md font-semibold', active ? 'text-primary' : 'text-on-surface')}>
           {card.label}
         </h3>
@@ -221,7 +224,7 @@ function SectionLabel({ children }) {
 
 function StoryPanel() {
   return (
-    <aside className="relative flex flex-col justify-between overflow-hidden bg-gradient-to-br from-primary via-primary-container to-primary p-8 text-on-primary lg:col-span-5 lg:p-10">
+    <aside className="relative hidden flex-col overflow-hidden bg-gradient-to-br from-primary via-primary-container to-primary p-8 text-on-primary lg:col-span-5 lg:flex lg:p-10">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-secondary-fixed/10 blur-3xl"
@@ -265,16 +268,20 @@ function StoryPanel() {
         </div>
       </div>
 
-      <div className="relative z-10 mt-8 flex flex-col gap-3 rounded-2xl bg-surface-container-lowest/10 p-4 shadow-lg backdrop-blur-md">
-        <div className="relative h-36 w-full overflow-hidden rounded-xl bg-gradient-to-br from-primary-container via-secondary to-primary">
-          <Snowflake
-            className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 text-on-primary/25"
-            strokeWidth={1.25}
-            aria-hidden="true"
-          />
+      <div className="relative z-10 mt-space-lg flex flex-1 flex-col gap-3 rounded-2xl bg-surface-container-lowest/10 p-4 shadow-lg backdrop-blur-md">
+        <div className="relative min-h-[10rem] w-full flex-1 overflow-hidden rounded-xl bg-primary-container">
+          <picture className="block h-full w-full">
+            <source srcSet="/auth-register.webp" type="image/webp" />
+            <img
+              src="/auth-register.jpg"
+              alt="A volunteer carrying rescued food to a community kitchen partner"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+          </picture>
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"
+            className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,40,20,0.55)_0%,rgba(0,40,20,0.15)_45%,transparent_100%)]"
           />
           <span className="absolute bottom-2 left-2 inline-flex items-center gap-1.5 rounded-full bg-surface-container-lowest/90 px-2.5 py-0.5 backdrop-blur-md">
             <span className="font-label-sm text-[11px] text-primary">Sample</span>
@@ -284,10 +291,15 @@ function StoryPanel() {
             </span>
           </span>
         </div>
-        <p className="font-body-sm text-body-sm italic leading-snug text-surface-container-low">
+
+        <span className="font-label-sm text-[10px] uppercase tracking-wider text-secondary-fixed/90">
+          Sample testimonial
+        </span>
+        <p className="font-body-sm text-body-sm italic leading-snug text-on-primary/90">
           &ldquo;The rescue network is built for kitchens of every size — log surplus once, and the
           matching engine finds the closest verified home for it.&rdquo;
         </p>
+        <span className="font-label-sm text-label-sm font-semibold text-mint">Harvest Hope Kitchens</span>
       </div>
     </aside>
   );
@@ -306,6 +318,15 @@ export default function Register() {
   const [submitting, setSubmitting] = useState(false);
 
   const strength = passwordStrength(form.password);
+  const strengthTone = !form.password
+    ? 'text-on-surface-variant'
+    : strength.score >= 3
+      ? 'text-secondary'
+      : strength.score === 2
+        ? 'text-tertiary'
+        : 'text-error';
+  const strengthBarTone =
+    strength.score >= 3 ? 'bg-secondary' : strength.score === 2 ? 'bg-tertiary-container' : 'bg-error';
 
   function setField(key, value) {
     setForm((current) => ({ ...current, [key]: value }));
@@ -439,20 +460,42 @@ export default function Register() {
                 value={form.phone}
                 onChange={(event) => setField('phone', event.target.value)}
                 error={errors.phone}
-                hint="Optional"
+                optional
               />
-              <Input
-                label="Password"
-                name="password"
-                type="password"
-                autoComplete="new-password"
-                placeholder="At least 8 characters"
-                leadingIcon={Lock}
-                value={form.password}
-                onChange={(event) => setField('password', event.target.value)}
-                error={errors.password}
-                required
-              />
+              <div className="flex flex-col gap-1.5">
+                <Input
+                  label="Password"
+                  name="password"
+                  type="password"
+                  autoComplete="new-password"
+                  placeholder="At least 8 characters"
+                  leadingIcon={Lock}
+                  value={form.password}
+                  onChange={(event) => setField('password', event.target.value)}
+                  error={errors.password}
+                  required
+                />
+                <div className="flex items-center gap-1.5" aria-hidden="true">
+                  {[1, 2, 3, 4].map((segment) => (
+                    <span
+                      key={segment}
+                      className={cn(
+                        'h-1.5 flex-1 rounded-full',
+                        segment <= strength.score ? strengthBarTone : 'bg-surface-container-highest'
+                      )}
+                    />
+                  ))}
+                </div>
+                <div className="flex items-center justify-between gap-2 font-label-sm text-label-sm">
+                  <span className="text-on-surface-variant">Password strength</span>
+                  <span aria-live="polite" className={cn('font-semibold', strengthTone)}>
+                    {form.password ? strength.label : '—'}
+                  </span>
+                </div>
+                <p className="text-left font-label-sm text-label-sm text-on-surface-variant">
+                  {PASSWORD_HINT}
+                </p>
+              </div>
               <Input
                 label="Confirm Password"
                 name="confirmPassword"
@@ -465,27 +508,6 @@ export default function Register() {
                 error={errors.confirmPassword}
                 required
               />
-
-              <div className="flex flex-col gap-1.5 sm:col-span-2">
-                <div className="flex items-center gap-1.5">
-                  {[1, 2, 3, 4].map((segment) => (
-                    <span
-                      key={segment}
-                      aria-hidden="true"
-                      className={cn(
-                        'h-1.5 flex-1 rounded-full',
-                        segment <= strength.score ? 'bg-secondary' : 'bg-surface-container-highest'
-                      )}
-                    />
-                  ))}
-                </div>
-                <div className="flex flex-wrap items-center justify-between gap-2 font-label-sm text-label-sm text-outline">
-                  <span aria-live="polite">
-                    {form.password ? `Strength: ${strength.label}` : 'Password strength'}
-                  </span>
-                  <span>{PASSWORD_HINT}</span>
-                </div>
-              </div>
             </div>
 
             <div className="flex flex-col gap-4 pt-2">
@@ -496,7 +518,7 @@ export default function Register() {
                   <Input
                     label="Organization / Business Name"
                     name="organizationName"
-                    placeholder="e.g. Daily Greens Market & Bakery"
+                    placeholder="e.g. Daily Greens Market"
                     leadingIcon={Building2}
                     value={form.organizationName}
                     onChange={(event) => setField('organizationName', event.target.value)}
@@ -669,11 +691,22 @@ export default function Register() {
                   checked={form.acceptedTerms}
                   onChange={(event) => setField('acceptedTerms', event.target.checked)}
                   aria-invalid={errors.acceptedTerms ? true : undefined}
-                  className="mt-1 h-4 w-4 rounded accent-secondary"
+                  className="mt-0.5 h-4 w-4 shrink-0 rounded border-outline accent-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40"
                 />
                 <span className="font-body-sm text-body-sm leading-snug text-on-surface-variant">
-                  I agree to the Terms of Service, the safe food handling pledge, and the Privacy
-                  Policy.
+                  I agree to the{' '}
+                  <span className="font-semibold text-secondary underline underline-offset-2">
+                    Terms of Service
+                  </span>
+                  , the{' '}
+                  <span className="font-semibold text-secondary underline underline-offset-2">
+                    safe food handling pledge
+                  </span>
+                  , and the{' '}
+                  <span className="font-semibold text-secondary underline underline-offset-2">
+                    Privacy Policy
+                  </span>
+                  .
                 </span>
               </label>
               {errors.acceptedTerms && (
@@ -683,27 +716,32 @@ export default function Register() {
               )}
             </div>
 
-            <Button type="submit" size="lg" variant="secondary" fullWidth loading={submitting} className="mt-2">
+            <Button type="submit" size="lg" variant="primary" fullWidth loading={submitting} className="mt-2">
               Create Account
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Button>
           </form>
 
-          <div className="relative flex items-center justify-center">
-            <span aria-hidden="true" className="absolute inset-x-0 h-px bg-surface-container-high" />
-            <span className="relative bg-surface-container-lowest px-4 font-label-sm text-label-sm text-outline">
-              or sign up with
-            </span>
-          </div>
+          {SHOW_SOCIAL_LOGIN && (
+            <>
+              <div className="relative flex items-center justify-center">
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-x-0 h-px bg-surface-container-high"
+                />
+                <span className="relative bg-surface-container-lowest px-4 font-label-sm text-label-sm text-on-surface-variant">
+                  or sign up with
+                </span>
+              </div>
 
-          <SocialAuthButtons />
+              <SocialAuthButtons />
+            </>
+          )}
 
-          <div className="flex flex-wrap items-center gap-2">
-            <Badge variant="neutral" size="sm">
-              Demo environment
-            </Badge>
-            <span className="font-body-sm text-body-sm text-on-surface-variant">
-              Accounts created here use the local demo database.
+          <div className="flex justify-center">
+            <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-surface-container-low px-3 py-1 font-label-sm text-label-sm text-on-surface-variant">
+              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-secondary" />
+              Demo environment — local database only
             </span>
           </div>
         </div>

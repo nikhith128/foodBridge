@@ -50,7 +50,7 @@ const Select = forwardRef(function Select(
               *
             </span>
           ) : (
-            optional && <span className="font-normal text-outline"> (Optional)</span>
+            optional && <span className="font-normal text-on-surface-variant"> (Optional)</span>
           )}
         </label>
       )}
@@ -79,7 +79,7 @@ const Select = forwardRef(function Select(
             'focus:outline-none focus:ring-2 focus:bg-surface-bright transition-colors',
             LeadingIcon ? 'pl-10' : 'pl-4',
             'pr-10',
-            hasError ? 'border-error ring-2 ring-error/60 focus:ring-error' : 'border-outline focus:border-secondary focus:ring-secondary/40',
+            hasError ? 'border-error ring-2 ring-error/60 focus:ring-error' : 'border-outline focus:border-secondary focus:ring-secondary',
             props.disabled && 'cursor-not-allowed opacity-60',
             className
           )}
@@ -114,7 +114,7 @@ const Select = forwardRef(function Select(
         </p>
       ) : (
         hint && (
-          <p id={hintId} className="font-label-sm text-label-sm text-outline">
+          <p id={hintId} className="font-label-sm text-label-sm text-on-surface-variant">
             {hint}
           </p>
         )

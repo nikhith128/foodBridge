@@ -490,10 +490,20 @@ try {
   check('Login renders the story panel greeting', loginPage.includes('Welcome back'));
   check('Login links to the password reset page', loginPage.includes('href="/forgot-password"'));
 
-  // Social buttons are shown but disabled — no OAuth backend exists.
+  // Social OAuth has no provider, so the whole section is hidden behind
+  // SHOW_SOCIAL_LOGIN. The component itself stays shipped and disabled.
+  const SocialAuthButtons = (await server.ssrLoadModule('/src/components/public/SocialAuthButtons.jsx')).default;
   check(
-    'Auth pages render the social buttons disabled',
-    registerPage.includes('Google') && registerPage.includes('disabled') && loginPage.includes('GitHub')
+    'Social buttons stay disabled when the feature flag is restored',
+    render(h(SocialAuthButtons)).includes('Google') &&
+      render(h(SocialAuthButtons)).includes('disabled')
+  );
+  check(
+    'Auth pages hide the social section while the flag is off',
+    !registerPage.includes('Google') &&
+      !registerPage.includes('or sign up with') &&
+      !loginPage.includes('GitHub') &&
+      !loginPage.includes('or continue with')
   );
 
   const publicOnlyChild = h('span', null, 'auth-form-secret');

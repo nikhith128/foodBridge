@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ArrowRight, Leaf, Lock, Mail, Star, Zap } from 'lucide-react';
+import { ArrowRight, Lock, Mail, Zap } from 'lucide-react';
 
 import SocialAuthButtons from '../../components/public/SocialAuthButtons.jsx';
 import Logo from '../../components/shared/Logo.jsx';
-import { Badge, Banner, Button, Input, useToast } from '../../components/ui/index.js';
+import { Banner, Button, Input, useToast } from '../../components/ui/index.js';
+import { SHOW_SOCIAL_LOGIN } from '../../constants/features.js';
 import { AUTH_BENEFITS, DEMO_METRIC } from '../../constants/marketing.js';
 import { useAuth } from '../../context/AuthContext.jsx';
 import { homePathForRole } from '../../routes/guards.js';
@@ -53,7 +54,7 @@ function validate(form) {
 
 function StoryPanel() {
   return (
-    <aside className="relative flex flex-col justify-between overflow-hidden bg-gradient-to-br from-primary via-primary-container to-primary p-8 text-on-primary lg:col-span-5 lg:p-10">
+    <aside className="relative hidden flex-col justify-between overflow-hidden bg-gradient-to-br from-primary via-primary-container to-primary text-on-primary lg:col-span-5 lg:flex lg:p-8">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-secondary-fixed/10 blur-3xl"
@@ -63,7 +64,7 @@ function StoryPanel() {
         className="pointer-events-none absolute -left-12 bottom-20 h-48 w-48 rounded-full bg-tertiary-fixed-dim/10 blur-2xl"
       />
 
-      <div className="relative z-10 flex flex-col gap-space-md">
+      <div className="relative z-10 flex flex-col gap-space-sm">
         <div className="flex items-center gap-space-sm">
           <Logo tone="on-primary" />
         </div>
@@ -74,7 +75,7 @@ function StoryPanel() {
         </span>
 
         <div>
-          <h2 className="font-display text-headline-lg-mobile font-bold leading-tight text-on-primary lg:text-headline-lg">
+          <h2 className="font-display text-headline-lg-mobile font-bold leading-tight text-on-primary lg:text-headline-md">
             Welcome back
           </h2>
           <p className="mt-space-xs font-body-md text-body-md leading-relaxed text-on-primary-container">
@@ -83,11 +84,11 @@ function StoryPanel() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-space-sm pt-space-xs">
+        <div className="flex flex-col gap-1.5 pt-space-xs">
           {AUTH_BENEFITS.LOGIN.map((benefit) => {
             const Icon = benefit.icon;
             return (
-              <div key={benefit.key} className="flex items-start gap-space-sm">
+              <div key={benefit.key} className="flex items-start gap-space-xs">
                 <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary-fixed/20 text-secondary-fixed">
                   <Icon className="h-3.5 w-3.5" aria-hidden="true" />
                 </span>
@@ -101,16 +102,20 @@ function StoryPanel() {
         </div>
       </div>
 
-      <div className="relative z-10 mt-space-lg flex flex-col gap-space-sm rounded-xl bg-surface-container-lowest/10 p-space-md text-on-primary backdrop-blur-md">
-        <div className="relative h-36 w-full overflow-hidden rounded-lg bg-gradient-to-br from-primary-container via-secondary to-primary">
-          <Leaf
-            className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 text-on-primary/25"
-            strokeWidth={1.25}
-            aria-hidden="true"
-          />
+      <div className="relative z-10 mt-space-md flex flex-col gap-2 rounded-xl bg-surface-container-lowest/10 p-space-sm text-on-primary backdrop-blur-md">
+        <div className="relative h-24 w-full overflow-hidden rounded-xl bg-primary-container">
+          <picture className="block h-full w-full">
+            <source srcSet="/auth-login.webp" type="image/webp" />
+            <img
+              src="/auth-login.jpg"
+              alt="Volunteers packing fresh surplus food for a community kitchen pickup"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+          </picture>
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"
+            className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,40,20,0.55)_0%,rgba(0,40,20,0.15)_45%,transparent_100%)]"
           />
           <span className="absolute left-2 top-2 inline-flex items-center gap-1.5 rounded-full bg-surface-container-lowest/90 px-2.5 py-0.5 shadow-sm backdrop-blur-md">
             <span
@@ -122,16 +127,16 @@ function StoryPanel() {
             </span>
           </span>
         </div>
-        <p className="font-body-sm text-body-sm italic leading-relaxed text-on-primary-container">
+        <span className="font-label-sm text-[10px] uppercase tracking-wider text-secondary-fixed/90">
+          Sample testimonial
+        </span>
+        <p className="font-body-sm text-body-sm italic leading-snug text-on-primary/90">
           &ldquo;FoodBridge AI makes closing the loop effortless. We diverted 180kg surplus
           yesterday within 34 minutes of closing.&rdquo;
         </p>
-        <div className="flex items-center justify-between font-label-sm text-label-sm text-secondary-fixed">
-          <span>Harvest Hope Kitchens</span>
-          <span className="flex items-center gap-0.5 text-tertiary-fixed">
-            <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
-            4.99 verified
-          </span>
+        <div className="flex items-center justify-between gap-2 font-label-sm text-label-sm">
+          <span className="font-semibold text-mint">Harvest Hope Kitchens</span>
+          <span className="text-on-primary/70">Community kitchen partner</span>
         </div>
       </div>
     </aside>
@@ -187,12 +192,12 @@ export default function Login() {
   }
 
   return (
-    <section className="w-full px-gutter-mobile py-space-xl">
-      <div className="mx-auto grid w-full max-w-[1140px] grid-cols-1 overflow-hidden rounded-2xl bg-surface-container-lowest shadow-overlay lg:min-h-[680px] lg:grid-cols-12">
+    <section className="w-full px-gutter-mobile py-space-lg sm:py-space-xl">
+      <div className="mx-auto grid w-full max-w-[1140px] grid-cols-1 overflow-hidden rounded-2xl bg-surface-container-lowest shadow-overlay lg:min-h-[600px] lg:grid-cols-12">
         <StoryPanel />
 
         <div className="relative flex flex-col justify-center gap-space-lg p-6 sm:p-10 lg:col-span-7">
-          <div className="mx-auto flex w-full max-w-md flex-col gap-space-lg">
+          <div className="mx-auto flex w-full max-w-md flex-col gap-space-md sm:gap-space-lg">
             {formError && (
               <Banner variant="error" title="Authentication failed">
                 {formError}
@@ -239,21 +244,15 @@ export default function Login() {
               />
 
               <div className="flex items-center justify-between pt-1">
-                <label
-                  title="Remember me is coming soon"
-                  className="flex cursor-not-allowed items-center gap-2 select-none"
-                >
+                <label className="flex cursor-pointer select-none items-center gap-2">
                   <input
                     type="checkbox"
                     defaultChecked
-                    disabled
-                    aria-disabled="true"
-                    className="h-4 w-4 rounded accent-secondary opacity-60"
+                    className="h-4 w-4 shrink-0 cursor-pointer rounded border-outline accent-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40"
                   />
                   <span className="font-body-sm text-body-sm text-on-surface-variant">
                     Remember me for 30 days
                   </span>
-                  <span className="sr-only">— not available yet</span>
                 </label>
                 <Link
                   to="/forgot-password"
@@ -276,31 +275,38 @@ export default function Login() {
               </Button>
             </form>
 
-            <div className="relative flex items-center justify-center">
-              <span aria-hidden="true" className="absolute inset-x-0 h-px bg-surface-container-high" />
-              <span className="relative bg-surface-container-lowest px-3 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
-                or continue with
-              </span>
-            </div>
+            {SHOW_SOCIAL_LOGIN && (
+              <>
+                <div className="relative flex items-center justify-center">
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-x-0 h-px bg-surface-container-high"
+                  />
+                  <span className="relative bg-surface-container-lowest px-3 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+                    or continue with
+                  </span>
+                </div>
 
-            <SocialAuthButtons />
+                <SocialAuthButtons />
+              </>
+            )}
 
-            <p className="text-center font-label-sm text-label-sm text-on-surface-variant">
-              By logging in, you agree to our{' '}
-              <span className="text-secondary underline">Terms of Service</span> and{' '}
-              <span className="text-secondary underline">Privacy Policy</span>.
-            </p>
-
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              <Badge variant="neutral" size="sm">
-                Demo environment
-              </Badge>
-              <span className="font-body-sm text-body-sm text-on-surface-variant">
-                Use a seeded demo account, or{' '}
-                <Link to="/register" className="font-semibold text-secondary hover:underline">
-                  create one
-                </Link>
+            <div className="flex flex-col items-center gap-2">
+              <p className="text-center font-label-sm text-label-sm leading-relaxed text-on-surface-variant">
+                By logging in, you agree to our{' '}
+                <span className="font-semibold text-secondary underline underline-offset-2">
+                  Terms of Service
+                </span>{' '}
+                and{' '}
+                <span className="font-semibold text-secondary underline underline-offset-2">
+                  Privacy Policy
+                </span>
                 .
+              </p>
+
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-container-low px-3 py-1 font-label-sm text-label-sm text-on-surface-variant">
+                <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                Demo environment — seeded accounts available
               </span>
             </div>
           </div>

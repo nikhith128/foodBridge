@@ -16,6 +16,20 @@
     font-variant-numeric: tabular-nums;
   }
 
+  /*
+   * Browser autofill paint is a blue/yellow wash that clashes with the auth
+   * cards. Keep the field white and the text on-surface; the inset shadow is
+   * the only reliable way to override Chrome's background.
+   */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: theme('colors.on-surface');
+    caret-color: theme('colors.on-surface');
+    -webkit-box-shadow: 0 0 0 1000px theme('colors.surface-container-lowest') inset;
+    transition: background-color 600000s 0s;
+  }
+
   :focus-visible {
     @apply outline-none ring-2 ring-secondary/40 ring-offset-1 ring-offset-surface;
   }

@@ -55,7 +55,7 @@ const Input = forwardRef(function Input(
               *
             </span>
           ) : (
-            optional && <span className="font-normal text-outline"> (Optional)</span>
+            optional && <span className="font-normal text-on-surface-variant"> (Optional)</span>
           )}
         </label>
       )}
@@ -81,13 +81,13 @@ const Input = forwardRef(function Input(
           aria-describedby={cn(hint && hintId, hasError && errorId) || undefined}
           className={cn(
             'w-full h-11 rounded-xl border bg-surface-container-lowest text-on-surface',
-            'font-body-md text-body-md shadow-sm placeholder:text-outline',
+            'font-body-md text-body-md shadow-sm placeholder:text-on-surface-variant',
             'focus:outline-none focus:ring-2 focus:bg-surface-bright transition-colors',
             LeadingIcon ? 'pl-10' : 'pl-4',
             isPassword ? 'pr-11' : 'pr-4',
             hasError
               ? 'border-error ring-2 ring-error/60 focus:ring-error'
-              : 'border-outline focus:border-secondary focus:ring-secondary/40',
+              : 'border-outline focus:border-secondary focus:ring-secondary',
             props.disabled && 'cursor-not-allowed opacity-60',
             className
           )}
@@ -120,7 +120,7 @@ const Input = forwardRef(function Input(
         </p>
       ) : (
         hint && (
-          <p id={hintId} className="font-label-sm text-label-sm text-outline">
+          <p id={hintId} className="font-label-sm text-label-sm text-on-surface-variant">
             {hint}
           </p>
         )
