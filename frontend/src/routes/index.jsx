@@ -37,8 +37,6 @@ import VolunteerDashboard from '../pages/volunteer/VolunteerDashboard.jsx';
 import AvailableTasks from '../pages/volunteer/AvailableTasks.jsx';
 import MyTasks from '../pages/volunteer/MyTasks.jsx';
 import TaskDetails from '../pages/volunteer/TaskDetails.jsx';
-import ComponentGallery from '../pages/dev/ComponentGallery.jsx';
-import TokenPreview from '../pages/TokenPreview.jsx';
 
 export default function AppRoutes() {
   return (
@@ -103,14 +101,6 @@ export default function AppRoutes() {
           <Route path="/settings" element={<Settings />} />
         </Route>
       </Route>
-
-      {/* --- Development only (never shipped to production) ---------------- */}
-      {import.meta.env.DEV && (
-        <>
-          <Route path="/dev/components" element={<ComponentGallery />} />
-          <Route path="/dev/tokens" element={<TokenPreview />} />
-        </>
-      )}
 
       {/* --- Anything else ------------------------------------------------ */}
       <Route path="*" element={<NotFound />} />

@@ -72,34 +72,34 @@ Fill the last column after you check `design/screens/`. Mark any page with no sc
 
 | # | Page | Route | Role | Screen folder |
 |---|---|---|---|---|
-| 1 | Home | / | Public | FILL |
-| 2 | About Us | /about | Public | FILL |
-| 3 | How It Works | /how-it-works | Public | FILL |
-| 4 | Register | /register | Public | FILL |
-| 5 | Login | /login | Public | FILL |
-| 6 | Forgot / Reset Password | /forgot-password | Public | FILL |
-| 7 | Donor Dashboard | /donor | Donor | FILL |
-| 8 | Create Donation | /donor/create-donation | Donor | FILL |
-| 9 | My Donations (tabs: Active, Completed, Expired, Cancelled; also acts as history) | /donor/donations | Donor | FILL |
-| 10 | Donation Details | /donor/donations/:id | Donor | FILL |
-| 11 | Matching Results | /donor/donations/:id/matches | Donor | FILL |
-| 12 | Pickup Details | /donor/pickups/:id | Donor | FILL |
-| 14 | NGO Dashboard | /ngo | NGO | FILL |
-| 15 | Available Donations | /ngo/donations | NGO | FILL |
-| 16 | Donation Details | /ngo/donations/:id | NGO | FILL |
-| 17 | Matching Recommendations | /ngo/recommendations | NGO | FILL |
-| 18 | My Accepted Donations | /ngo/accepted | NGO | FILL |
-| 19 | Pickup Management | /ngo/pickups | NGO | FILL |
-| 20 | Donation History | /ngo/history | NGO | FILL |
-| 21 | Volunteer Dashboard | /volunteer | Volunteer | FILL |
-| 22 | Available Tasks | /volunteer/tasks | Volunteer | FILL |
-| 23 | My Tasks | /volunteer/my-tasks | Volunteer | FILL |
-| 24 | Task Details | /volunteer/tasks/:id | Volunteer | FILL |
-| 25 | My Profile | /app/profile | All | FILL |
-| 26 | Edit Profile | /app/profile/edit | All | FILL |
-| 27 | Notifications | /app/notifications | All | FILL |
-| 28 | Settings | /app/settings | All | FILL |
-| 29 | Impact Dashboard | /app/impact | All | FILL |
+| 1 | Home | / | Public | stitch_foodbridge_ai_platform_landing_page |
+| 2 | About Us | /about | Public | MISSING |
+| 3 | How It Works | /how-it-works | Public | MISSING |
+| 4 | Register | /register | Public | stitch_foodbridge_ai_platform_landing_page (1) |
+| 5 | Login | /login | Public | stitch_foodbridge_ai_platform_landing_page (2) |
+| 6 | Forgot / Reset Password | /forgot-password | Public | MISSING |
+| 7 | Donor Dashboard | /donor | Donor | stitch_foodbridge_ai_platform_landing_page (3) |
+| 8 | Create Donation | /donor/create-donation | Donor | stitch_foodbridge_ai_platform_landing_page (4) |
+| 9 | My Donations (tabs: Active, Completed, Expired, Cancelled; also acts as history) | /donor/donations | Donor | stitch_foodbridge_ai_platform_landing_page (6) |
+| 10 | Donation Details | /donor/donations/:id | Donor | MISSING |
+| 11 | Matching Results | /donor/donations/:id/matches | Donor | stitch_foodbridge_ai_platform_landing_page (5) |
+| 12 | Pickup Details | /donor/pickups/:id | Donor | stitch_foodbridge_ai_platform_landing_page (7) |
+| 14 | NGO Dashboard | /ngo | NGO | stitch_foodbridge_ai_platform_landing_page (8) |
+| 15 | Available Donations | /ngo/donations | NGO | stitch_foodbridge_ai_platform_landing_page (9) |
+| 16 | Donation Details | /ngo/donations/:id | NGO | stitch_foodbridge_ai_platform_landing_page (10) |
+| 17 | Matching Recommendations | /ngo/recommendations | NGO | stitch_foodbridge_ai_platform_landing_page (11) |
+| 18 | My Accepted Donations | /ngo/accepted | NGO | MISSING |
+| 19 | Pickup Management | /ngo/pickups | NGO | stitch_foodbridge_ai_platform_landing_page (12) |
+| 20 | Donation History | /ngo/history | NGO | stitch_foodbridge_ai_platform_landing_page (13) |
+| 21 | Volunteer Dashboard | /volunteer | Volunteer | stitch_foodbridge_ai_platform_landing_page (14) |
+| 22 | Available Tasks | /volunteer/tasks | Volunteer | stitch_foodbridge_ai_platform_landing_page (15) |
+| 23 | My Tasks | /volunteer/my-tasks | Volunteer | stitch_foodbridge_ai_platform_landing_page (16) |
+| 24 | Task Details | /volunteer/tasks/:id | Volunteer | stitch_foodbridge_ai_platform_landing_page (17) |
+| 25 | My Profile | /app/profile | All | MISSING |
+| 26 | Edit Profile | /app/profile/edit | All | MISSING |
+| 27 | Notifications | /app/notifications | All | MISSING |
+| 28 | Settings | /app/settings | All | MISSING |
+| 29 | Impact Dashboard | /app/impact | All | MISSING |
 
 If the Stitch files show merged pages (for example tabs instead of separate pages), follow the Stitch files and note it under "Open questions".
 

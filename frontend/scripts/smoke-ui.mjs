@@ -333,7 +333,6 @@ try {
   const RoleRoute = (await server.ssrLoadModule('/src/routes/RoleRoute.jsx')).default;
   const AppRoutes = (await server.ssrLoadModule('/src/routes/index.jsx')).default;
   const NotFound = (await server.ssrLoadModule('/src/pages/system/NotFound.jsx')).default;
-  const RoleHome = (await server.ssrLoadModule('/src/pages/system/RoleHome.jsx')).default;
 
   // ------------------------------------------------- the guard matrix (9)
   // A donor is signed in; each row asks for no role, their own role, another.
@@ -423,11 +422,6 @@ try {
   const notFound = render(h(MemoryRouter, null, h(NotFound)));
   check('NotFound explains the page is missing', notFound.includes('Page not found'));
   check('NotFound offers a way home', notFound.includes('href="/"'));
-
-  const roleHome = render(withAuth('authenticated', 'NGO', h(RoleHome)));
-  check('RoleHome names the signed-in account', roleHome.includes('Demo Account'));
-  check('RoleHome shows the role', roleHome.includes('NGO'));
-  check('RoleHome labels its figures as placeholders', roleHome.includes('Placeholder figures'));
 
   // -------------------------------------------------------- route table
   const appAt = (path) =>
@@ -1349,7 +1343,6 @@ try {
     bootingProtected,
     wrongRole,
     notFound,
-    roleHome,
     unknownRoute,
     anonDashboard,
     publicShell,

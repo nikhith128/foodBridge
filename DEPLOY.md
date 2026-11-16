@@ -24,7 +24,9 @@ DATABASE_URL="mysql://USER:PASSWORD@HOST:3306/foodbridge"
   - `CLIENT_URL` — the exact frontend origin, e.g. `https://foodbridge.vercel.app`
   - `PORT` — the host sets this; do not hard-code it
 
-Optional demo data (run once): `npm run seed`
+Optional demo data (run once): `npm run seed` — on Render, open the backend
+service's **Shell** tab and run it there, so it uses the hosted `DATABASE_URL`.
+Without it, every login returns `401 Incorrect email or password`.
 
 ## 3. Frontend (Vercel / Netlify)
 
@@ -36,6 +38,14 @@ Optional demo data (run once): `npm run seed`
 SPA rewrites are already included:
 - `frontend/vercel.json` for Vercel
 - `frontend/public/_redirects` for Netlify
+
+**Render ignores both files.** A Render Static Site must get the rewrite in the
+dashboard, or every route except `/` returns 404 on load/refresh:
+
+- Dashboard → your static site → **Redirects/Rewrites** → Add
+- Source: `/*`
+- Destination: `/index.html`
+- Action: **Rewrite** (not Redirect)
 
 ## 4. Verify
 
