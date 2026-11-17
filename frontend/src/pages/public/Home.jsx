@@ -1,6 +1,7 @@
 import { ArrowRight, Handshake, Leaf, ShieldCheck, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import WarpCarouselPanel from '../../components/charts/WarpCarouselPanel.jsx';
 import { Badge, Button } from '../../components/ui/index.js';
 import {
   DEMO_METRIC,
@@ -198,39 +199,41 @@ function ImpactCarousel() {
         </p>
       </div>
 
-      <div className="flex snap-x snap-mandatory gap-space-md overflow-x-auto pb-space-sm lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0">
-        {HOME_STATS.map((stat) => {
-          const Icon = stat.icon;
-          return (
-            <div
-              key={stat.key}
-              className="flex min-h-[210px] w-[275px] shrink-0 snap-center flex-col justify-between rounded-3xl border border-white/[0.08] bg-primary-container p-space-lg shadow-card-hover lg:w-auto"
-            >
-              <div className="flex items-start justify-between gap-2">
-                <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/[0.12] text-on-primary backdrop-blur-md">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <span className="rounded-full bg-white/15 px-2.5 py-1 font-label-sm text-label-sm font-semibold text-on-primary backdrop-blur-md">
-                  {stat.badge}
-                </span>
+      <WarpCarouselPanel>
+        <div className="flex snap-x snap-mandatory gap-space-md overflow-x-auto pb-space-sm lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0">
+          {HOME_STATS.map((stat) => {
+            const Icon = stat.icon;
+            return (
+              <div
+                key={stat.key}
+                className="flex min-h-[210px] w-[275px] shrink-0 snap-center flex-col justify-between rounded-3xl border border-white/[0.08] bg-primary-container p-space-lg shadow-card-hover lg:w-auto"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/[0.12] text-on-primary backdrop-blur-md">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <span className="rounded-full bg-white/15 px-2.5 py-1 font-label-sm text-label-sm font-semibold text-on-primary backdrop-blur-md">
+                    {stat.badge}
+                  </span>
+                </div>
+                <div>
+                  <div className="font-display text-[2.5rem] font-bold leading-none tracking-tight text-secondary-fixed">
+                    {stat.value}
+                  </div>
+                  <div className="mt-1 font-body-md font-semibold text-on-primary">
+                    {stat.label}
+                  </div>
+                  {/* Two lines are always reserved, so all four numbers sit on
+                      the same baseline even when a note fits on one line. */}
+                  <div className="mt-0.5 min-h-[2.5rem] font-body-sm text-body-sm text-on-primary/75">
+                    {stat.note}
+                  </div>
+                </div>
               </div>
-              <div>
-                <div className="font-display text-[2.5rem] font-bold leading-none tracking-tight text-secondary-fixed">
-                  {stat.value}
-                </div>
-                <div className="mt-1 font-body-md font-semibold text-on-primary">
-                  {stat.label}
-                </div>
-                {/* Two lines are always reserved, so all four numbers sit on
-                    the same baseline even when a note fits on one line. */}
-                <div className="mt-0.5 min-h-[2.5rem] font-body-sm text-body-sm text-on-primary/75">
-                  {stat.note}
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      </WarpCarouselPanel>
     </Section>
   );
 }
