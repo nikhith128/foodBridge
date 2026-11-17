@@ -2,6 +2,7 @@ import { ArrowRight, Handshake, Leaf, ShieldCheck, Sparkles } from 'lucide-react
 import { Link } from 'react-router-dom';
 
 import WarpCarouselPanel from '../../components/charts/WarpCarouselPanel.jsx';
+import HeroDonateButton from '../../components/ui/HeroDonateButton.jsx';
 import { Badge, Button } from '../../components/ui/index.js';
 import {
   DEMO_METRIC,
@@ -81,10 +82,7 @@ function Hero() {
           </div>
 
           <div className="flex flex-col items-stretch gap-space-sm pt-space-xs sm:flex-row">
-            <Button as={Link} to="/register" size="lg" variant="primary" className="rounded-full">
-              Donate Food
-              <ArrowRight className="h-5 w-5" aria-hidden="true" />
-            </Button>
+            <HeroDonateButton />
             <Button
               as={Link}
               to="/register"

@@ -13,6 +13,7 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
+    "@paper-design/shaders": "^0.0.82",
     "framer-motion": "^14.14.0",
     "leaflet": "^1.9.4",
     "lucide-react": "^1.73.0",
