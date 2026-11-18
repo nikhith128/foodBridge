@@ -2,6 +2,8 @@
 
 FoodBridge AI connects surplus-food donors with nearby NGOs through intelligent matching. This repo holds the React/Vite client and the Express/Prisma API.
 
+**Live demo:** [foodbridge-frontend-6e6p.onrender.com](https://foodbridge-frontend-6e6p.onrender.com/) — hosted on Render. The free tier can sleep, so the first request may take ~30 seconds.
+
 ## Stack
 
 - **Frontend:** React 19, Vite 8, Tailwind CSS 3, Framer Motion, React Router 7, Recharts, Leaflet
