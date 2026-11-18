@@ -1,6 +1,8 @@
 import { ArrowRight, Handshake, Leaf, ShieldCheck, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
 
+import { rise } from "../../components/intro/rise.js";
 import WarpCarouselPanel from '../../components/charts/WarpCarouselPanel.jsx';
 import HeroDonateButton from '../../components/ui/HeroDonateButton.jsx';
 import { Badge, Button } from '../../components/ui/index.js';
@@ -72,16 +74,16 @@ function Hero() {
           </span>
 
           <div className="flex flex-col gap-space-lg">
-            <h1 className="font-display text-display-mobile font-extrabold tracking-tight text-primary sm:text-headline-lg lg:text-display">
+            <motion.h1 {...rise(0)} className="font-display text-display-mobile font-extrabold tracking-tight text-primary sm:text-headline-lg lg:text-display">
               {HOME_HERO.headline}
               <span className="mt-1 block text-secondary">{HOME_HERO.headlineAccent}</span>
-            </h1>
-            <p className="max-w-xl font-body-md text-body-md leading-relaxed text-on-surface-variant">
+            </motion.h1>
+            <motion.p {...rise(1)} className="max-w-xl font-body-md text-body-md leading-relaxed text-on-surface-variant">
               {HOME_HERO.body}
-            </p>
+            </motion.p>
           </div>
 
-          <div className="flex flex-col items-stretch gap-space-sm pt-space-xs sm:flex-row">
+          <motion.div {...rise(2)} className="flex flex-col items-stretch gap-space-sm pt-space-xs sm:flex-row">
             <HeroDonateButton />
             <Button
               as={Link}
@@ -93,7 +95,7 @@ function Hero() {
               <Handshake className="h-5 w-5" aria-hidden="true" />
               Join as an NGO
             </Button>
-          </div>
+          </motion.div>
 
           <p className="flex items-start gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
             <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-secondary" aria-hidden="true" />
@@ -119,6 +121,8 @@ function Hero() {
                 alt="Volunteers handing a crate of fresh food to a community kitchen"
                 loading="eager"
                 className="h-full w-full object-cover"
+                decoding="async"
+                fetchpriority="high"
               />
             </picture>
             <div

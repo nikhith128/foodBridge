@@ -1,3 +1,7 @@
+import { useState } from "react";
+
+import IntroSplash from "./components/intro/IntroSplash.jsx";
+import { introState } from "./components/intro/introState.js";
 import { ToastProvider, ToastViewport } from './components/ui/index.js';
 import { AuthProvider } from './context/AuthContext.jsx';
 import AppRoutes from './routes/index.jsx';
@@ -14,10 +18,13 @@ import AppRoutes from './routes/index.jsx';
  * navigation is not unmounted with the page that raised it.
  */
 export default function App() {
+  const [routesReady, setRoutesReady] = useState(!introState.plays);
+
   return (
     <ToastProvider>
       <AuthProvider>
-        <AppRoutes />
+        <IntroSplash onDone={() => setRoutesReady(true)} />
+        {routesReady && <AppRoutes />}
       </AuthProvider>
       <ToastViewport />
     </ToastProvider>
