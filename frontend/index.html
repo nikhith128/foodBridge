@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="en" class="h-full">
   <head>
+    <script>
+      try {
+        if (
+          location.pathname === "/" &&
+          !sessionStorage.getItem("fb_intro_seen") &&
+          !matchMedia("(prefers-reduced-motion: reduce)").matches
+        ) {
+          document.documentElement.classList.add("fb-intro");
+          setTimeout(function () {
+            document.documentElement.classList.remove("fb-intro");
+          }, 4000);
+        }
+      } catch (e) {}
+    </script>
+    <style>
+      html.fb-intro, html.fb-intro body { background: #003422; }
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FoodBridge AI — Rescue Food. Connect Communities. Reduce Waste.</title>
@@ -8,10 +25,18 @@
       name="description"
       content="FoodBridge AI connects surplus-food donors with nearby NGOs through intelligent matching."
     />
+    <link rel="preload" as="image" href="/hero.webp" />
 
     <!-- Typography: Manrope for headings, Inter for body (from the Stitch design tokens) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
       rel="stylesheet"
