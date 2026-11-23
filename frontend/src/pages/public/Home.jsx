@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
 import { rise } from "../../components/intro/rise.js";
+import DepthImage from "../../components/intro/DepthImage.jsx";
 import WarpCarouselPanel from '../../components/charts/WarpCarouselPanel.jsx';
 import HeroDonateButton from '../../components/ui/HeroDonateButton.jsx';
 import { Badge, Button } from '../../components/ui/index.js';
@@ -116,20 +117,18 @@ function Hero() {
           <div className="relative h-[300px] w-full overflow-hidden bg-primary sm:h-[360px] lg:h-[420px]">
             <picture className="block h-full w-full">
               <source srcSet="/hero.webp" type="image/webp" />
-              <img
-                src="/hero.jpg"
+              <DepthImage
+                src="/hero.webp"
+                depth="/hero-depth.webp"
                 alt="Volunteers handing a crate of fresh food to a community kitchen"
-                loading="eager"
                 className="h-full w-full object-cover"
-                decoding="async"
-                fetchpriority="high"
               />
             </picture>
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,40,20,0.65)_0%,transparent_50%)]"
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,40,20,0.65)_0%,transparent_50%)]"
             />
-            <div className="absolute inset-x-4 bottom-3 flex items-center justify-between gap-2 text-on-primary">
+            <div className="pointer-events-none absolute inset-x-4 bottom-3 flex items-center justify-between gap-2 text-on-primary">
               <span className="rounded-full bg-primary/80 px-3 py-1 font-label-sm text-label-sm tracking-wide backdrop-blur-md">
                 Harvest Hope Crate No. 408
               </span>
